@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.EntityFrameworkCore.Scaffolding.Metadata;
+using Microsoft.Extensions.Options;
+using PovarCRM.Migrations;
 using PovarCRM.Models.Views;
 
 namespace PovarCRM.Models;
@@ -15,21 +18,38 @@ public class PovarDbContextFactory : IDesignTimeDbContextFactory<PovarDbContext>
         var connectionString = ConfigurationManager.ConnectionStrings["PovarDbContext"].ConnectionString;
         optionsBuilder.UseSqlServer(connectionString);
 
-        return new PovarDbContext(optionsBuilder.Options);
+        var mode = PovarDbContext.DbMode.DataBaseOn; // default
+        if (args.Length > 0 && Enum.TryParse<PovarDbContext.DbMode>(args[0], out var result)){
+            mode = result;
+        }
+        return new PovarDbContext(optionsBuilder.Options, mode);
+
     }
 }
 
 public partial class PovarDbContext : DbContext
 {
+    public enum DbMode
+    {
+        DataBaseOn,  // реальная база
+        DataBaseOff  // InMemory / временное хранение
+    }
     public PovarDbContext()
     {
         connectionString = ConfigurationManager.ConnectionStrings["PovarDbContext"].ConnectionString;
     }
 
-    public PovarDbContext(DbContextOptions<PovarDbContext> options)
+    public PovarDbContext(DbContextOptions<PovarDbContext> options, DbMode mode)
         : base(options)
     {
-        connectionString = ConfigurationManager.ConnectionStrings["PovarDbContext"].ConnectionString;
+        if(mode == DbMode.DataBaseOn)
+            connectionString = ConfigurationManager.ConnectionStrings["PovarDbContext"].ConnectionString;
+        else if(mode == DbMode.DataBaseOff)
+        {
+            connectionString = "DataSource=:memory:";
+            this._mode = mode;
+        }
+            
     }
     
     public virtual DbSet<Dish> Dishes { get; set; }
@@ -45,13 +65,18 @@ public partial class PovarDbContext : DbContext
 
     public virtual DbSet<DishProduct> DishProducts { get; set; }
     public string connectionString;
+    private readonly DbMode _mode = DbMode.DataBaseOn;
 
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        if (!optionsBuilder.IsConfigured)
+        if (!optionsBuilder.IsConfigured && this._mode == DbMode.DataBaseOn)
         {
             optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["PovarDbContext"].ConnectionString);
+        }
+        else if(this._mode == DbMode.DataBaseOff)
+        {
+            optionsBuilder.UseInMemoryDatabase(this.connectionString);
         }
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)

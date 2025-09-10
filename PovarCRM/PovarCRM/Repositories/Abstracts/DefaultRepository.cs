@@ -1,19 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.Linq;
-using System.Numerics;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using PovarCRM.Models;
+﻿using Microsoft.EntityFrameworkCore;
 using PovarCRM.Models.Interfaces;
 using PovarCRM.Repositories.Interfaces;
 
 namespace PovarCRM.Repositories.Abstracts
 {
-    public abstract class DefaultRepository<T> : IRepository<T> where T : class
+    public abstract class DefaultRepository<T> : IRepository<T> where T : class, ICopyable<T>
     {
         internal DbContext DbContext { get; set; }
 
@@ -26,99 +17,224 @@ namespace PovarCRM.Repositories.Abstracts
         {
             return DbContext.Set<T>();
         }
-        public virtual T GetByID(int id)
+        public virtual void AddRange(IEnumerable<T> entities)
         {
-            var a = DbContext.Set<T>().Find(id);
+            Console.WriteLine(entities);
+
+            if (entities is IEnumerable<ISingleIdentityEntity> listEntity)
+            {
+                foreach (var entity in listEntity)
+                {
+                    if (this.GetByID(entity.Id) != null)
+                        Update((T)entity);
+                    else
+                        DbContext.Set<T>().Add((T)entity);
+                }
+            }
+            else if (entities is IEnumerable<IIdentityEntity> list)
+            {
+                foreach (var entity in list)
+                {
+                    if (this.GetByID(entity.Id) != null)
+                        Update((T)entity);
+                    else
+                        DbContext.Set<T>().Add((T)entity);
+                }
+            }
+            DbContext.SaveChanges();
+
+        }
+        public virtual void Add(T entity)
+        {
+            if (entity is ISingleIdentityEntity singleEntity)
+            {
+                var existing = this.GetByID(singleEntity.Id);
+                if (existing != null)
+                    Update(entity);
+                else
+                    DbContext.Set<T>().Add(entity);
+            }
+            else if (entity is IIdentityEntity identityEntity)
+            {
+                var existing = this.GetByID(identityEntity.Id);
+                if (existing != null)
+                    Update(entity);
+                else
+                    DbContext.Set<T>().Add(entity);
+            }
+
+            DbContext.SaveChanges();
+        }
+        public virtual T GetByID(params int[] id)
+        {
+            if (id == null)
+                return null;
+
+            if (!DbContext.Set<T>().Any())
+            {
+                Console.WriteLine("(\"DB is empty\"); typeof = " + typeof(T).ToString());
+                return null;
+            }
+
+            T? a;
+            if (id.Length == 1)
+                a = DbContext.Set<T>().Find(id[0]);
+            else
+            {
+                object[] keyValues = id.Cast<object>().ToArray();
+                a = DbContext.Set<T>().Find(keyValues);
+            }
             if (a == null)
-                throw new Exception("DB doesnt exist obj with id:" + id);
+            {
+                return null;
+            }
             else
                 return a;
         }
 
-        public virtual T Insert(T obj)
-        {
-            DbContext.Set<T>().Add(obj);
-            return obj;
-        }
-        public virtual void Insert(params T[] objs)
-        {
-            foreach(T item in objs)
-                DbContext.Set<T>().Add(item);
-            return;
-        }
+        //public virtual T Insert(T obj)
+        //{
+        //    DbContext.Set<T>().Add(obj);
+        //    DbContext.SaveChanges();
+        //    return obj;
+        //}
+        //public virtual void Insert(params T[] objs)
+        //{
+        //    foreach (T item in objs)
+        //        DbContext.Set<T>().Add(item);
+        //    DbContext.SaveChanges();
+        //    return;
+        //}
 
         public virtual void Update(T obj)
         {
-            DbContext.Set<T>().Update(obj);
+            var z = DbContext.Entry(obj).State;
+            T item = GetByID(Find(obj));
+            if(DbContext.Entry(item).State != EntityState.Detached)
+            {
+                var i = DbContext.Entry(item).State;
+            }
+            else
+            {
+
+            }
+
+            if (item != null)
+                item.Copy(obj);
+
+            var j = DbContext.Entry(item).State;
+            z = DbContext.Entry(obj).State;
+            DbContext.SaveChanges();
         }
         public virtual void Update(params T[] objs)
         {
             foreach (T item in objs)
-                DbContext.Set<T>().Update(item);
+                Update(item);
+            DbContext.SaveChanges();
             return;
         }
 
 
         public virtual bool Delete(T obj)
         {
-            if(obj is IComposEntity)
+            var item = GetByID(Find(obj));
+            if (item != null)
             {
-               return this.Delete(((IComposEntity)obj).ids);
+                DbContext.Remove(item);
+                return true;
             }
-            else
-            {
-                return this.Delete(((IIdentityEntity)obj).Id);
-            }
+            return false;
+
         }
         public virtual bool Delete(params T[] objs)
         {
-            bool flag = false;
-            if (objs is IComposEntity)
-            {
-                IComposEntity[] composEntities = (IComposEntity[])objs;
-                foreach (IComposEntity item in composEntities)
+            foreach (T item in objs)
+                if (!Delete(item))
                 {
-                    flag = this.Delete(item.ids);
-                    if (!flag)
-                        break;
+                    return false;
                 }
-                    
-            }
-            else
-            {
-                IIdentityEntity[] composEntities = (IIdentityEntity[])objs;
-                foreach (IIdentityEntity item in composEntities)
-                {
-                    flag = this.Delete(item.Id);
-                    if (!flag)
-                        break;
-                }
-            }
-            return flag;
+
+            //if (objs.First() is IIdentityEntity)
+            //{
+            //    IIdentityEntity[] composEntities = (IIdentityEntity[])objs;
+            //    foreach (IIdentityEntity item in composEntities)
+            //    {
+            //        flag = DbContext.Remove(;
+            //        if (!flag)
+            //            break;
+            //    }
+
+            //}
+            //else if(objs.First() is ISingleIdentityEntity)
+            //{
+            //    ISingleIdentityEntity[] composEntities = (ISingleIdentityEntity[])objs;
+            //    foreach (ISingleIdentityEntity item in composEntities)
+            //    {
+            //        flag = this.Delete(item.Id);
+            //        if (!flag)
+            //            break;
+            //    }
+            //}
+            //else
+            //{
+            //    throw new Exception();
+            //}
+
+            DbContext.SaveChanges();
+            return true;
         }
-        public virtual bool Delete(int objID)
+        //public virtual bool Delete(int objID)
+        //{
+        //    T? obj = GetByID(objID);
+        //    if (obj == null) {
+        //        DbContext.SaveChanges();
+        //        return false;
+        //    }else{
+        //        DbContext.Set<T>().Remove(obj);
+        //        DbContext.SaveChanges();
+        //        return true;
+        //    }
+        //}
+
+        //public bool Delete(int[] ids)
+        //{
+        //    T? obj = GetByID(ids);
+        //    if (obj == null)
+        //    {
+        //        DbContext.SaveChanges();
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        DbContext.Set<T>().Remove(obj);
+        //        DbContext.SaveChanges();
+        //        return true;
+        //    }
+        //}
+        public virtual int[]? Find(T entity)
         {
-            T? obj = DbContext.Set<T>().Find(objID);
-            if (obj == null) {
-                return false;
-            }else{
-                DbContext.Set<T>().Remove(obj);
-                return true;
+            if (entity is ISingleIdentityEntity singleEntity)
+            {
+                var existing = GetByID(singleEntity.Id);
+                if (existing != null)
+                    return new int[1] { singleEntity.Id };
+                else
+                    return null;
             }
+            else if (entity is IIdentityEntity identityEntity)
+            {
+                var existing = GetByID(identityEntity.Id);
+                if (existing != null)
+                    return identityEntity.Id;
+                else
+                    return null;
+            }
+            throw new Exception();
         }
 
-        public bool Delete(Vector<int> ids)
-        {
-            T? obj = DbContext.Set<T>().Find(ids);
-            if (obj == null)
-            {
-                return false;
-            }
-            else
-            {
-                DbContext.Set<T>().Remove(obj);
-                return true;
-            }
-        }
+        //public virtual IEnumerable<T> GetCollection()
+        //{
+        //    return this.DbContext.Set<T>().ToList();
+        //}
     }
 }

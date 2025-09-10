@@ -11,8 +11,7 @@ namespace PovarCRM.UIcontrollers
     using System.ComponentModel;
     using System.Diagnostics;
     using System.Reflection.Metadata.Ecma335;
-    using PovarCRM.BusinessLogic;
-    using PovarCRM.BusinessLogic.interfaces;
+    using PovarCRM.BusinessLogic.OrderFilter;
     using PovarCRM.Models;
     using PovarCRM.UIcontrollers.UImembers;
 

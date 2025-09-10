@@ -11,14 +11,13 @@ namespace PovarCRM.Repositories.Interfaces
     public interface IRepository<T>
     {
         IEnumerable<T> GetCollection();
-        T GetByID(int objID);
-        T Insert(T obj);
-        void Insert(params T[] objs);
-        bool Delete(int objID);
+        T GetByID(params int[] objID);
+        void AddRange(IEnumerable<T> entities);
+        void Add(T entity);
         bool Delete(params T[] objs);
         bool Delete(T obj);
-        bool Delete(Vector<int> ids);
-        void Update(T obj);
-        void Update(params T[] objs);
+        //bool Delete(int[] ids);
+        //void Update(T obj);
+        //void Update(params T[] objs);
     }
 }

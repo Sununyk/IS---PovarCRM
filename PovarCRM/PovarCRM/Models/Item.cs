@@ -1,17 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
+using CommunityToolkit.Mvvm.ComponentModel;
+using PovarCRM.Models.Interfaces;
 
 namespace PovarCRM.Models;
-
-public partial class Item 
+[ObservableObject]
+public partial class Item : IIdentityEntity, ICopyable<Item>, ICloneable
 {
-    public int OrderCheckId { get; set; }
+    public Item() { }
 
-    public int DishId { get; set; }
+    [ObservableProperty]
+    int orderCheckId;
+    [ObservableProperty]
+    int dishId;
+    [ObservableProperty]
+    int dishCount = 1;
 
-    public int DishCount { get; set; } = 1;
+     public virtual Dish Dish { get; set; } = null!;
+    
+     public virtual OrderCheck OrderCheck { get; set; } = null!;
 
-    public virtual Dish Dish { get; set; }
+    public int[] Id => new int[2] { orderCheckId, dishId };
 
-    public virtual OrderCheck OrderCheck { get; set; }
+
+    // Конструктор копирования
+    public Item(Item other)
+    {
+        if (other == null) throw new ArgumentNullException(nameof(other));
+        OrderCheckId = other.OrderCheckId;
+        DishId = other.DishId;
+        DishCount = other.DishCount;
+        Dish = other.Dish; // поверхностная копия ссылки
+        OrderCheck = other.OrderCheck; // поверхностная копия ссылки
+    }
+    public void Copy(Item other)
+    {
+        if (other == null) throw new ArgumentNullException(nameof(other));
+        orderCheckId = other.orderCheckId;
+        dishId = other.dishId;
+        this.dishCount = other.dishCount;
+
+        //Dish = other.Dish; // поверхностная копия ссылки
+        //OrderCheck = other.OrderCheck; // поверхностная копия ссылки
+    }
+
+    public object Clone()
+    {
+        return new Item(this);
+    }
 }

@@ -64,11 +64,11 @@
             // 
             Title.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             Title.AutoSize = true;
-            Title.Location = new Point(221, 67);
+            Title.Location = new Point(207, 73);
             Title.Name = "Title";
-            Title.Size = new Size(132, 20);
+            Title.Size = new Size(138, 20);
             Title.TabIndex = 0;
-            Title.Text = "Сonfirm the action";
+            Title.Text = "Execute command?";
             // 
             // tableLayoutPanel1
             // 
@@ -100,7 +100,7 @@
             DeniedButton.Name = "DeniedButton";
             DeniedButton.Size = new Size(178, 53);
             DeniedButton.TabIndex = 3;
-            DeniedButton.Text = "Cancel";
+            DeniedButton.Text = "No";
             DeniedButton.UseVisualStyleBackColor = false;
             DeniedButton.Click += DeniedButton_Click;
             // 
@@ -112,7 +112,7 @@
             ConfirmButton.Name = "ConfirmButton";
             ConfirmButton.Size = new Size(184, 53);
             ConfirmButton.TabIndex = 2;
-            ConfirmButton.Text = "Ok";
+            ConfirmButton.Text = "Yes";
             ConfirmButton.UseVisualStyleBackColor = false;
             ConfirmButton.Click += ConfirmButton_Click;
             // 

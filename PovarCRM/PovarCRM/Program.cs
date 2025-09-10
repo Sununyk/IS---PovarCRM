@@ -1,5 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
-using PovarCRM.BusinessLogic;
+using PovarCRM.BusinessLogic.OrderFilter;
 using PovarCRM.Models;
 using PovarCRM.Repositories;
 using PovarCRM.Repositories.Abstracts;

@@ -1,4 +1,5 @@
 C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\bin\Debug\net8.0-windows\PovarCRM.exe
+C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\bin\Debug\net8.0-windows\PovarCRM.dll.config
 C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\bin\Debug\net8.0-windows\PovarCRM.deps.json
 C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\bin\Debug\net8.0-windows\PovarCRM.runtimeconfig.json
 C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\bin\Debug\net8.0-windows\PovarCRM.dll
@@ -116,7 +117,12 @@ C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\bin\Debug\net
 C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
 C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.csproj.AssemblyReference.cache
+C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.Properties.Resources.resources
+C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.Viewers.ConfirmationForm.resources
 C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.Form1.resources
+C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.Viewers.Menu.resources
+C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.Viewers.UserControls.CommandManagerViewer.resources
+C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.Viewers.ServingOrdersViewer.resources
 C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.csproj.GenerateResource.cache
 C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.AssemblyInfoInputs.cache
@@ -128,8 +134,9 @@ C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net
 C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.pdb
 C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.genruntimeconfig.cache
 C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\ref\PovarCRM.dll
-C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\bin\Debug\net8.0-windows\PovarCRM.dll.config
-C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.Properties.Resources.resources
-C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.Viewers.ServingOrdersViewer.resources
-C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.Viewers.ConfirmationForm.resources
-C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.Viewers.Menu.resources
+C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.Viewers.UserControls.TabRouter.resources
+C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.Viewers.UserControls.OrderConstructorViewer.resources
+C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.Viewers.ErrorForm.resources
+C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.Viewers.Forms.ConfirmAndInputForm.resources
+C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\bin\Debug\net8.0-windows\CommunityToolkit.Mvvm.dll

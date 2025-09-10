@@ -7,6 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Identity.Client;
+using PovarCRM.Repositories.CommandsLogic;
+using PovarCRM.UIcontrollers;
+using PovarCRM.UIcontrollers.UImembers;
+using PovarCRM.Viewers.Forms;
 
 namespace PovarCRM.Viewers
 {
@@ -15,6 +20,8 @@ namespace PovarCRM.Viewers
         public ServingOrdersViewer()
         {
             InitializeComponent();
+
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -60,11 +67,61 @@ namespace PovarCRM.Viewers
         {
 
         }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
+            string clientName = "";
 
+            using (var form = new ConfirmAndInputForm())
+            {
+                form.KeyDown += (object obj, KeyEventArgs args) => {
+                    if (args.KeyCode == Keys.Enter) clientName = form.ClientNaming;
+                };
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                }
+            }
+
+            int newOrderId = this.controller.CreatOrderCheck(clientName);
+
+            MenuController controller = new MenuController(this.controller.GetUnitOfWork() ,UIcontrollers.MenuMode.OrderConstructor, newOrderId);
+            controller.AddUpdateMember(this.controller);
+
+            using (Menu menu = new Menu(controller))
+            {
+                if (menu.ShowDialog() == DialogResult.OK)
+                {
+                    // Здесь будет выполнение кода после того, как форма закроется с OK
+                    
+
+                }
+            }
+                    
+               
+            
         }
+        //private void button1_Click_1(object sender, EventArgs e)
+        //{
+        //    // Создаём новый поток для другой формы
+        //    Thread thread = new(args =>
+        //    {
+        //        if (args is UIcontrollers.MenuThreadArguments menuArgs)
+        //        {
+        //            MenuController controller = new MenuController(UIcontrollers.MenuMode.OrderConstructor);
+        //            controller.SubscribeContextMembers(menuArgs.ContextMembers);
+
+        //            Menu menu = new Menu(controller);
+        //            Application.Run(menu); // Запускаем цикл сообщений для этой формы
+        //        }
+        //    });
+        //    thread.SetApartmentState(ApartmentState.STA);
+
+        //    List<(SynchronizationContext, IUpdateMember)> contextMember = new List<(SynchronizationContext, IUpdateMember)> {(SynchronizationContext.Current, (IUpdateMember)this.controller)};
+
+        //    MenuThreadArguments args = new MenuThreadArguments { 
+        //        ContextMembers = contextMember,
+        //    };
+        //    thread.Start(args);
+        //}
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -92,6 +149,25 @@ namespace PovarCRM.Viewers
 
                 }
             }
+        }
+
+        private void ordersTable_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ordersTable_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (ordersTable.Rows.Count <= 0)
+                return;
+
+            this.selectedDishId = (int)ordersTable[0, e.RowIndex].Value;
+            this.controller.onSelectedOrderId(selectedDishId);
+            try
+            {
+                itemsTable.Columns["DishWeight"].DefaultCellStyle.Format = "0\" грамм\"";
+            }
+            catch (Exception ex) { }
         }
     }
 }

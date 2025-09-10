@@ -1,4 +1,5 @@
-﻿using PovarCRM.UIcontrollers;
+﻿using System.Runtime.CompilerServices;
+using PovarCRM.UIcontrollers;
 
 namespace PovarCRM.Viewers
 {
@@ -13,14 +14,16 @@ namespace PovarCRM.Viewers
         /// Освободить все используемые ресурсы.
         /// </summary>
         /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        
         public void InitController(UIcontrollers.ServingOrdersController controller)
         {
             if (controller == null)
                 return;
 
-            _controller = controller;
-            ordersTable.DataSource = _controller.initOrderCheckList();
-            itemsTable.DataSource = _controller.initItemViewList();
+            this.controller = controller;
+            ordersTable.DataSource = this.controller.initOrderCheckList();
+            itemsTable.DataSource = this.controller.initItemViewList();
+            this.IngredientsTable.DataSource = this.controller.initRecipeViewList();
 
         }
         protected override void Dispose(bool disposing)
@@ -46,6 +49,7 @@ namespace PovarCRM.Viewers
             ItemsView = new TabControl();
             tabPage1 = new TabPage();
             IngredientsView = new TabPage();
+            IngredientsTable = new DataGridView();
             tableLayoutPanel1 = new TableLayoutPanel();
             splitContainer1 = new SplitContainer();
             label2 = new Label();
@@ -57,6 +61,8 @@ namespace PovarCRM.Viewers
             ((System.ComponentModel.ISupportInitialize)itemsTable).BeginInit();
             ItemsView.SuspendLayout();
             tabPage1.SuspendLayout();
+            IngredientsView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)IngredientsTable).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -78,6 +84,8 @@ namespace PovarCRM.Viewers
             ordersTable.TabIndex = 0;
             ordersTable.CellContentClick += dataGridView1_CellContentClick_1;
             ordersTable.CellDoubleClick += dataGridView1_CellDoubleClick;
+            ordersTable.RowEnter += ordersTable_RowEnter;
+            ordersTable.Paint += ordersTable_Paint;
             ordersTable.Layout += dataGridView1_Layout;
             // 
             // itemsTable
@@ -125,6 +133,7 @@ namespace PovarCRM.Viewers
             // 
             // IngredientsView
             // 
+            IngredientsView.Controls.Add(IngredientsTable);
             IngredientsView.Location = new Point(4, 29);
             IngredientsView.Name = "IngredientsView";
             IngredientsView.Padding = new Padding(3);
@@ -132,6 +141,16 @@ namespace PovarCRM.Viewers
             IngredientsView.TabIndex = 1;
             IngredientsView.Text = "Ingredients";
             IngredientsView.UseVisualStyleBackColor = true;
+            // 
+            // IngredientsTable
+            // 
+            IngredientsTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            IngredientsTable.Dock = DockStyle.Fill;
+            IngredientsTable.Location = new Point(3, 3);
+            IngredientsTable.Name = "IngredientsTable";
+            IngredientsTable.RowHeadersWidth = 51;
+            IngredientsTable.Size = new Size(322, 494);
+            IngredientsTable.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -195,13 +214,13 @@ namespace PovarCRM.Viewers
             splitContainer2.Panel1.Controls.Add(NewOrderButton);
             splitContainer2.Panel1.Paint += splitContainer2_Panel1_Paint;
             splitContainer2.Size = new Size(246, 533);
-            splitContainer2.SplitterDistance = 82;
+            splitContainer2.SplitterDistance = 90;
             splitContainer2.TabIndex = 7;
             // 
             // DeniedButton
             // 
             DeniedButton.Dock = DockStyle.Bottom;
-            DeniedButton.Location = new Point(0, -1);
+            DeniedButton.Location = new Point(0, 7);
             DeniedButton.Name = "DeniedButton";
             DeniedButton.Size = new Size(246, 29);
             DeniedButton.TabIndex = 2;
@@ -212,7 +231,7 @@ namespace PovarCRM.Viewers
             // CompleteButton
             // 
             CompleteButton.Dock = DockStyle.Bottom;
-            CompleteButton.Location = new Point(0, 28);
+            CompleteButton.Location = new Point(0, 36);
             CompleteButton.Name = "CompleteButton";
             CompleteButton.Size = new Size(246, 29);
             CompleteButton.TabIndex = 1;
@@ -223,7 +242,7 @@ namespace PovarCRM.Viewers
             // NewOrderButton
             // 
             NewOrderButton.Dock = DockStyle.Bottom;
-            NewOrderButton.Location = new Point(0, 57);
+            NewOrderButton.Location = new Point(0, 65);
             NewOrderButton.Name = "NewOrderButton";
             NewOrderButton.Size = new Size(246, 25);
             NewOrderButton.TabIndex = 0;
@@ -243,6 +262,8 @@ namespace PovarCRM.Viewers
             ItemsView.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            IngredientsView.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)IngredientsTable).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
@@ -257,10 +278,12 @@ namespace PovarCRM.Viewers
 
         #endregion
 
+
+
         private DataGridView ordersTable;
         private DataGridView itemsTable;
         private DataGridView ingredients;
-        private UIcontrollers.ServingOrdersController _controller;
+        private UIcontrollers.ServingOrdersController controller;
         private Label label1;
         private TabControl ItemsView;
         private TabPage tabPage1;
@@ -272,5 +295,8 @@ namespace PovarCRM.Viewers
         private Button DeniedButton;
         private Button CompleteButton;
         public TableLayoutPanel tableLayoutPanel1;
+        private DataGridView IngredientsTable;
+
+        private int selectedDishId = -1;
     }
 }

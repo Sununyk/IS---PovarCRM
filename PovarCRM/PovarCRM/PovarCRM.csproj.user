@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="Viewers\Forms\ErrorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Viewers\Forms\ConfirmAndInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Viewers\Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -13,13 +19,13 @@
     <Compile Update="Viewers\UserControls\CommandManagerViewer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Viewers\UserControls\Page.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Viewers\UserControls\PageRouter.cs">
+    <Compile Update="Viewers\UserControls\OrderConstructorViewer.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Viewers\UserControls\ServingOrdersViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Viewers\UserControls\TabRouter.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

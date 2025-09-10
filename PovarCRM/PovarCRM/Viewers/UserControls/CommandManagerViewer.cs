@@ -10,24 +10,39 @@ using System.Windows.Forms;
 
 namespace PovarCRM.Viewers.UserControls
 {
-    public partial class CommandManagerViewer : UserControl
+    public partial class CommandManagerViewer
     {
-        
-        public CommandManagerViewer(CommandManagerViewer controller)
+
+        public CommandManagerViewer()
         {
             InitializeComponent();
-
-            this.controller = controller;
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
+            if (this.IsDisposed || tableLayoutPanel1.IsDisposed) return;
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (this.controller != null)
+            {
+                controller.Undo();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (this.controller != null)
+            {
+                controller.Redo();
+            }
         }
     }
 }

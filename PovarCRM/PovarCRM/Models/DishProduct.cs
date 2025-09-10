@@ -1,18 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
+using CommunityToolkit.Mvvm.ComponentModel;
 using PovarCRM.Models.Interfaces;
 
 namespace PovarCRM.Models;
 
-public partial class DishProduct : IIdentityEntity
+[ObservableObject]
+public partial class DishProduct : ISingleIdentityEntity, ICopyable<DishProduct>
 {
-    public int Id { get; set; }
-
-    public string Naming { get; set; } = null!;
-
-    public decimal Cost { get; set; }
-
-    public int? UnitId { get; set; }
-
+    [ObservableProperty]
+     int id;
+    [ObservableProperty]
+     string naming= null!;
+    [ObservableProperty]
+     decimal cost;
+    [ObservableProperty]
+     int? unitId;
     public virtual Unit? Unit { get; set; }
+
+    // Конструктор копирования
+    public DishProduct() { }
+    //public DishProduct(DishProduct other)
+    //{
+    //    if (other == null) throw new ArgumentNullException(nameof(other));
+    //    Id = other.Id;
+    //    Naming = other.Naming;
+    //    Cost = other.Cost;
+    //    UnitId = other.UnitId;
+    //    Unit = other.Unit; // ссылка, глубокое копирование при необходимости
+    //}
+
+    public void Copy(DishProduct other)
+    {
+        if (other == null) throw new ArgumentNullException(nameof(other));
+        id = other.id;
+        naming = other.naming;
+        cost = other.cost;
+        unitId = other.unitId;
+        Unit = other.Unit; // ссылка, глубокое копирование при необходимости
+    }
 }

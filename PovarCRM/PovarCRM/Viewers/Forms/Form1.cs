@@ -11,6 +11,7 @@ namespace PovarCRM
     {
         BindingList<OrderCheck> binCtrlOrderChecks;
         CheckListViewController checkListController;
+        ServingOrdersController servingOrdersController1;
 
         public Form1(CheckListViewController checkListController)
         {
@@ -30,6 +31,9 @@ namespace PovarCRM
             dataGridView1.DataSource = binCtrlOrderChecks;
             dataGridView1.ReadOnly = true;
 
+            //ServingOrdersPart
+            servingOrdersController1 = new ServingOrdersController();
+            servingOrdersViewer1.InitController(servingOrdersController1);
 
 
 
@@ -333,16 +337,16 @@ namespace PovarCRM
         }
 
         private void button5_Click(object sender, EventArgs e)
-        {
-            Menu menu = new Menu();
-            using (var form = new Menu())
-            {
-                if (form.ShowDialog() == DialogResult.OK)
-                {
-                   
-                }
-            }
+        { 
 
+        }
+
+        private void mainTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (mainTabControl.SelectedTab.Text == "Serving orders")
+                this.servingOrdersController1?.onUpdateState();
+                
         }
     }
 }

@@ -7,7 +7,7 @@ using PovarCRM.Models.Interfaces;
 
 namespace PovarCRM.UIcontrollers.UImembers
 {
-    public interface IListBoxMember<T> where T : class, IIdentityEntity
+    public interface IListBoxMember<T> where T : class, ISingleIdentityEntity
     {
         void ItemsAddedToListBox(object? obj, IList<T> items);
         void ItemAddedToListBox(object? obj, T item);

@@ -1,45 +1,83 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using PovarCRM.Models.Interfaces;
 
 namespace PovarCRM.Models.Views
 {
-    public partial class DishView : IIdentityEntity
+    [ObservableObject]
+    public partial class DishView : ISingleIdentityEntity, ICloneable, ICopyable<DishView>
     {
-        public int Id { get; set; }
+        [ObservableProperty]
+        private int id;
+        [ObservableProperty]
+        private string naming = null!;
+        [ObservableProperty]
+        private decimal cost;
+        [ObservableProperty]
+        private float weight;
+        [ObservableProperty]
+        private bool picked = false;
+        [ObservableProperty]
+        private int count;
+        public DishView() { }
 
-        public string Naming { get; set; } = null!;
-
-        public decimal Cost { get; set; }
-
-        public float Weight { get; set; }
-
-        public bool Picked { get; set; } = false;
-
-        public int Count
+        public DishView(DishView duplicate)
         {
-            get
-            {
-                if (!Picked)
-                    return 0;
-                return Count;
-            }
-            set
-            {
-                if (Picked)
-                {
-                    Count = value;
-                }
-            }
+            Id = duplicate.Id;
+            Naming = duplicate.Naming;
+            Cost = duplicate.Cost;
+            Weight = duplicate.Weight;
+            Picked = duplicate.Picked;
+            Count = duplicate.Count; 
         }
 
-        public override string ToString()
+        public object Clone()
         {
-            return Id.ToString() + " " + Naming;
+            return new DishView(this);
         }
+        public void Copy(DishView source)
+        {
+            Id = source.Id;
+            Naming = source.Naming;
+            Cost = source.Cost;
+            Weight = source.Weight;
+            Picked = source.Picked;
+            Count = source.Count;
+        }
+
+        //public bool Picked
+        //{
+        //    get => picked;
+        //    set
+        //    {
+        //        if (picked != value)
+        //        {
+        //            picked = value;
+        //            OnPropertyChanged(nameof(Picked));
+        //        }
+        //    }
+        //}
+
+        //public int Count
+        //{
+        //    get => picked ? _count : 0;
+        //    set
+        //    {
+        //        if (_count != value)
+        //        {
+        //            if (picked)
+        //            {
+        //                _count = value;
+        //                if (_count == 0) Picked = false;
+        //                OnPropertyChanged(nameof(Count));
+        //            }
+        //        }
+        //    }
+        //}
+
+        public override string ToString() => $"{Id} {Naming}";
+
+
     }
-
 }

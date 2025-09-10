@@ -10,6 +10,7 @@ using PovarCRM.Models;
 using PovarCRM.Models.Interfaces;
 using PovarCRM.Repositories.Interfaces;
 using PovarCRM.UIcontrollers.UImembers;
+using PovarCRM.UIelements;
 
 
 namespace PovarCRM.UIcontrollers
@@ -17,7 +18,7 @@ namespace PovarCRM.UIcontrollers
 
     //Логическая оболочка над графическими элементами Combo and List boxes
     public class ListBoxController<TypeOfSet> : IListBoxController<TypeOfSet>
-        where TypeOfSet : class, IIdentityEntity
+        where TypeOfSet : class, ISingleIdentityEntity, ICloneable, ICopyable<TypeOfSet>
     {
 
         public delegate void ItemsChanged(object sender, List<TypeOfSet> e);
