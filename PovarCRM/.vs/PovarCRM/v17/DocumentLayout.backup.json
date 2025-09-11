@@ -3,6 +3,45 @@
   "WorkspaceRootPath": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\uielements\\bindinglistex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\uielements\\bindinglistex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\viewers\\forms\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\viewers\\forms\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\povarcrm\\viewers\\forms\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\viewers\\forms\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\viewers\\forms\\menu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\viewers\\forms\\menu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\viewers\\usercontrols\\commandmanagerviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\viewers\\usercontrols\\commandmanagerviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\povarcrm\\viewers\\usercontrols\\commandmanagerviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\viewers\\usercontrols\\commandmanagerviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\uicontrollers\\commandmanagercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\uicontrollers\\commandmanagercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Windows\\Temp\\.vsdbgsrc\\PovarCRM.Models.Views.DishView.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\repositories\\commandslogic\\commandpackage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\repositories\\commandslogic\\commandpackage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\repositories\\commandslogic\\updateinrep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\repositories\\commandslogic\\updateinrep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\viewers\\usercontrols\\orderconstructorviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\viewers\\usercontrols\\orderconstructorviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,32 +50,40 @@
       "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\uicontrollers\\orderconstructorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\uielements\\bindinglistex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\uielements\\bindinglistex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\repositories\\commandslogic\\addtorep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\repositories\\commandslogic\\addtorep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\uicontrollers\\commandmanagercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\uicontrollers\\commandmanagercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\repositories\\commandslogic\\deletefromrep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\repositories\\commandslogic\\deletefromrep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\viewers\\usercontrols\\orderconstructorviewer.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\viewers\\usercontrols\\orderconstructorviewer.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\viewers\\usercontrols\\commandmanagerviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\viewers\\usercontrols\\commandmanagerviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\repositories\\abstracts\\defaultrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\repositories\\abstracts\\defaultrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\CommandsLogic\\CommandPackage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PovarCRM\\Repositories\\CommandsLogic\\CommandPackage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\viewers\\usercontrols\\servingordersviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\viewers\\usercontrols\\servingordersviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\uicontrollers\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\uicontrollers\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\uicontrollers\\servingorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\uicontrollers\\servingorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\models\\views\\dishview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\models\\views\\dishview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\viewers\\usercontrols\\servingordersviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\viewers\\usercontrols\\servingordersviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\viewers\\usercontrols\\orderconstructorviewer.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\viewers\\usercontrols\\orderconstructorviewer.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\models\\dish.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,22 +98,10 @@
       "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\viewers\\usercontrols\\commandmanagerviewer.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\povarcrm\\viewers\\usercontrols\\commandmanagerviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\viewers\\usercontrols\\commandmanagerviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alexu\\AppData\\Local\\SourceServer\\caeec1692fa2b4916bd167d5b9782325222e8891e582a95647b5869610d47f80\\src\\System.Windows.Forms\\src\\System\\Windows\\Forms\\Control.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alexu\\AppData\\Local\\SourceServer\\29cb10eb611221d8bb7affcf8483db26b96fc17802e7a4c1c0ed31815d50f493\\src\\System.Windows.Forms\\src\\System\\Windows\\Forms\\DataGridView.Methods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\viewers\\forms\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\viewers\\forms\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\viewers\\forms\\menu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\viewers\\forms\\menu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\uicontrollers\\checklistviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -85,10 +120,6 @@
       "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\businesslogic\\orderfilter\\orderchecklistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\uicontrollers\\servingorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\uicontrollers\\servingorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\models\\views\\itemview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\models\\views\\itemview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -101,36 +132,12 @@
       "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\repositories\\commandslogic\\icommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\repositories\\commandslogic\\updateinrep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\repositories\\commandslogic\\updateinrep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\uicontrollers\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\uicontrollers\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\repositories\\commandslogic\\addtorep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\repositories\\commandslogic\\addtorep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\repositories\\abstracts\\defaultrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\repositories\\abstracts\\defaultrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\povarcrm\\viewers\\forms\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\viewers\\forms\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\models\\views\\dishexpensiveview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\models\\views\\dishexpensiveview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\models\\dishproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -190,8 +197,8 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Windows\\Temp\\.vsdbgsrc\\dec3ae9fae3f28ca946d4b821f7c0d14de78acb7\\PovarCRM.Models.Dish.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\CommandsLogic\\ActionCommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PovarCRM\\Repositories\\CommandsLogic\\ActionCommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|c:\\users\\alexu\\onedrive\\desktop\\sharaga6\\kursach\\povarcrm\\povarcrm\\repositories\\commandslogic\\actioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4691FB71-791F-4E54-A3C9-4AB6161E041E}|PovarCRM\\PovarCRM.csproj|solutionrelative:povarcrm\\repositories\\commandslogic\\actioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -200,141 +207,63 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 345,
+          "DockedWidth": 316,
           "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "OrderConstructorController.cs",
-              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\UIcontrollers\\OrderConstructorController.cs",
-              "RelativeDocumentMoniker": "PovarCRM\\UIcontrollers\\OrderConstructorController.cs",
-              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\UIcontrollers\\OrderConstructorController.cs",
-              "RelativeToolTip": "PovarCRM\\UIcontrollers\\OrderConstructorController.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAUwFoAAAAQAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Menu.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\Forms\\Menu.cs",
+              "RelativeDocumentMoniker": "PovarCRM\\Viewers\\Forms\\Menu.cs",
+              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\Forms\\Menu.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "PovarCRM\\Viewers\\Forms\\Menu.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T08:59:29.023Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-07T08:13:36.508Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OrderConstructorViewer.cs",
-              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\OrderConstructorViewer.cs",
-              "RelativeDocumentMoniker": "PovarCRM\\Viewers\\UserControls\\OrderConstructorViewer.cs",
-              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\OrderConstructorViewer.cs",
-              "RelativeToolTip": "PovarCRM\\Viewers\\UserControls\\OrderConstructorViewer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAAFAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\Forms\\Menu.cs",
+              "RelativeDocumentMoniker": "PovarCRM\\Viewers\\Forms\\Menu.cs",
+              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\Forms\\Menu.cs",
+              "RelativeToolTip": "PovarCRM\\Viewers\\Forms\\Menu.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAIwGMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-07T13:44:38.836Z",
+              "WhenOpened": "2025-09-07T14:46:24.461Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "CommandManagerController.cs",
-              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\UIcontrollers\\CommandManagerController.cs",
-              "RelativeDocumentMoniker": "PovarCRM\\UIcontrollers\\CommandManagerController.cs",
-              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\UIcontrollers\\CommandManagerController.cs",
-              "RelativeToolTip": "PovarCRM\\UIcontrollers\\CommandManagerController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAMAAAAAAAAAA==",
+              "Title": "Menu.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\Forms\\Menu.Designer.cs",
+              "RelativeDocumentMoniker": "PovarCRM\\Viewers\\Forms\\Menu.Designer.cs",
+              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\Forms\\Menu.Designer.cs",
+              "RelativeToolTip": "PovarCRM\\Viewers\\Forms\\Menu.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAI0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T12:44:05.627Z",
+              "WhenOpened": "2025-09-07T14:46:14.292Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "OrderConstructorViewer.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\OrderConstructorViewer.Designer.cs",
-              "RelativeDocumentMoniker": "PovarCRM\\Viewers\\UserControls\\OrderConstructorViewer.Designer.cs",
-              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\OrderConstructorViewer.Designer.cs",
-              "RelativeToolTip": "PovarCRM\\Viewers\\UserControls\\OrderConstructorViewer.Designer.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwCkAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-07T13:46:30.953Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "CommandManagerViewer.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.cs",
               "RelativeDocumentMoniker": "PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.cs",
               "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.cs",
               "RelativeToolTip": "PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACMAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAhwDQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-10T12:59:46.053Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CommandPackage.cs",
-              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\CommandsLogic\\CommandPackage.cs",
-              "RelativeDocumentMoniker": "PovarCRM\\Repositories\\CommandsLogic\\CommandPackage.cs",
-              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\CommandsLogic\\CommandPackage.cs",
-              "RelativeToolTip": "PovarCRM\\Repositories\\CommandsLogic\\CommandPackage.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAvwDsAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T14:11:02.435Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ServingOrdersViewer.cs",
-              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\ServingOrdersViewer.cs",
-              "RelativeDocumentMoniker": "PovarCRM\\Viewers\\UserControls\\ServingOrdersViewer.cs",
-              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\ServingOrdersViewer.cs",
-              "RelativeToolTip": "PovarCRM\\Viewers\\UserControls\\ServingOrdersViewer.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAADgv1oAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-07T14:47:14.264Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Dish.cs",
-              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Models\\Dish.cs",
-              "RelativeDocumentMoniker": "PovarCRM\\Models\\Dish.cs",
-              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Models\\Dish.cs",
-              "RelativeToolTip": "PovarCRM\\Models\\Dish.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-07T07:05:15.358Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CommandManagerViewer.resx",
-              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.resx",
-              "RelativeDocumentMoniker": "PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.resx",
-              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.resx",
-              "RelativeToolTip": "PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-09-10T13:31:46.29Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "CommandManagerViewer.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.Designer.cs",
-              "RelativeDocumentMoniker": "PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.Designer.cs",
-              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.Designer.cs",
-              "RelativeToolTip": "PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.Designer.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwHYAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T11:33:19.367Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 5,
               "Title": "CommandManagerViewer.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.cs",
               "RelativeDocumentMoniker": "PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.cs",
@@ -346,33 +275,173 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Menu.cs",
-              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\Forms\\Menu.cs",
-              "RelativeDocumentMoniker": "PovarCRM\\Viewers\\Forms\\Menu.cs",
-              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\Forms\\Menu.cs",
-              "RelativeToolTip": "PovarCRM\\Viewers\\Forms\\Menu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADgvxEAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "CommandManagerController.cs",
+              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\UIcontrollers\\CommandManagerController.cs",
+              "RelativeDocumentMoniker": "PovarCRM\\UIcontrollers\\CommandManagerController.cs",
+              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\UIcontrollers\\CommandManagerController.cs",
+              "RelativeToolTip": "PovarCRM\\UIcontrollers\\CommandManagerController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAD4vyEAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-07T14:46:24.461Z",
+              "WhenOpened": "2025-09-10T12:44:05.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CommandPackage.cs",
+              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\CommandsLogic\\CommandPackage.cs",
+              "RelativeDocumentMoniker": "PovarCRM\\Repositories\\CommandsLogic\\CommandPackage.cs",
+              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\CommandsLogic\\CommandPackage.cs",
+              "RelativeToolTip": "PovarCRM\\Repositories\\CommandsLogic\\CommandPackage.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAMwEAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T14:11:02.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OrderConstructorViewer.cs",
+              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\OrderConstructorViewer.cs",
+              "RelativeDocumentMoniker": "PovarCRM\\Viewers\\UserControls\\OrderConstructorViewer.cs",
+              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\OrderConstructorViewer.cs",
+              "RelativeToolTip": "PovarCRM\\Viewers\\UserControls\\OrderConstructorViewer.cs",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAMwJcAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T13:44:38.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OrderConstructorController.cs",
+              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\UIcontrollers\\OrderConstructorController.cs",
+              "RelativeDocumentMoniker": "PovarCRM\\UIcontrollers\\OrderConstructorController.cs",
+              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\UIcontrollers\\OrderConstructorController.cs",
+              "RelativeToolTip": "PovarCRM\\UIcontrollers\\OrderConstructorController.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAWwFkAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T08:59:29.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AddToRep.cs",
+              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\CommandsLogic\\AddToRep.cs",
+              "RelativeDocumentMoniker": "PovarCRM\\Repositories\\CommandsLogic\\AddToRep.cs",
+              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\CommandsLogic\\AddToRep.cs",
+              "RelativeToolTip": "PovarCRM\\Repositories\\CommandsLogic\\AddToRep.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAcwEEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T09:07:24.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "DefaultRepository.cs",
+              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\Abstracts\\DefaultRepository.cs",
+              "RelativeDocumentMoniker": "PovarCRM\\Repositories\\Abstracts\\DefaultRepository.cs",
+              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\Abstracts\\DefaultRepository.cs",
+              "RelativeToolTip": "PovarCRM\\Repositories\\Abstracts\\DefaultRepository.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAWwFwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T07:59:26.372Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "Menu.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\Forms\\Menu.Designer.cs",
-              "RelativeDocumentMoniker": "PovarCRM\\Viewers\\Forms\\Menu.Designer.cs",
-              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\Forms\\Menu.Designer.cs",
-              "RelativeToolTip": "PovarCRM\\Viewers\\Forms\\Menu.Designer.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAADgvyUAAAAMAAAAAAAAAA==",
+              "Title": "ServingOrdersViewer.cs",
+              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\ServingOrdersViewer.cs",
+              "RelativeDocumentMoniker": "PovarCRM\\Viewers\\UserControls\\ServingOrdersViewer.cs",
+              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\ServingOrdersViewer.cs",
+              "RelativeToolTip": "PovarCRM\\Viewers\\UserControls\\ServingOrdersViewer.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAMwFUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-07T14:46:14.292Z",
+              "WhenOpened": "2025-09-07T14:47:14.264Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
+              "Title": "MenuController.cs",
+              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\UIcontrollers\\MenuController.cs",
+              "RelativeDocumentMoniker": "PovarCRM\\UIcontrollers\\MenuController.cs",
+              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\UIcontrollers\\MenuController.cs",
+              "RelativeToolTip": "PovarCRM\\UIcontrollers\\MenuController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAWwCAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T08:13:59.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ServingOrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\UIcontrollers\\ServingOrdersController.cs",
+              "RelativeDocumentMoniker": "PovarCRM\\UIcontrollers\\ServingOrdersController.cs",
+              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\UIcontrollers\\ServingOrdersController.cs",
+              "RelativeToolTip": "PovarCRM\\UIcontrollers\\ServingOrdersController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAhwFQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T08:13:21.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "OrderConstructorViewer.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\OrderConstructorViewer.Designer.cs",
+              "RelativeDocumentMoniker": "PovarCRM\\Viewers\\UserControls\\OrderConstructorViewer.Designer.cs",
+              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\OrderConstructorViewer.Designer.cs",
+              "RelativeToolTip": "PovarCRM\\Viewers\\UserControls\\OrderConstructorViewer.Designer.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwCkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T13:46:30.953Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Dish.cs",
+              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Models\\Dish.cs",
+              "RelativeDocumentMoniker": "PovarCRM\\Models\\Dish.cs",
+              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Models\\Dish.cs",
+              "RelativeToolTip": "PovarCRM\\Models\\Dish.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T07:05:15.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CommandManagerViewer.resx",
+              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.resx",
+              "RelativeDocumentMoniker": "PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.resx",
+              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.resx",
+              "RelativeToolTip": "PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-09-10T13:31:46.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "CommandManagerViewer.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.Designer.cs",
+              "RelativeDocumentMoniker": "PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.Designer.cs",
+              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.Designer.cs",
+              "RelativeToolTip": "PovarCRM\\Viewers\\UserControls\\CommandManagerViewer.Designer.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwIEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T11:33:19.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
               "Title": "CheckListViewController.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\UIcontrollers\\CheckListViewController.cs",
               "RelativeDocumentMoniker": "PovarCRM\\UIcontrollers\\CheckListViewController.cs",
@@ -380,12 +449,11 @@
               "RelativeToolTip": "PovarCRM\\UIcontrollers\\CheckListViewController.cs",
               "ViewState": "AgIAADAAAAAAAAAAAADgvzEAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-07T15:58:43.603Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-07T15:58:43.603Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 27,
               "Title": "ListBoxController.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\UIcontrollers\\ListBoxController.cs",
               "RelativeDocumentMoniker": "PovarCRM\\UIcontrollers\\ListBoxController.cs",
@@ -393,12 +461,11 @@
               "RelativeToolTip": "PovarCRM\\UIcontrollers\\ListBoxController.cs",
               "ViewState": "AgIAAFcAAAAAAAAAAAAvwGgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T06:25:42.925Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T06:25:42.925Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 28,
               "Title": "DishRecipeView.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Models\\Views\\DishRecipeView.cs",
               "RelativeDocumentMoniker": "PovarCRM\\Models\\Views\\DishRecipeView.cs",
@@ -410,7 +477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 29,
               "Title": "OrderCheckListController.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\BusinessLogic\\OrderFilter\\OrderCheckListController.cs",
               "RelativeDocumentMoniker": "PovarCRM\\BusinessLogic\\OrderFilter\\OrderCheckListController.cs",
@@ -422,19 +489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "ServingOrdersController.cs",
-              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\UIcontrollers\\ServingOrdersController.cs",
-              "RelativeDocumentMoniker": "PovarCRM\\UIcontrollers\\ServingOrdersController.cs",
-              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\UIcontrollers\\ServingOrdersController.cs",
-              "RelativeToolTip": "PovarCRM\\UIcontrollers\\ServingOrdersController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAwwBoAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-07T08:13:21.88Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 30,
               "Title": "ItemView.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Models\\Views\\ItemView.cs",
               "RelativeDocumentMoniker": "PovarCRM\\Models\\Views\\ItemView.cs",
@@ -446,7 +501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 50,
               "Title": "ActionCommand.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\CommandsLogic\\ActionCommand.cs",
               "RelativeDocumentMoniker": "PovarCRM\\Repositories\\CommandsLogic\\ActionCommand.cs",
@@ -458,7 +513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 31,
               "Title": "OrderCheckRepository.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\OrderCheckRepository.cs",
               "RelativeDocumentMoniker": "PovarCRM\\Repositories\\OrderCheckRepository.cs",
@@ -470,7 +525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 32,
               "Title": "ICommand.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\CommandsLogic\\ICommand.cs",
               "RelativeDocumentMoniker": "PovarCRM\\Repositories\\CommandsLogic\\ICommand.cs",
@@ -482,54 +537,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "MenuController.cs",
-              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\UIcontrollers\\MenuController.cs",
-              "RelativeDocumentMoniker": "PovarCRM\\UIcontrollers\\MenuController.cs",
-              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\UIcontrollers\\MenuController.cs",
-              "RelativeToolTip": "PovarCRM\\UIcontrollers\\MenuController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAkwCsAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-07T08:13:59.343Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "AddToRep.cs",
-              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\CommandsLogic\\AddToRep.cs",
-              "RelativeDocumentMoniker": "PovarCRM\\Repositories\\CommandsLogic\\AddToRep.cs",
-              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\CommandsLogic\\AddToRep.cs",
-              "RelativeToolTip": "PovarCRM\\Repositories\\CommandsLogic\\AddToRep.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAYwEEAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T09:07:24.045Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "DefaultRepository.cs",
-              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\Abstracts\\DefaultRepository.cs",
-              "RelativeDocumentMoniker": "PovarCRM\\Repositories\\Abstracts\\DefaultRepository.cs",
-              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\Abstracts\\DefaultRepository.cs",
-              "RelativeToolTip": "PovarCRM\\Repositories\\Abstracts\\DefaultRepository.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAswG0AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-07T07:59:26.372Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Menu.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\Forms\\Menu.cs",
-              "RelativeDocumentMoniker": "PovarCRM\\Viewers\\Forms\\Menu.cs",
-              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\Forms\\Menu.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "PovarCRM\\Viewers\\Forms\\Menu.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-07T08:13:36.508Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "DishExpensiveView.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Models\\Views\\DishExpensiveView.cs",
               "RelativeDocumentMoniker": "PovarCRM\\Models\\Views\\DishExpensiveView.cs",
@@ -541,7 +549,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "DishProduct.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Models\\DishProduct.cs",
               "RelativeDocumentMoniker": "PovarCRM\\Models\\DishProduct.cs",
@@ -553,7 +561,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 36,
               "Title": "DishType.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Models\\DishType.cs",
               "RelativeDocumentMoniker": "PovarCRM\\Models\\DishType.cs",
@@ -565,7 +573,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 37,
               "Title": "OrderCheck.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Models\\OrderCheck.cs",
               "RelativeDocumentMoniker": "PovarCRM\\Models\\OrderCheck.cs",
@@ -577,7 +585,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 38,
               "Title": "Recipe.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Models\\Recipe.cs",
               "RelativeDocumentMoniker": "PovarCRM\\Models\\Recipe.cs",
@@ -589,7 +597,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 39,
               "Title": "Unit.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Models\\Unit.cs",
               "RelativeDocumentMoniker": "PovarCRM\\Models\\Unit.cs",
@@ -601,7 +609,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 40,
               "Title": "PovarCRM.Models.Views.DishView.g.cs",
               "DocumentMoniker": "C:\\Windows\\Temp\\.vsdbgsrc\\4a6b40c345f16c88d750062ec4cb77cdc16e29ef\\PovarCRM.Models.Views.DishView.g.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Windows\\Temp\\.vsdbgsrc\\4a6b40c345f16c88d750062ec4cb77cdc16e29ef\\PovarCRM.Models.Views.DishView.g.cs",
@@ -614,7 +622,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 41,
               "Title": "OrderConstructorViewer.resx",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\OrderConstructorViewer.resx",
               "RelativeDocumentMoniker": "PovarCRM\\Viewers\\UserControls\\OrderConstructorViewer.resx",
@@ -625,7 +633,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 43,
               "Title": "DataExctractor.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\DataExctractor.cs",
               "RelativeDocumentMoniker": "PovarCRM\\Repositories\\DataExctractor.cs",
@@ -638,7 +646,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 44,
               "Title": "ServingOrdersViewer.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\ServingOrdersViewer.cs",
               "RelativeDocumentMoniker": "PovarCRM\\Viewers\\UserControls\\ServingOrdersViewer.cs",
@@ -649,7 +657,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 45,
               "Title": "FinanceCalculator.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\BusinessLogic\\OrderFilter\\FinanceCalculator.cs",
               "RelativeDocumentMoniker": "PovarCRM\\BusinessLogic\\OrderFilter\\FinanceCalculator.cs",
@@ -661,7 +669,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 46,
               "Title": "ISingleIdentityEntity.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Models\\Interfaces\\ISingleIdentityEntity.cs",
               "RelativeDocumentMoniker": "PovarCRM\\Models\\Interfaces\\ISingleIdentityEntity.cs",
@@ -673,7 +681,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 47,
               "Title": "IDependentTab.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\UIelements\\IDependentTab.cs",
               "RelativeDocumentMoniker": "PovarCRM\\UIelements\\IDependentTab.cs",
@@ -685,7 +693,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 49,
               "Title": "PovarCRM.Models.Dish.g.cs",
               "DocumentMoniker": "C:\\Windows\\Temp\\.vsdbgsrc\\dec3ae9fae3f28ca946d4b821f7c0d14de78acb7\\PovarCRM.Models.Dish.g.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Windows\\Temp\\.vsdbgsrc\\dec3ae9fae3f28ca946d4b821f7c0d14de78acb7\\PovarCRM.Models.Dish.g.cs",
@@ -698,7 +706,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 48,
               "Title": "PovarCRM.Models.Dish.g.cs",
               "DocumentMoniker": "C:\\Windows\\Temp\\.vsdbgsrc\\bb9cd076b955df7033868a81b44a8f6d494ef7fb\\PovarCRM.Models.Dish.g.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Windows\\Temp\\.vsdbgsrc\\bb9cd076b955df7033868a81b44a8f6d494ef7fb\\PovarCRM.Models.Dish.g.cs",
@@ -712,25 +720,77 @@
           ]
         },
         {
-          "DockedWidth": 294,
+          "DockedWidth": 323,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "BindingListEx.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\UIelements\\BindingListEx.cs",
               "RelativeDocumentMoniker": "PovarCRM\\UIelements\\BindingListEx.cs",
               "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\UIelements\\BindingListEx.cs",
               "RelativeToolTip": "PovarCRM\\UIelements\\BindingListEx.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAMwDsAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-07T07:55:29.121Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PovarCRM.Models.Views.DishView.g.cs",
+              "DocumentMoniker": "C:\\Windows\\Temp\\.vsdbgsrc\\PovarCRM.Models.Views.DishView.g.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Windows\\Temp\\.vsdbgsrc\\PovarCRM.Models.Views.DishView.g.cs",
+              "ToolTip": "C:\\Windows\\Temp\\.vsdbgsrc\\PovarCRM.Models.Views.DishView.g.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Windows\\Temp\\.vsdbgsrc\\PovarCRM.Models.Views.DishView.g.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAWwGIAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T18:43:48.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UpdateInRep.cs",
+              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\CommandsLogic\\UpdateInRep.cs",
+              "RelativeDocumentMoniker": "PovarCRM\\Repositories\\CommandsLogic\\UpdateInRep.cs",
+              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\CommandsLogic\\UpdateInRep.cs",
+              "RelativeToolTip": "PovarCRM\\Repositories\\CommandsLogic\\UpdateInRep.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T08:58:30.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 13,
+              "Title": "DeleteFromRep.cs",
+              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\CommandsLogic\\DeleteFromRep.cs",
+              "RelativeDocumentMoniker": "PovarCRM\\Repositories\\CommandsLogic\\DeleteFromRep.cs",
+              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\CommandsLogic\\DeleteFromRep.cs",
+              "RelativeToolTip": "PovarCRM\\Repositories\\CommandsLogic\\DeleteFromRep.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-11T05:25:37.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Item.cs",
+              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Models\\Item.cs",
+              "RelativeDocumentMoniker": "PovarCRM\\Models\\Item.cs",
+              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Models\\Item.cs",
+              "RelativeToolTip": "PovarCRM\\Models\\Item.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAWwDEAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T08:42:26.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "Control.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\AppData\\Local\\SourceServer\\caeec1692fa2b4916bd167d5b9782325222e8891e582a95647b5869610d47f80\\src\\System.Windows.Forms\\src\\System\\Windows\\Forms\\Control.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Local\\SourceServer\\caeec1692fa2b4916bd167d5b9782325222e8891e582a95647b5869610d47f80\\src\\System.Windows.Forms\\src\\System\\Windows\\Forms\\Control.cs",
@@ -743,20 +803,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 19,
               "Title": "DishView.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Models\\Views\\DishView.cs",
               "RelativeDocumentMoniker": "PovarCRM\\Models\\Views\\DishView.cs",
               "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Models\\Views\\DishView.cs",
               "RelativeToolTip": "PovarCRM\\Models\\Views\\DishView.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAawCwAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-07T14:33:09.827Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-07T14:33:09.827Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 25,
               "Title": "DataGridView.Methods.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\AppData\\Local\\SourceServer\\29cb10eb611221d8bb7affcf8483db26b96fc17802e7a4c1c0ed31815d50f493\\src\\System.Windows.Forms\\src\\System\\Windows\\Forms\\DataGridView.Methods.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Local\\SourceServer\\29cb10eb611221d8bb7affcf8483db26b96fc17802e7a4c1c0ed31815d50f493\\src\\System.Windows.Forms\\src\\System\\Windows\\Forms\\DataGridView.Methods.cs",
@@ -769,31 +828,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "UpdateInRep.cs",
-              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\CommandsLogic\\UpdateInRep.cs",
-              "RelativeDocumentMoniker": "PovarCRM\\Repositories\\CommandsLogic\\UpdateInRep.cs",
-              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\CommandsLogic\\UpdateInRep.cs",
-              "RelativeToolTip": "PovarCRM\\Repositories\\CommandsLogic\\UpdateInRep.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T08:58:30.84Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Item.cs",
-              "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Models\\Item.cs",
-              "RelativeDocumentMoniker": "PovarCRM\\Models\\Item.cs",
-              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Models\\Item.cs",
-              "RelativeToolTip": "PovarCRM\\Models\\Item.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwB8AAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T08:42:26.618Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 33,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Repositories\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "PovarCRM\\Repositories\\UnitOfWork.cs",
@@ -805,7 +840,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 42,
               "Title": "OrderConstructorViewer.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControls\\OrderConstructorViewer.cs",
               "RelativeDocumentMoniker": "PovarCRM\\Viewers\\UserControls\\OrderConstructorViewer.cs",

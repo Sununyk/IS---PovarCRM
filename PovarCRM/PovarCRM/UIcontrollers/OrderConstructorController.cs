@@ -57,8 +57,7 @@ namespace PovarCRM.UIcontrollers
                 DishCount = newItem.Count
             };
             CommandPackage eventPack = new CommandPackage();
-            //выполнение уже было, поэтому пусто, поэтому Redo работать не будет
-            BoolBox firstEx = new BoolBox { Value = false };
+
             eventPack.AddCommand(changeOldOnNewItemCommand);
 
             if (oldItem.Picked != newItem.Picked)

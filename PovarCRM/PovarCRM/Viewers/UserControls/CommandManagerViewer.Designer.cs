@@ -34,9 +34,12 @@ namespace PovarCRM.Viewers.UserControls
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CommandManagerViewer));
             button1 = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
             button3 = new Button();
+            notifyIcon1 = new NotifyIcon(components);
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -45,7 +48,7 @@ namespace PovarCRM.Viewers.UserControls
             button1.Dock = DockStyle.Left;
             button1.Location = new Point(3, 3);
             button1.Name = "button1";
-            button1.Size = new Size(55, 28);
+            button1.Size = new Size(53, 28);
             button1.TabIndex = 0;
             button1.Text = "<-";
             button1.UseVisualStyleBackColor = true;
@@ -53,9 +56,10 @@ namespace PovarCRM.Viewers.UserControls
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnCount = 3;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.06468F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.7683F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Controls.Add(button1, 0, 0);
             tableLayoutPanel1.Controls.Add(button3, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
@@ -71,13 +75,21 @@ namespace PovarCRM.Viewers.UserControls
             // button3
             // 
             button3.Dock = DockStyle.Right;
-            button3.Location = new Point(80, 3);
+            button3.Location = new Point(62, 3);
             button3.Name = "button3";
-            button3.Size = new Size(57, 28);
+            button3.Size = new Size(54, 28);
             button3.TabIndex = 2;
             button3.Text = "->";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
+            button3.MouseMove += button3_MouseMove;
+            // 
+            // notifyIcon1
+            // 
+            notifyIcon1.Icon = (Icon)resources.GetObject("notifyIcon1.Icon");
+            notifyIcon1.Text = "notifyIcon1";
+            notifyIcon1.Visible = true;
+            notifyIcon1.MouseDoubleClick += notifyIcon1_MouseDoubleClick;
             // 
             // CommandManagerViewer
             // 
@@ -117,6 +129,6 @@ namespace PovarCRM.Viewers.UserControls
         private Button button3;
 
         private CommandManagerController? controller = null;
-
+        private NotifyIcon notifyIcon1;
     }
 }

@@ -21,9 +21,6 @@ namespace PovarCRM.UIelements
     //Кастомный БиндингЛист с возможностью отключения обновлений
     public class BindingListEx<T> : BindingList<T> where T : class, ICloneable, ICopyable<T>
     {
-        
-
-
         public BindingListEx() {}
 
         public int GetOldItemIndex()
@@ -98,25 +95,27 @@ namespace PovarCRM.UIelements
         public void Execute()
         {
             //не выполнится если уже была совершена прямая операция
-            list.ResumeNotifications();
+
             if (!exFlag)
             {
+                list.SuspendNotifications();
                 T temp = (T)newState.Clone();
                 newState.Copy((T)oldState);
                 oldState = temp;
+                list.ResumeNotifications();
             }
-            list.SuspendNotifications();
+            
         }
 
         public void Undo()
         {
-            list.ResumeNotifications();
+            list.SuspendNotifications();
             T temp = (T)newState.Clone();
             newState.Copy((T)oldState);
             oldState = temp;
 
             this.exFlag = false;
-            list.SuspendNotifications();
+            list.ResumeNotifications();
         }
     }
 }

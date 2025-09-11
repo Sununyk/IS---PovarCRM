@@ -1,4 +1,5 @@
-﻿using PovarCRM.UIcontrollers;
+﻿using System.Runtime.CompilerServices;
+using PovarCRM.UIcontrollers;
 
 namespace PovarCRM.Viewers
 {
@@ -127,6 +128,7 @@ namespace PovarCRM.Viewers
             Text = "Menu";
             FormClosed += Menu_FormClosed;
             Load += Menu_Load;
+            KeyDown += Menu_KeyDown;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             splitContainer1.Panel2.PerformLayout();
@@ -137,6 +139,7 @@ namespace PovarCRM.Viewers
         }
 
         #endregion
+        
 
         private SplitContainer splitContainer1;
         private TableLayoutPanel tableLayoutPanel1;

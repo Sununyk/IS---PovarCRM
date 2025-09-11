@@ -33,8 +33,7 @@ namespace PovarCRM.Repositories.CommandsLogic
                 if (ids == null)
                     repository.Add(t);
                 else {
-                    
-                    oldItems.Append(repository.GetByID(repository.Find(t)).Clone());
+                    oldItems.Add((T)repository.GetByID(ids).Clone());
                     repository.Update(t);
 
                 }

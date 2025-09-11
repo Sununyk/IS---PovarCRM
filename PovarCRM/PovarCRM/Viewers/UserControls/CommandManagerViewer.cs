@@ -44,5 +44,16 @@ namespace PovarCRM.Viewers.UserControls
                 controller.Redo();
             }
         }
+
+        private void button3_MouseMove(object sender, MouseEventArgs e)
+        {
+            notifyIcon1.Visible = true;
+            notifyIcon1.Text = "Press ctrl + x";
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }

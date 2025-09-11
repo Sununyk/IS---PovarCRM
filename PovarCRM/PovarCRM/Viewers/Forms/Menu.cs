@@ -20,6 +20,8 @@ namespace PovarCRM.Viewers
             this.controller = controller;
             this.commandManagerViewer1.InitDependency(controller.CommandManager);
             this.orderConstructorViewer1.InitDependecies(controller.OrderConstructor);
+
+            this.KeyPreview = true;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -86,5 +88,23 @@ namespace PovarCRM.Viewers
             //this.controller.Close(true);
             //this.Close();
         }
+
+        private void Menu_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.Control && e.KeyCode == Keys.Z)
+            {
+                // Ctrl + Z
+                MessageBox.Show("Отмена действия (Ctrl+Z)");
+                e.Handled = true;
+            }
+            else if (e.Control && e.KeyCode == Keys.B)
+            {
+                // Ctrl + B
+                MessageBox.Show("Вырезать (Ctrl+B)");
+                e.Handled = true;
+            }
+        }
+
     }
 }
