@@ -52,13 +52,16 @@ namespace PovarCRM.UIelements
         {
             if (_suspend)
                 return;
-            if (e.OldIndex == ChangedItem.oldItemIndex && ChangedItem.oldItemIndex > -1)
+            //если изменился элемент, и его индекс совпадает с индексом старого элемента
+            if (e.OldIndex == ChangedItem.oldItemIndex && ChangedItem.oldItemIndex > -1 && ChangedItem.item != null)
             {
+                ChangedItem = (-1, ChangedItem.item);
                 ListItemChanged?.Invoke(this, ChangedItem.item, this[e.NewIndex], new ChangeNewOnOldItemCommand<T>(
                     ChangedItem.item, 
                     this[e.NewIndex],
                     this
                 ));
+
             }
  
             base.OnListChanged(e);

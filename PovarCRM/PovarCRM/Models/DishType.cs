@@ -39,4 +39,8 @@ public partial class DishType : ISingleIdentityEntity, ICopyable<DishType>, IClo
 
 
     }
+    public override string ToString()
+    {
+        return $"{Naming}";
+    }
 }

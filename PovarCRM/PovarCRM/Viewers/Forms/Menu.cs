@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PovarCRM.UIcontrollers;
+using PovarCRM.UIcontrollers.UImembers;
 
 namespace PovarCRM.Viewers
 {
@@ -18,6 +19,7 @@ namespace PovarCRM.Viewers
             InitializeComponent();
 
             this.controller = controller;
+            ((IFormControllerMember)this).SubscribeController(controller);
             this.commandManagerViewer1.InitDependency(controller.CommandManager);
             this.orderConstructorViewer1.InitDependecies(controller.OrderConstructor);
 
@@ -95,16 +97,37 @@ namespace PovarCRM.Viewers
             if (e.Control && e.KeyCode == Keys.Z)
             {
                 // Ctrl + Z
-                MessageBox.Show("Отмена действия (Ctrl+Z)");
+
                 e.Handled = true;
+                this.controller.CommandManager.Undo();
             }
             else if (e.Control && e.KeyCode == Keys.B)
             {
                 // Ctrl + B
-                MessageBox.Show("Вырезать (Ctrl+B)");
+
                 e.Handled = true;
+                this.controller.CommandManager.Redo();
             }
         }
 
+        private void splitContainer2_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
+
+        private void Denied_Click(object sender, EventArgs e)
+        {
+            using(var confirm = new ConfirmationForm())
+            {
+                confirm.Owner = this;
+                confirm.StartPosition = FormStartPosition.CenterParent;
+                if (confirm.ShowDialog() == DialogResult.OK)
+                {
+                    
+                }
+                if (confirm.YesOrNo == true)
+                    this.controller.Close(false);
+            }
+        }
     }
 }

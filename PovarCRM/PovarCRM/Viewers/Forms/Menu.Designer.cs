@@ -1,9 +1,10 @@
 ﻿using System.Runtime.CompilerServices;
 using PovarCRM.UIcontrollers;
+using PovarCRM.UIcontrollers.UImembers;
 
 namespace PovarCRM.Viewers
 {
-    partial class Menu
+    partial class Menu : IFormControllerMember
     {
         /// <summary>
         /// Required designer variable.
@@ -37,11 +38,18 @@ namespace PovarCRM.Viewers
             button1 = new Button();
             label3 = new Label();
             orderConstructorViewer1 = new PovarCRM.Viewers.UserControls.OrderConstructorViewer();
+            splitContainer2 = new SplitContainer();
+            button2 = new Button();
+            Denied = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
+            splitContainer2.Panel1.SuspendLayout();
+            splitContainer2.Panel2.SuspendLayout();
+            splitContainer2.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
@@ -70,7 +78,7 @@ namespace PovarCRM.Viewers
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel1.Controls.Add(commandManagerViewer1, 0, 0);
-            tableLayoutPanel1.Controls.Add(button1, 2, 0);
+            tableLayoutPanel1.Controls.Add(splitContainer2, 2, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -89,11 +97,11 @@ namespace PovarCRM.Viewers
             // 
             // button1
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.Location = new Point(635, 3);
+            button1.Dock = DockStyle.Fill;
+            button1.Location = new Point(0, 0);
             button1.Name = "button1";
             button1.Padding = new Padding(10, 0, 10, 0);
-            button1.Size = new Size(162, 41);
+            button1.Size = new Size(125, 41);
             button1.TabIndex = 3;
             button1.Text = "Complete";
             button1.UseVisualStyleBackColor = true;
@@ -117,6 +125,47 @@ namespace PovarCRM.Viewers
             orderConstructorViewer1.TabIndex = 0;
             orderConstructorViewer1.Load += orderConstructorViewer1_Load;
             // 
+            // splitContainer2
+            // 
+            splitContainer2.Dock = DockStyle.Fill;
+            splitContainer2.Location = new Point(535, 3);
+            splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            splitContainer2.Panel1.Controls.Add(button2);
+            splitContainer2.Panel1.Controls.Add(button1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            splitContainer2.Panel2.Controls.Add(Denied);
+            splitContainer2.Size = new Size(262, 41);
+            splitContainer2.SplitterDistance = 125;
+            splitContainer2.TabIndex = 4;
+            splitContainer2.SplitterMoved += splitContainer2_SplitterMoved;
+            // 
+            // button2
+            // 
+            button2.Dock = DockStyle.Fill;
+            button2.Location = new Point(0, 0);
+            button2.Name = "button2";
+            button2.Padding = new Padding(10, 0, 10, 0);
+            button2.Size = new Size(125, 41);
+            button2.TabIndex = 4;
+            button2.Text = "Complete";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // Denied
+            // 
+            Denied.Dock = DockStyle.Fill;
+            Denied.Location = new Point(0, 0);
+            Denied.Name = "Denied";
+            Denied.Size = new Size(133, 41);
+            Denied.TabIndex = 0;
+            Denied.Text = "Denied";
+            Denied.UseVisualStyleBackColor = true;
+            Denied.Click += Denied_Click;
+            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
@@ -135,11 +184,20 @@ namespace PovarCRM.Viewers
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
+            splitContainer2.Panel1.ResumeLayout(false);
+            splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
+            splitContainer2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
+        public void OnFormControllerClose()
+        {
+            this.Close();
+        }
+
         #endregion
-        
+
 
         private SplitContainer splitContainer1;
         private TableLayoutPanel tableLayoutPanel1;
@@ -150,5 +208,8 @@ namespace PovarCRM.Viewers
 
         private Button button1;
         private Label label3;
+        private SplitContainer splitContainer2;
+        private Button button2;
+        private Button Denied;
     }
 }

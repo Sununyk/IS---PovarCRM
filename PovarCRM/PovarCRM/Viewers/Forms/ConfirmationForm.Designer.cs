@@ -56,27 +56,28 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(tableLayoutPanel1);
-            splitContainer1.Size = new Size(564, 299);
-            splitContainer1.SplitterDistance = 154;
+            splitContainer1.Size = new Size(423, 204);
+            splitContainer1.SplitterDistance = 105;
             splitContainer1.TabIndex = 0;
             // 
             // Title
             // 
-            Title.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            Title.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             Title.AutoSize = true;
-            Title.Location = new Point(207, 73);
+            Title.Location = new Point(139, 44);
             Title.Name = "Title";
             Title.Size = new Size(138, 20);
             Title.TabIndex = 0;
             Title.Text = "Execute command?";
+            Title.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 5;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17.52988F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 82.47012F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 105F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 184F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 47F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 146F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 44F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 84F));
             tableLayoutPanel1.Controls.Add(DeniedButton, 3, 1);
@@ -85,10 +86,10 @@
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 45.37037F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 54.62963F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 32F));
-            tableLayoutPanel1.Size = new Size(564, 141);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 24.2857151F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 75.71429F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 11F));
+            tableLayoutPanel1.Size = new Size(423, 95);
             tableLayoutPanel1.TabIndex = 1;
             tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
@@ -96,9 +97,9 @@
             // 
             DeniedButton.BackColor = Color.Red;
             DeniedButton.Dock = DockStyle.Fill;
-            DeniedButton.Location = new Point(338, 52);
+            DeniedButton.Location = new Point(235, 23);
             DeniedButton.Name = "DeniedButton";
-            DeniedButton.Size = new Size(178, 53);
+            DeniedButton.Size = new Size(140, 57);
             DeniedButton.TabIndex = 3;
             DeniedButton.Text = "No";
             DeniedButton.UseVisualStyleBackColor = false;
@@ -108,9 +109,9 @@
             // 
             ConfirmButton.BackColor = Color.LimeGreen;
             ConfirmButton.Dock = DockStyle.Fill;
-            ConfirmButton.Location = new Point(43, 52);
+            ConfirmButton.Location = new Point(35, 23);
             ConfirmButton.Name = "ConfirmButton";
-            ConfirmButton.Size = new Size(184, 53);
+            ConfirmButton.Size = new Size(147, 57);
             ConfirmButton.TabIndex = 2;
             ConfirmButton.Text = "Yes";
             ConfirmButton.UseVisualStyleBackColor = false;
@@ -120,7 +121,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(564, 299);
+            ClientSize = new Size(423, 204);
             Controls.Add(splitContainer1);
             Name = "ConfirmationForm";
             Text = "ConfirmationForm";

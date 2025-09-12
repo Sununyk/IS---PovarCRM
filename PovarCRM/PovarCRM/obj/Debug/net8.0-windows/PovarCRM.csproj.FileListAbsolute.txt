@@ -140,3 +140,4 @@ C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net
 C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.Viewers.Forms.ConfirmAndInputForm.resources
 C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\bin\Debug\net8.0-windows\CommunityToolkit.Mvvm.dll
+C:\Users\alexu\OneDrive\Desktop\SHARAGA6\Kursach\PovarCRM\PovarCRM\obj\Debug\net8.0-windows\PovarCRM.Viewers.UserControls.RadioButtonList.resources

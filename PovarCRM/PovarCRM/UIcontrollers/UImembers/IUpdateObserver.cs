@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PovarCRM.UIcontrollers.UImembers
 {
-    public interface IUpdateObserver
+    public interface IUpdateObserver : IUpdateMember
     {
         public event UpdateState ObserverStateUpdated;
 

@@ -16,16 +16,19 @@
     <Compile Update="Viewers\Forms\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Viewers\UserControls\CommandManagerViewer.cs">
+    <Compile Update="Viewers\UserControlls\CommandManagerViewer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Viewers\UserControls\OrderConstructorViewer.cs">
+    <Compile Update="Viewers\UserControlls\OrderConstructorViewer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Viewers\UserControls\ServingOrdersViewer.cs">
+    <Compile Update="Viewers\UserControlls\ServingOrdersViewer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Viewers\UserControls\TabRouter.cs">
+    <Compile Update="Viewers\UserControlls\TabRouter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Viewers\UserControlls\RadioButtonList.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

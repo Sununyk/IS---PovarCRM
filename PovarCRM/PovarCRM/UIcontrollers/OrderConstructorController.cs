@@ -15,7 +15,7 @@ using static PovarCRM.Repositories.DataExctractor;
 namespace PovarCRM.UIcontrollers
 {
 
-    public class OrderConstructorController : IUpdateMember
+    public class OrderConstructorController : UpdateObserver
     {
 
 
@@ -70,12 +70,13 @@ namespace PovarCRM.UIcontrollers
                 }
                 else
                 {
-                    //добавляем блюдо в заказ
+                    //добавляем блюдо в заказ count + 1 and блокируем биндинглист
+                    newItem.Count = 1;
                     eventPack.AddCommand(new AddToRep<Item>(
                         unit, newOrderItem));
-                    //newOrderItem.DishCount = 1;
-                    //eventPack.AddCommand(new UpdateInRep<Item>(
-                    //    unit, newOrderItem));
+                    newOrderItem.DishCount = 1;
+                    eventPack.AddCommand(new UpdateInRep<Item>(
+                        unit, newOrderItem));
                 }
             }
             if (oldItem.Count != newItem.Count && newItem.Picked == true)

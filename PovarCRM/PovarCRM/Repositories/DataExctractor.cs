@@ -86,6 +86,7 @@ namespace PovarCRM.Repositories
             var dishes = unit.Dishes.GetCollection();
 
             List<DishView> dishViews = new List<DishView>(from d in dishes
+                                                          join dt in unit.DishTypes.GetCollection() on d.DishTypeId equals dt.Id
                                                           select new DishView
                                                           {
                                                               Id = d.Id,
@@ -93,6 +94,8 @@ namespace PovarCRM.Repositories
                                                               Cost = d.Cost,
                                                               Weight = d.Weight,
                                                               Picked = false,
+                                                              Count = 0,
+                                                              DishTypeId = d.DishTypeId
                                                           })
                                         .OrderBy(x => x.Naming)
                                         .ToList();

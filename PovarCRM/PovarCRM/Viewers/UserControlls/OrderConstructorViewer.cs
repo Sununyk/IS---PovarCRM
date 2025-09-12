@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PovarCRM.Models;
 using PovarCRM.Models.Views;
 
 namespace PovarCRM.Viewers.UserControls
@@ -65,6 +66,12 @@ namespace PovarCRM.Viewers.UserControls
                     Name = "Weight",
                     HeaderText = "Вес",
                     DataPropertyName = "Weight"
+                },
+                new DataGridViewTextBoxColumn()
+                {
+                    Name = "DishTypeId",
+                    HeaderText = "DishTypeId",
+                    DataPropertyName = "DishTypeId"
                 }
             });
             DishViews.CellClick += DishViewsButton_CellClick;
@@ -88,35 +95,33 @@ namespace PovarCRM.Viewers.UserControls
                         DishViews.BeginEdit(true);
 
                         DishViews["Count", arg.RowIndex].Value = 0;
-                        //DishViews["Picked", arg.RowIndex].Value = false;
+
                         DishViews.NotifyCurrentCellDirty(true);
                         DishViews.EndEdit();
                     }
-                    //else
-                    //{
-                    //    DishViews["Count", arg.RowIndex].Value = 1;
-                    //}
-                    //DishViews.NotifyCurrentCellDirty(true);
-                    //DishViews.EndEdit();
                 }
             };
-            //DishViews.CellValidating += (object obj, DataGridViewCellValidatingEventArgs arg) =>
-            //{
-            //    //Смотрим изменился ли флаг
-            //    if (DishViews.Columns[arg.ColumnIndex].DataPropertyName == "Count")
-            //    {
-            //        if (!(bool)DishViews["Picked", arg.RowIndex].Value) {
-            //            if (arg.FormattedValue is int count)
-            //                count = 0;
-            //        }
-            //        //else
-            //        //{
-            //        //    DishViews["Count", arg.RowIndex].Value = 1;
-            //        //}
-            //        //DishViews.NotifyCurrentCellDirty(true);
-            //        //DishViews.EndEdit();
-            //    }
-            //};
+            radioButtonList1.SelectedRowIdChanged += RadioButtonList1_SelectedRowIdChanged;
+        }
+
+        private void RadioButtonList1_SelectedRowIdChanged(object sender, int rowId)
+        {
+            if (rowId == -1)
+            {
+                this.dishTypesBindingSource.RemoveFilter();
+                return;
+            }
+            try
+            {
+                selectedDishTypeId = dishTypes[rowId].Id;
+            }
+            catch
+            {
+                this.dishTypesBindingSource.RemoveFilter();
+                return;
+            }
+
+            this.dishTypesBindingSource.Filter = $"DishTypeId = {selectedDishTypeId}";
         }
 
         // Обработчик клика на кнопку строки
@@ -149,7 +154,7 @@ namespace PovarCRM.Viewers.UserControls
                             //DishViews.EndEdit();
 
                             DishViews["Picked", e.RowIndex].Value = true;
-                            DishViews["Count", e.RowIndex].Value = 1;
+                            //DishViews["Count", e.RowIndex].Value = 1;
                             //DishViews.CurrentCell = DishViews["Count", e.RowIndex];
                             ////DishViews.BeginEdit(true);
 
@@ -211,6 +216,17 @@ namespace PovarCRM.Viewers.UserControls
         private void bindingSource1_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void radioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            
+        }
+
+        private void radioButtonList1_Load(object sender, EventArgs e)
+        {
+            //
         }
     }
 }

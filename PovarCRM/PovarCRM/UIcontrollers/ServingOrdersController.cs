@@ -15,7 +15,7 @@ using PovarCRM.Repositories.CommandsLogic;
 
 namespace PovarCRM.UIcontrollers
 {
-    public class ServingOrdersController : IUpdateMember
+    public class ServingOrdersController : IUpdateObserver
     {
         private int selectedOrderId = -1;
 
@@ -25,6 +25,9 @@ namespace PovarCRM.UIcontrollers
         private BindingListEx<OrderCheck> orders;
         private BindingListEx<ItemView> items;
         BindingListEx<OrderCheckRecipeView> orderRecipeViews;
+
+        public event UpdateState ObserverStateUpdated;
+
         public ServingOrdersController()
         {
             this.dataSet = new UnitOfWork(PovarDbContext.DbMode.DataBaseOff);
@@ -118,16 +121,26 @@ namespace PovarCRM.UIcontrollers
         {
             return this.dataSet;
         }
-    //private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-    //{
-    //    if (e.RowIndex >= 0)
-    //    {
-    //        // Получаем выбранную строку
-    //        DataGridViewRow row = _ordersTable.Rows[e.RowIndex];
-    //        _itemsAndProductsTable.DataSource = GetViewItemsByOrder((row.DataBoundItem as OrderCheck).Id);
-    //    }
-    //    return;
-    //}
+
+        public void UpdateState()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddUpdateMember(IUpdateMember member)
+        {
+            throw new NotImplementedException();
+        }
+        //private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (e.RowIndex >= 0)
+        //    {
+        //        // Получаем выбранную строку
+        //        DataGridViewRow row = _ordersTable.Rows[e.RowIndex];
+        //        _itemsAndProductsTable.DataSource = GetViewItemsByOrder((row.DataBoundItem as OrderCheck).Id);
+        //    }
+        //    return;
+        //}
 
 
     }

@@ -110,20 +110,22 @@ namespace PovarCRM.Repositories.Abstracts
         {
             var z = DbContext.Entry(obj).State;
             T item = GetByID(Find(obj));
-            if(DbContext.Entry(item).State != EntityState.Detached)
-            {
-                var i = DbContext.Entry(item).State;
-            }
-            else
-            {
+            if (item == null)
+                return;
+            //if(DbContext.Entry(item).State != EntityState.Detached)
+            //{
+            //    var i = DbContext.Entry(item).State;
+            //}
+            //else
+            //{
 
-            }
+            //}
 
             if (item != null)
                 item.Copy(obj);
 
-            var j = DbContext.Entry(item).State;
-            z = DbContext.Entry(obj).State;
+            //var j = DbContext.Entry(item).State;
+            //z = DbContext.Entry(obj).State;
             DbContext.SaveChanges();
         }
         public virtual void Update(params T[] objs)

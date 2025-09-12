@@ -21,7 +21,7 @@ namespace PovarCRM.UIcontrollers
         Additor
     }
 
-    public class MenuController : UpdateObserver
+    public class MenuController : UpdateObserver, IFormControllerObserver
     {
         public MenuController(UnitOfWork unit, MenuMode mode = MenuMode.Additor, int newOrderId = -1)
         {
@@ -31,19 +31,21 @@ namespace PovarCRM.UIcontrollers
 
             if(mode == MenuMode.OrderConstructor)
                 this.orderConstructor = new OrderConstructorController(newOrderId, unit, CommandManager);
-
+            
             this.commandManager.AddUpdateMember(orderConstructor);
+            orderConstructor.AddUpdateMember(this);
         }
 
-        public void Close(bool completeOrDenied)
+        public void Close(bool CompleteFlag)
         {
-            if (!completeOrDenied)
+            if (!CompleteFlag)
             {
                 this.commandManager.DeniedCommands();
             }
+            this.ControllerIsClosing?.Invoke();
         }
-        
-       
+
+
         public OrderConstructorController OrderConstructor { get { return this.orderConstructor; } }
         public CommandManagerController CommandManager { get { return this.commandManager; } }
         public MenuMode Mode { get; private set; }
@@ -51,5 +53,7 @@ namespace PovarCRM.UIcontrollers
         private CommandManagerController commandManager;
 
         private UnitOfWork dataSet;
+
+        public event CloseController ControllerIsClosing;
     }
 }

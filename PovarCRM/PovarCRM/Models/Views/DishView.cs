@@ -20,6 +20,8 @@ namespace PovarCRM.Models.Views
         private bool picked = false;
         [ObservableProperty]
         private int count;
+        [ObservableProperty]
+        private int? dishTypeId;
         public DishView() { }
 
         public DishView(DishView duplicate)

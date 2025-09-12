@@ -2,6 +2,7 @@
 using PovarCRM.Models;
 using PovarCRM.Models.Views;
 using PovarCRM.UIcontrollers;
+using PovarCRM.UIelements;
 
 namespace PovarCRM.Viewers.UserControls
 {
@@ -16,10 +17,16 @@ namespace PovarCRM.Viewers.UserControls
         {
             this.controller = controller;
 
-            DishTypesList.DataBindings.Add("Text", controller.InitDishTypes(), "Naming");
+            //DishTypesList.DataBindings.Add("Text", controller.InitDishTypes(), "Naming");
+            
+            dishTypes = controller.InitDishTypes();
+            radioButtonList1.InitDataSourse(controller.InitDishTypes().ToList<object>());
+
             DishRecipeViews.DataSource = controller.InitDishRecipeViews();
 
-            DishViews.DataSource = controller.InitDishViews();
+            dishTypesBindingSource = new BindingSource();
+            dishTypesBindingSource.DataSource = controller.InitDishViews();
+            DishViews.DataSource = dishTypesBindingSource;// controller.InitDishViews();
             DishViews.CellValidating += controller.InitDishViews().OnValueValidating;
 
             // label3.Text = controller.NewOrderCheck.Id.ToString();
@@ -50,7 +57,7 @@ namespace PovarCRM.Viewers.UserControls
             splitContainer1 = new SplitContainer();
             splitContainer3 = new SplitContainer();
             label1 = new Label();
-            DishTypesList = new CheckedListBox();
+            radioButtonList1 = new RadioButtonList();
             splitContainer2 = new SplitContainer();
             label3 = new Label();
             label2 = new Label();
@@ -109,7 +116,7 @@ namespace PovarCRM.Viewers.UserControls
             // 
             // splitContainer3.Panel2
             // 
-            splitContainer3.Panel2.Controls.Add(DishTypesList);
+            splitContainer3.Panel2.Controls.Add(radioButtonList1);
             splitContainer3.Size = new Size(168, 411);
             splitContainer3.SplitterDistance = 101;
             splitContainer3.TabIndex = 0;
@@ -124,14 +131,14 @@ namespace PovarCRM.Viewers.UserControls
             label1.Text = "DishChapters";
             label1.Click += label1_Click;
             // 
-            // DishTypesList
+            // radioButtonList1
             // 
-            DishTypesList.FormattingEnabled = true;
-            DishTypesList.Location = new Point(3, 3);
-            DishTypesList.Name = "DishTypesList";
-            DishTypesList.Size = new Size(150, 114);
-            DishTypesList.TabIndex = 0;
-            DishTypesList.SelectedIndexChanged += DishTypesList_SelectedIndexChanged;
+            radioButtonList1.Location = new Point(3, 3);
+            radioButtonList1.Name = "radioButtonList1";
+            radioButtonList1.Size = new Size(167, 188);
+            radioButtonList1.TabIndex = 0;
+            radioButtonList1.SelectedIndexChanged += radioButtonList1_SelectedIndexChanged;
+            radioButtonList1.Load += radioButtonList1_Load;
             // 
             // splitContainer2
             // 
@@ -270,7 +277,6 @@ namespace PovarCRM.Viewers.UserControls
         private SplitContainer splitContainer2;
         private SplitContainer splitContainer3;
         private Label label1;
-        private CheckedListBox DishTypesList;
         private Label label2;
         private TabControl Dishes;
         private TabPage tabPage1;
@@ -281,5 +287,10 @@ namespace PovarCRM.Viewers.UserControls
         private OrderConstructorController? controller;
         private Label label3;
         private DataGridViewButtonColumn Column1;
+        private RadioButtonList radioButtonList1;
+
+        private BindingListEx<DishType> dishTypes;
+        private BindingSource dishTypesBindingSource;
+        private int selectedDishTypeId;
     }
 }

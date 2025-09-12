@@ -56,10 +56,9 @@ namespace PovarCRM.Viewers.UserControls
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.06468F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.7683F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Controls.Add(button1, 0, 0);
             tableLayoutPanel1.Controls.Add(button3, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
@@ -75,7 +74,7 @@ namespace PovarCRM.Viewers.UserControls
             // button3
             // 
             button3.Dock = DockStyle.Right;
-            button3.Location = new Point(62, 3);
+            button3.Location = new Point(83, 3);
             button3.Name = "button3";
             button3.Size = new Size(54, 28);
             button3.TabIndex = 2;
