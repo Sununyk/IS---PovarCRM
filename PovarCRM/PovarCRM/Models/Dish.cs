@@ -19,6 +19,8 @@ public partial class Dish : ISingleIdentityEntity, ICopyable<Dish>, ICloneable
      int? dishTypeId;
     [ObservableProperty]
      float weight;
+    [ObservableProperty]
+    float markup = 0.25f;//наценка
 
     public Dish() { }
     public virtual DishType? DishType { get; set; }
@@ -54,4 +56,5 @@ public partial class Dish : ISingleIdentityEntity, ICopyable<Dish>, ICloneable
     {
         return new Dish(this);
     }
+
 }

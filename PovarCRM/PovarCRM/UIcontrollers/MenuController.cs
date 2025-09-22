@@ -26,11 +26,11 @@ namespace PovarCRM.UIcontrollers
         public MenuController(UnitOfWork unit, MenuMode mode = MenuMode.Additor, int newOrderId = -1)
         {
             this.Mode = mode;
-            this.dataSet = unit;
+            this.tempContext = unit;
             this.commandManager = new CommandManagerController();
 
             if(mode == MenuMode.OrderConstructor)
-                this.orderConstructor = new OrderConstructorController(newOrderId, unit, CommandManager);
+                this.orderConstructor = new OrderConstructorController(unit, newOrderId,  CommandManager);
             
             this.commandManager.AddUpdateMember(orderConstructor);
             orderConstructor.AddUpdateMember(this);
@@ -42,8 +42,18 @@ namespace PovarCRM.UIcontrollers
             {
                 this.commandManager.DeniedCommands();
             }
+            else
+            {
+                //using (var unit = new UnitOfWork())
+                //{
+                //    unit.Items.AddRange(tempContext.Items.GetCollection().ToArray<Item>());
+                //}
+                this.OrderComplete = true;
+            }
             this.ControllerIsClosing?.Invoke();
+
         }
+        public UnitOfWork TempContext { get { return tempContext; } private set { tempContext = value; } }
 
 
         public OrderConstructorController OrderConstructor { get { return this.orderConstructor; } }
@@ -52,8 +62,9 @@ namespace PovarCRM.UIcontrollers
         private OrderConstructorController orderConstructor;
         private CommandManagerController commandManager;
 
-        private UnitOfWork dataSet;
+        private UnitOfWork tempContext;
 
+        public bool OrderComplete = false;
         public event CloseController ControllerIsClosing;
     }
 }

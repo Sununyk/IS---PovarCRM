@@ -2,12 +2,14 @@
 using PovarCRM.Models;
 using PovarCRM.Models.Views;
 using PovarCRM.UIcontrollers;
+using PovarCRM.UIcontrollers.UImembers;
 using PovarCRM.UIelements;
 
 namespace PovarCRM.Viewers.UserControls
 {
-    partial class OrderConstructorViewer
+    partial class OrderConstructorViewer : IUpdateMember
     {
+        public event BindingListEx<DishView>.FilterChanged filterChanged;
         /// <summary> 
         /// Обязательная переменная конструктора.
         /// </summary>
@@ -16,20 +18,21 @@ namespace PovarCRM.Viewers.UserControls
         public void InitDependecies(OrderConstructorController controller)
         {
             this.controller = controller;
-
+            controller.AddUpdateMember(this);
             //DishTypesList.DataBindings.Add("Text", controller.InitDishTypes(), "Naming");
             
             dishTypes = controller.InitDishTypes();
             radioButtonList1.InitDataSourse(controller.InitDishTypes().ToList<object>());
+            //radioButtonList1.RadioButtonClickedCommand += dishTypes.OnViewCommandPackToExec;
 
             DishRecipeViews.DataSource = controller.InitDishRecipeViews();
 
-            dishTypesBindingSource = new BindingSource();
-            dishTypesBindingSource.DataSource = controller.InitDishViews();
-            DishViews.DataSource = dishTypesBindingSource;// controller.InitDishViews();
+            dishViewsFilter = controller.InitDishViews();
+            this.filterChanged += dishViewsFilter.OnFilterChange;
+            DishViews.DataSource = dishViewsFilter;
             DishViews.CellValidating += controller.InitDishViews().OnValueValidating;
 
-            // label3.Text = controller.NewOrderCheck.Id.ToString();
+            label3.Text = controller.NewOrderCheck.ToString();
 
 
         }
@@ -162,7 +165,7 @@ namespace PovarCRM.Viewers.UserControls
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(95, 37);
+            label3.Location = new Point(110, 37);
             label3.Name = "label3";
             label3.Size = new Size(50, 20);
             label3.TabIndex = 1;
@@ -174,9 +177,10 @@ namespace PovarCRM.Viewers.UserControls
             label2.AutoSize = true;
             label2.Location = new Point(7, 37);
             label2.Name = "label2";
-            label2.Size = new Size(82, 20);
+            label2.Size = new Size(97, 20);
             label2.TabIndex = 0;
-            label2.Text = "New order:";
+            label2.Text = "New orderID:";
+            label2.Click += label2_Click;
             // 
             // Dishes
             // 
@@ -270,6 +274,12 @@ namespace PovarCRM.Viewers.UserControls
             ResumeLayout(false);
         }
 
+        public void onUpdateState()
+        {
+            //DishViews.DataSource = null;
+            //DishViews.DataSource = dishViewsFilter;
+        }
+
         #endregion
 
 
@@ -283,14 +293,16 @@ namespace PovarCRM.Viewers.UserControls
         private TabPage tabPage2;
 
         private DataGridView DishViews;
+        private BindingListEx<DishView> dishViewsFilter;
+
         private DataGridView DishRecipeViews;
         private OrderConstructorController? controller;
+
         private Label label3;
         private DataGridViewButtonColumn Column1;
         private RadioButtonList radioButtonList1;
 
         private BindingListEx<DishType> dishTypes;
-        private BindingSource dishTypesBindingSource;
         private int selectedDishTypeId;
     }
 }

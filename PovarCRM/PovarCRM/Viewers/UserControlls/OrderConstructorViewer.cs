@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PovarCRM.Models;
 using PovarCRM.Models.Views;
+using PovarCRM.Repositories.CommandsLogic;
 
 namespace PovarCRM.Viewers.UserControls
 {
@@ -104,24 +105,18 @@ namespace PovarCRM.Viewers.UserControls
             radioButtonList1.SelectedRowIdChanged += RadioButtonList1_SelectedRowIdChanged;
         }
 
-        private void RadioButtonList1_SelectedRowIdChanged(object sender, int rowId)
+        private void RadioButtonList1_SelectedRowIdChanged(object sender, ICommand checkCommandChange, int rowId)
         {
-            if (rowId == -1)
+            Func<DishView, bool>? filter;
+            if (rowId < 0)
             {
-                this.dishTypesBindingSource.RemoveFilter();
-                return;
+                filter = null;
             }
-            try
+            else
             {
-                selectedDishTypeId = dishTypes[rowId].Id;
+                filter = (DishView obj) => { return obj.DishTypeId == dishTypes[rowId].Id; };
             }
-            catch
-            {
-                this.dishTypesBindingSource.RemoveFilter();
-                return;
-            }
-
-            this.dishTypesBindingSource.Filter = $"DishTypeId = {selectedDishTypeId}";
+            filterChanged?.Invoke(this, checkCommandChange, filter);
         }
 
         // Обработчик клика на кнопку строки
@@ -148,20 +143,7 @@ namespace PovarCRM.Viewers.UserControls
 
                             ////активируем ячейку только перед последним изменением
                             DishViews.CurrentCell = DishViews["Picked", e.RowIndex];
-                            //DishViews.BeginEdit(true);
-
-                            //DishViews.NotifyCurrentCellDirty(true);
-                            //DishViews.EndEdit();
-
                             DishViews["Picked", e.RowIndex].Value = true;
-                            //DishViews["Count", e.RowIndex].Value = 1;
-                            //DishViews.CurrentCell = DishViews["Count", e.RowIndex];
-                            ////DishViews.BeginEdit(true);
-
-                            ////DishViews.NotifyCurrentCellDirty(true);
-                            ////DishViews.EndEdit();
-
-                            //DishViews["Count", e.RowIndex].Value = 1;
                         }
                     }
 
@@ -221,12 +203,17 @@ namespace PovarCRM.Viewers.UserControls
         private void radioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            
+
         }
 
         private void radioButtonList1_Load(object sender, EventArgs e)
         {
             //
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

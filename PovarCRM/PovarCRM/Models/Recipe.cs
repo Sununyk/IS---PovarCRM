@@ -7,7 +7,7 @@ using PovarCRM.Models.Interfaces;
 
 namespace PovarCRM.Models;
 [ObservableObject]
-public partial class Recipe : IIdentityEntity, ICopyable<Recipe>
+public partial class Recipe : IIdentityEntity, ICopyable<Recipe>, ICloneable
 {
     [ObservableProperty]
     int dishId;
@@ -21,25 +21,30 @@ public partial class Recipe : IIdentityEntity, ICopyable<Recipe>
 
     // Конструктор копирования
     public Recipe() { }
-    //public Recipe(Recipe other)
-    //{
-    //    if (other == null) throw new ArgumentNullException(nameof(other));
-    //    DishId = other.DishId;
-    //    DishProductId = other.DishProductId;
-    //    CountOfUnits = other.CountOfUnits;
-    //    Dish = other.Dish; // поверхностное копирование
-    //    DishProduct = other.DishProduct; // поверхностное копирование
-    //}
+    public Recipe(Recipe other)
+    {
+        if (other == null) throw new ArgumentNullException(nameof(other));
+        DishId = other.DishId;
+        DishProductId = other.DishProductId;
+        CountOfUnits = other.CountOfUnits;
+        //Dish = other.Dish; // поверхностное копирование
+       // DishProduct = other.DishProduct; // поверхностное копирование
+    }
 
     public void Copy(Recipe other)
     {
         if (other == null) throw new ArgumentNullException(nameof(other));
-        dishId = other.dishId;
-        dishProductId = other.dishProductId;
+        //dishId = other.dishId;
+        //dishProductId = other.dishProductId;
         countOfUnits = other.countOfUnits;
 
         //Dish = other.Dish; // поверхностное копирование
         //DishProduct = other.DishProduct; // поверхностное копирование
+    }
+
+    public object Clone()
+    {
+        return new Recipe(this);
     }
 
     // Метод клонирования

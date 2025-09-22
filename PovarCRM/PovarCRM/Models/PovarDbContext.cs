@@ -10,6 +10,7 @@ using PovarCRM.Models.Views;
 
 namespace PovarCRM.Models;
 
+
 public class PovarDbContextFactory : IDesignTimeDbContextFactory<PovarDbContext>
 {
     public PovarDbContext CreateDbContext(string[] args)
@@ -97,7 +98,7 @@ public partial class PovarDbContext : DbContext
             entity.HasOne(d => d.DishType).WithMany(p => p.Dishes)
                 .HasForeignKey(d => d.DishTypeId)
                 .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK__Dish__DishTypeId__4E88ABD4");
+                .HasConstraintName("FK__Dish__DishTypeId__4E88ABD4").IsRequired();
         });
 
         modelBuilder.Entity<DishExpensiveView>(entity =>

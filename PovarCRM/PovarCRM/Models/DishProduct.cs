@@ -6,7 +6,7 @@ using PovarCRM.Models.Interfaces;
 namespace PovarCRM.Models;
 
 [ObservableObject]
-public partial class DishProduct : ISingleIdentityEntity, ICopyable<DishProduct>
+public partial class DishProduct : ISingleIdentityEntity, ICopyable<DishProduct>, ICloneable
 {
     [ObservableProperty]
      int id;
@@ -20,16 +20,19 @@ public partial class DishProduct : ISingleIdentityEntity, ICopyable<DishProduct>
 
     // Конструктор копирования
     public DishProduct() { }
-    //public DishProduct(DishProduct other)
-    //{
-    //    if (other == null) throw new ArgumentNullException(nameof(other));
-    //    Id = other.Id;
-    //    Naming = other.Naming;
-    //    Cost = other.Cost;
-    //    UnitId = other.UnitId;
-    //    Unit = other.Unit; // ссылка, глубокое копирование при необходимости
-    //}
-
+    public DishProduct(DishProduct other)
+    {
+        if (other == null) throw new ArgumentNullException(nameof(other));
+        Id = other.Id;
+        Naming = other.Naming;
+        Cost = other.Cost;
+        UnitId = other.UnitId;
+        //Unit = other.Unit; // ссылка, глубокое копирование при необходимости
+    }
+    public object Clone()
+    {
+        return new DishProduct(this);
+    }
     public void Copy(DishProduct other)
     {
         if (other == null) throw new ArgumentNullException(nameof(other));
@@ -37,6 +40,7 @@ public partial class DishProduct : ISingleIdentityEntity, ICopyable<DishProduct>
         naming = other.naming;
         cost = other.cost;
         unitId = other.unitId;
-        Unit = other.Unit; // ссылка, глубокое копирование при необходимости
+        //Unit = other.Unit; // ссылка, глубокое копирование при необходимости
     }
+
 }

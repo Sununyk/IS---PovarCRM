@@ -22,26 +22,6 @@ namespace PovarCRM.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("PovarCRM.DishExpensiveView", b =>
-                {
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Naming")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<double?>("SummaryCost")
-                        .HasColumnType("float")
-                        .HasColumnName("SUMMARY_COST");
-
-                    b.ToTable((string)null);
-
-                    b.ToView("DishExpensiveView", (string)null);
-                });
-
             modelBuilder.Entity("PovarCRM.Models.Dish", b =>
                 {
                     b.Property<int>("Id")
@@ -54,7 +34,11 @@ namespace PovarCRM.Migrations
                         .HasColumnType("money");
 
                     b.Property<int?>("DishTypeId")
+                        .IsRequired()
                         .HasColumnType("int");
+
+                    b.Property<float>("Markup")
+                        .HasColumnType("real");
 
                     b.Property<string>("Naming")
                         .IsRequired()
@@ -208,6 +192,9 @@ namespace PovarCRM.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(100)");
 
+                    b.Property<double>("Weight")
+                        .HasColumnType("float");
+
                     b.HasKey("Id")
                         .HasName("PK__Unit__3214EC07D9854487");
 
@@ -217,12 +204,33 @@ namespace PovarCRM.Migrations
                     b.ToTable("Unit", (string)null);
                 });
 
+            modelBuilder.Entity("PovarCRM.Models.Views.DishExpensiveView", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Naming")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<double?>("SummaryCost")
+                        .HasColumnType("float")
+                        .HasColumnName("SUMMARY_COST");
+
+                    b.ToTable((string)null);
+
+                    b.ToView("DishExpensiveView", (string)null);
+                });
+
             modelBuilder.Entity("PovarCRM.Models.Dish", b =>
                 {
                     b.HasOne("PovarCRM.Models.DishType", "DishType")
                         .WithMany("Dishes")
                         .HasForeignKey("DishTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
                         .HasConstraintName("FK__Dish__DishTypeId__4E88ABD4");
 
                     b.Navigation("DishType");

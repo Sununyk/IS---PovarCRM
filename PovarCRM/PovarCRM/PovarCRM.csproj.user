@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="Viewers\Forms\DishConstructor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Viewers\Forms\DishCreator.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Viewers\Forms\ErrorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -17,6 +23,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Viewers\UserControlls\CommandManagerViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Viewers\UserControlls\DishMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Viewers\UserControlls\OrderConstructorViewer.cs">

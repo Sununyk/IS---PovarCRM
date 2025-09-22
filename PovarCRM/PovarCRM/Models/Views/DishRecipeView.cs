@@ -6,22 +6,33 @@ using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
 using PovarCRM.Models.Interfaces;
 
 namespace PovarCRM.Models.Views
 {
-    public class DishRecipeView : ICloneable, ICopyable<DishRecipeView>
+    [ObservableObject]
+    public partial class DishRecipeView : ICloneable, ICopyable<DishRecipeView>
     {
-        public string DishProductNaming { get; set; }
-        public float CountOfUnits { get; set; }
-        public string UnitNaming { get; set; } = null!;
+        [ObservableProperty]
+         int dishId;
+        [ObservableProperty]
+        int dishProductId;
+        [ObservableProperty]
+        string dishProductNaming;
+        [ObservableProperty]
+        float countOfUnits;
+        [ObservableProperty]
+         string unitNaming = null!;
+        [ObservableProperty]
+        float weight;
 
         public DishRecipeView() { }
         public DishRecipeView(DishRecipeView dishRecipeView)
         {
-            this.DishProductNaming = dishRecipeView.DishProductNaming;
-            this.CountOfUnits = dishRecipeView.CountOfUnits;
-            this.UnitNaming = dishRecipeView.UnitNaming;
+            this.dishProductNaming = dishRecipeView.dishProductNaming;
+            this.countOfUnits = dishRecipeView.countOfUnits;
+            this.unitNaming = dishRecipeView.unitNaming;
         }
         public object Clone()
         {
@@ -30,9 +41,9 @@ namespace PovarCRM.Models.Views
 
         public void Copy(DishRecipeView other)
         {
-            this.DishProductNaming = other.DishProductNaming;
-            this.CountOfUnits = other.CountOfUnits;
-            this.UnitNaming = other.UnitNaming;
+            this.dishProductNaming = other.dishProductNaming;
+            this.countOfUnits = other.countOfUnits;
+            this.unitNaming = other.unitNaming;
         }
     }
     public class OrderCheckRecipeView: ICloneable, ICopyable<OrderCheckRecipeView>
@@ -43,6 +54,7 @@ namespace PovarCRM.Models.Views
             this.CountOfUnits = countOfUnits;
             UnitNaming = unitNaming;
         }
+        
         public string Naming { get; set; } = null!;
         public float CountOfUnits { get; set; }
         public string UnitNaming { get; set; } = null!;

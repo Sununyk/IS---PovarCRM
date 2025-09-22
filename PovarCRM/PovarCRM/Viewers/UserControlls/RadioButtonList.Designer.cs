@@ -24,23 +24,7 @@ namespace PovarCRM.Viewers.UserControls
             }
             base.Dispose(disposing);
         }
-        // Событие выбора
-        public event EventHandler SelectedIndexChanged;
-
-        // Запрещаем множественный выбор
-        private void ListBox_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-            if (e.NewValue == CheckState.Checked)
-            {
-                for (int i = 0; i < checkedListBox1.Items.Count; i++)
-                {
-                    if (i != e.Index)
-                        checkedListBox1.SetItemChecked(i, false);
-                }
-
-                SelectedIndexChanged?.Invoke(this, EventArgs.Empty);
-            }
-        }
+        
         #region Код, автоматически созданный конструктором компонентов
 
         /// <summary> 

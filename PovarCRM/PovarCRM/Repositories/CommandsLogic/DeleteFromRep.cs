@@ -8,7 +8,7 @@ using PovarCRM.Repositories.Abstracts;
 
 namespace PovarCRM.Repositories.CommandsLogic
 {
-    internal class DeleteFromRep<T> : ICommand where T : class, ICopyable<T>
+    internal class DeleteFromRep<T> : ICommand where T : class, ICopyable<T>, ICloneable
     {
         T[] item;
         DefaultRepository<T> repository;

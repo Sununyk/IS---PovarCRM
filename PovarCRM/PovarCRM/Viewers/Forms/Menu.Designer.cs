@@ -35,12 +35,13 @@ namespace PovarCRM.Viewers
             splitContainer1 = new SplitContainer();
             tableLayoutPanel1 = new TableLayoutPanel();
             commandManagerViewer1 = new PovarCRM.Viewers.UserControls.CommandManagerViewer();
-            button1 = new Button();
-            label3 = new Label();
-            orderConstructorViewer1 = new PovarCRM.Viewers.UserControls.OrderConstructorViewer();
             splitContainer2 = new SplitContainer();
             button2 = new Button();
+            button1 = new Button();
             Denied = new Button();
+            MenuModeLabel = new Label();
+            label3 = new Label();
+            orderConstructorViewer1 = new PovarCRM.Viewers.UserControls.OrderConstructorViewer();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -79,6 +80,7 @@ namespace PovarCRM.Viewers
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel1.Controls.Add(commandManagerViewer1, 0, 0);
             tableLayoutPanel1.Controls.Add(splitContainer2, 2, 0);
+            tableLayoutPanel1.Controls.Add(MenuModeLabel, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -94,36 +96,6 @@ namespace PovarCRM.Viewers
             commandManagerViewer1.Name = "commandManagerViewer1";
             commandManagerViewer1.Size = new Size(137, 41);
             commandManagerViewer1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            button1.Dock = DockStyle.Fill;
-            button1.Location = new Point(0, 0);
-            button1.Name = "button1";
-            button1.Padding = new Padding(10, 0, 10, 0);
-            button1.Size = new Size(125, 41);
-            button1.TabIndex = 3;
-            button1.Text = "Complete";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(498, 96);
-            label3.Name = "label3";
-            label3.Size = new Size(214, 20);
-            label3.TabIndex = 4;
-            label3.Text = "Press to finished order creation";
-            // 
-            // orderConstructorViewer1
-            // 
-            orderConstructorViewer1.Dock = DockStyle.Fill;
-            orderConstructorViewer1.Location = new Point(0, 0);
-            orderConstructorViewer1.Name = "orderConstructorViewer1";
-            orderConstructorViewer1.Size = new Size(800, 399);
-            orderConstructorViewer1.TabIndex = 0;
-            orderConstructorViewer1.Load += orderConstructorViewer1_Load;
             // 
             // splitContainer2
             // 
@@ -154,6 +126,19 @@ namespace PovarCRM.Viewers
             button2.TabIndex = 4;
             button2.Text = "Complete";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.Dock = DockStyle.Fill;
+            button1.Location = new Point(0, 0);
+            button1.Name = "button1";
+            button1.Padding = new Padding(10, 0, 10, 0);
+            button1.Size = new Size(125, 41);
+            button1.TabIndex = 3;
+            button1.Text = "Complete";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Denied
             // 
@@ -165,6 +150,36 @@ namespace PovarCRM.Viewers
             Denied.Text = "Denied";
             Denied.UseVisualStyleBackColor = true;
             Denied.Click += Denied_Click;
+            // 
+            // MenuModeLabel
+            // 
+            MenuModeLabel.AutoSize = true;
+            MenuModeLabel.Dock = DockStyle.Fill;
+            MenuModeLabel.Location = new Point(269, 0);
+            MenuModeLabel.Name = "MenuModeLabel";
+            MenuModeLabel.Size = new Size(260, 47);
+            MenuModeLabel.TabIndex = 5;
+            MenuModeLabel.Text = "label1";
+            MenuModeLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.ForeColor = SystemColors.ActiveBorder;
+            label3.Location = new Point(561, -4);
+            label3.Name = "label3";
+            label3.Size = new Size(214, 20);
+            label3.TabIndex = 4;
+            label3.Text = "Press to finished order creation";
+            // 
+            // orderConstructorViewer1
+            // 
+            orderConstructorViewer1.Dock = DockStyle.Fill;
+            orderConstructorViewer1.Location = new Point(0, 0);
+            orderConstructorViewer1.Name = "orderConstructorViewer1";
+            orderConstructorViewer1.Size = new Size(800, 399);
+            orderConstructorViewer1.TabIndex = 0;
+            orderConstructorViewer1.Load += orderConstructorViewer1_Load;
             // 
             // Menu
             // 
@@ -184,6 +199,7 @@ namespace PovarCRM.Viewers
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             splitContainer2.Panel1.ResumeLayout(false);
             splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
@@ -197,12 +213,12 @@ namespace PovarCRM.Viewers
         }
 
         #endregion
-
+        public bool OrderComplete { get { return orderComplete; } }
+        private bool orderComplete = false;
 
         private SplitContainer splitContainer1;
         private TableLayoutPanel tableLayoutPanel1;
         private UserControls.CommandManagerViewer commandManagerViewer1;
-         Label MenuMode;
         private UserControls.OrderConstructorViewer orderConstructorViewer1;
         private MenuController controller;
 
@@ -211,5 +227,6 @@ namespace PovarCRM.Viewers
         private SplitContainer splitContainer2;
         private Button button2;
         private Button Denied;
+        private Label MenuModeLabel;
     }
 }

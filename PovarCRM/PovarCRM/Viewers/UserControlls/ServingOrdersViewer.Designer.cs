@@ -54,8 +54,6 @@ namespace PovarCRM.Viewers
             splitContainer1 = new SplitContainer();
             label2 = new Label();
             splitContainer2 = new SplitContainer();
-            DeniedButton = new Button();
-            CompleteButton = new Button();
             NewOrderButton = new Button();
             ((System.ComponentModel.ISupportInitialize)ordersTable).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itemsTable).BeginInit();
@@ -209,42 +207,18 @@ namespace PovarCRM.Viewers
             // 
             // splitContainer2.Panel1
             // 
-            splitContainer2.Panel1.Controls.Add(DeniedButton);
-            splitContainer2.Panel1.Controls.Add(CompleteButton);
             splitContainer2.Panel1.Controls.Add(NewOrderButton);
             splitContainer2.Panel1.Paint += splitContainer2_Panel1_Paint;
             splitContainer2.Size = new Size(246, 533);
             splitContainer2.SplitterDistance = 90;
             splitContainer2.TabIndex = 7;
             // 
-            // DeniedButton
-            // 
-            DeniedButton.Dock = DockStyle.Bottom;
-            DeniedButton.Location = new Point(0, 7);
-            DeniedButton.Name = "DeniedButton";
-            DeniedButton.Size = new Size(246, 29);
-            DeniedButton.TabIndex = 2;
-            DeniedButton.Text = "Denied Order";
-            DeniedButton.UseVisualStyleBackColor = true;
-            DeniedButton.Click += button3_Click;
-            // 
-            // CompleteButton
-            // 
-            CompleteButton.Dock = DockStyle.Bottom;
-            CompleteButton.Location = new Point(0, 36);
-            CompleteButton.Name = "CompleteButton";
-            CompleteButton.Size = new Size(246, 29);
-            CompleteButton.TabIndex = 1;
-            CompleteButton.Text = "Complete Order";
-            CompleteButton.UseVisualStyleBackColor = true;
-            CompleteButton.Click += CompleteButton_Click;
-            // 
             // NewOrderButton
             // 
             NewOrderButton.Dock = DockStyle.Bottom;
-            NewOrderButton.Location = new Point(0, 65);
+            NewOrderButton.Location = new Point(0, 0);
             NewOrderButton.Name = "NewOrderButton";
-            NewOrderButton.Size = new Size(246, 25);
+            NewOrderButton.Size = new Size(246, 90);
             NewOrderButton.TabIndex = 0;
             NewOrderButton.Text = "New Order";
             NewOrderButton.UseVisualStyleBackColor = true;
@@ -292,8 +266,6 @@ namespace PovarCRM.Viewers
         private SplitContainer splitContainer2;
         private Label label2;
         private Button NewOrderButton;
-        private Button DeniedButton;
-        private Button CompleteButton;
         public TableLayoutPanel tableLayoutPanel1;
         private DataGridView IngredientsTable;
 

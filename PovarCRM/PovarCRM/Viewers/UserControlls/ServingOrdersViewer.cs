@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Identity.Client;
+using PovarCRM.Models;
+using PovarCRM.Repositories;
 using PovarCRM.Repositories.CommandsLogic;
 using PovarCRM.UIcontrollers;
 using PovarCRM.UIcontrollers.UImembers;
@@ -79,25 +82,29 @@ namespace PovarCRM.Viewers
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                 }
+
             }
 
             int newOrderId = this.controller.CreatOrderCheck(clientName);
 
-            MenuController controller = new MenuController(this.controller.GetUnitOfWork() ,UIcontrollers.MenuMode.OrderConstructor, newOrderId);
+            MenuController controller = new MenuController(this.controller.Unit, UIcontrollers.MenuMode.OrderConstructor, newOrderId);
             controller.AddUpdateMember(this.controller);
+
 
             using (Menu menu = new Menu(controller))
             {
                 if (menu.ShowDialog() == DialogResult.OK)
                 {
                     // Здесь будет выполнение кода после того, как форма закроется с OK
-                    
+                    //Сохраняем временный контекст в настоящий контекст
+                    this.controller.Unit.Save();
 
                 }
             }
-                    
-               
-            
+
+            if (!controller.OrderComplete)
+                this.controller.Unit.OrderChecks.Delete(this.controller.Unit.OrderChecks.GetByID(newOrderId));
+            this.controller.Unit.Save(); 
         }
         //private void button1_Click_1(object sender, EventArgs e)
         //{

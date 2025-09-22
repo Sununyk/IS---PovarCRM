@@ -12,7 +12,7 @@ using PovarCRM.UIcontrollers.UImembers;
 
 namespace PovarCRM.Repositories.CommandsLogic
 {
-    internal class AddToRep<T> : ICommand where T : class, ICopyable<T>
+    internal class AddToRep<T> : ICommand where T : class, ICopyable<T>, ICloneable
     {
         T[] items;
         DefaultRepository<T> repository;

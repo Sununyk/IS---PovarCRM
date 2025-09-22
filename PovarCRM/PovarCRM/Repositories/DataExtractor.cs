@@ -6,10 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using PovarCRM.Models.Views;
 using PovarCRM.Models;
+using PovarCRM.Migrations;
+using PovarCRM.Models.Interfaces;
 
 namespace PovarCRM.Repositories
 {
-    public static class DataExctractor
+    public static class DataExtractor
     {
         static public List<DishRecipeView> GetDishRecipeViews(int dishId)
         {
@@ -55,6 +57,7 @@ namespace PovarCRM.Repositories
                     DishProductNaming = p.Naming,
                     CountOfUnits = r.CountOfUnits,
                     UnitNaming = u.Naming,
+                    Weight = r.CountOfUnits * (float)u.Weight
                 }
             ).OrderBy(x => x.DishProductNaming));
             return recipeViewList;
@@ -280,33 +283,121 @@ namespace PovarCRM.Repositories
         {
             return unit.DishTypes.GetCollection().OrderBy(x => x.Naming).ToList();
         }
-        //public static void SynchronizDataList(List<T> dataList){
-        //    using (var unit = new UnitOfWork())
-        //    {
-        //        try
-        //        {
-        //            var repository = unit.GetRepository<T>();
 
-        //            foreach (var i in dataList)
-        //            {
-        //                try
-        //                {
-        //                    repository.Update(i);
-        //                }
-        //                catch
-        //                {
-        //                    repository.Insert(i);
-        //                }
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //static public Recipe ExtractFromRecipeView(DishRecipeView view, UnitOfWork unit)
+        //{
+        //    //int DishProdId = unit.DishProducts.GetCollection().ToList<DishProduct>().Find(x => {
+        //    //    if (x.Naming == view.DishProductNaming)
+        //    //        return true;
+        //    //    else
+        //    //        return false;
+        //    //    });
+        //    //if(DishProdId <= 0)
+        //    //    return null;
 
-        //        }
-
-        //    }
+            
         //}
+        //UPDATE PARAMETERS #################################################################################################
+        static public Dish? UpdateExistDishParam(int DishId, UnitOfWork unit)
+        {
+            Dish? dish = unit.Dishes.GetByID(DishId);
+            if (dish == null)
+                return null;
+
+            List<Recipe> recipes = new List<Recipe>();
+            recipes = (from i in unit.Recipes.GetCollection()
+                      where i.DishId == DishId
+                      select new Recipe
+                      {
+                          DishId = i.DishId,
+                          CountOfUnits = i.CountOfUnits,
+                          DishProductId = i.DishProductId
+                      }).ToList();
+
+            var aggregated = (from i in recipes
+                              join j in unit.DishProducts.GetCollection() on i.DishProductId equals j.Id
+                              join u in unit.Units.GetCollection() on j.UnitId equals u.Id
+                              group new { i, j, u } by u.Naming into g
+                              select new
+                              {
+                                  Weight = g.Sum(x => x.i.CountOfUnits * x.u.Weight),
+                                  Total = g.Sum(x => (decimal)x.i.CountOfUnits * x.j.Cost)
+                              }).ToList();
+
+            // Суммируем по всем группам
+            double totalWeight = aggregated.Sum(x => x.Weight);
+            decimal totalCost = aggregated.Sum(x => x.Total) + aggregated.Sum(x => x.Total) * (decimal)dish.Markup;
+
+            dish.Weight = (float)totalWeight;
+            dish.Cost = totalCost;
+
+            return dish;
+        }
+
+        static public OrderCheck? UpdateExistOrderCheckParam(int OrderCheckId, UnitOfWork unit)
+        {
+            OrderCheck? order = unit.OrderChecks.GetByID(OrderCheckId);
+            if (order == null)
+                return null;
+            if (unit.Items.GetCollection().Count<Item>() < 1)
+            {
+                order.Total = 0;
+                return order;
+            }
+            
+            order.Total = (from i in unit.Items.GetCollection()
+                             where i.OrderCheckId == OrderCheckId
+                             join d in unit.Dishes.GetCollection() on i.DishId equals d.Id
+                             select (i.DishCount * d.Cost))
+                            .Sum();
+
+
+            return order;
+        }
+
+        static public List<Dish> GetDishes(UnitOfWork unit)
+        {
+            return new List<Dish> (unit.Dishes.GetCollection());
+        }
+
+
+
+        //DataValidating Methods ##########################################################################################
+        public static bool ValidateDishRecipe(Recipe recipe,  UnitOfWork unit)
+        {
+            if (recipe == null)
+                return false;
+            if(recipe is IIdentityEntity entity)
+            {
+                foreach(var id in entity.Id)
+                {
+                    if (id <= 0)
+                        return false;
+                }
+            }
+
+            return true;
+        }
+
+        public static bool ValidateDish(Dish dish, UnitOfWork unit)
+        {
+            if (dish == null)
+                return false;
+
+            if (dish is ISingleIdentityEntity newDish)
+            {
+                foreach (Dish item in unit.Dishes.GetCollection())
+                {
+                    if (item is ISingleIdentityEntity repDish)
+                    {
+                        if (newDish.Equals(repDish))
+                            return false;
+                    }
+                }
+            }            
+
+            return true;
+        }
 
     }
 }

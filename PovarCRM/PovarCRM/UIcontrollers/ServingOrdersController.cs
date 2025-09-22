@@ -10,8 +10,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Update;
 using PovarCRM.UIcontrollers.UImembers;
 using PovarCRM.UIelements;
-using static PovarCRM.Repositories.DataExctractor;
+using static PovarCRM.Repositories.DataExtractor;
 using PovarCRM.Repositories.CommandsLogic;
+using PovarCRM.Repositories;
 
 namespace PovarCRM.UIcontrollers
 {
@@ -19,9 +20,9 @@ namespace PovarCRM.UIcontrollers
     {
         private int selectedOrderId = -1;
 
-        UnitOfWork dataSet;
+        UnitOfWork unit;
 
-        private List<int> newOrdersId;
+        private int newOrderId;
         private BindingListEx<OrderCheck> orders;
         private BindingListEx<ItemView> items;
         BindingListEx<OrderCheckRecipeView> orderRecipeViews;
@@ -30,22 +31,16 @@ namespace PovarCRM.UIcontrollers
 
         public ServingOrdersController()
         {
-            this.dataSet = new UnitOfWork(PovarDbContext.DbMode.DataBaseOff);
-            using(var unit = new UnitOfWork())
-            {
-                unit.InitRepositoryes();
-                this.dataSet.AddReps(unit);
-            }
-
+            this.unit = new UnitOfWork();
+            //LoadDataSet();
 
             orders = new BindingListEx<OrderCheck>();
             items = new BindingListEx<ItemView>();
             orderRecipeViews = new BindingListEx<Models.Views.OrderCheckRecipeView>();
 
-            newOrdersId = new List<int>();
             //this.onUpdateState();
         }
-
+        public UnitOfWork Unit { get { return unit; } }
         public void onSelectedOrderId(int orderId)
         {
             UpdateItemsAndIngredients(orderId);
@@ -56,25 +51,28 @@ namespace PovarCRM.UIcontrollers
                 return;
 
             items.Clear();
-            items.AppendList(GetViewItemsOfOrder(orderCheckId, dataSet));
+            items.AppendList(GetViewItemsOfOrder(orderCheckId, unit));
             orderRecipeViews.Clear();
-            orderRecipeViews.AppendList(GetRecipeOfOrder(orderCheckId, dataSet));
+            orderRecipeViews.AppendList(GetRecipeOfOrder(orderCheckId, unit));
 
             this.selectedOrderId = orderCheckId;
+        }
+        public void LoadDataSet()
+        {
         }
         public void onUpdateState()
         {
            
             orders.Clear();
-            orders.AppendList(GetOrdersSortedByTime());
+            orders.AppendList(GetOrdersSortedByTime(unit));
 
             if (selectedOrderId < 0)
                 return;
 
             items.Clear();
-            items.AppendList(GetViewItemsOfOrder(selectedOrderId, dataSet));
+            items.AppendList(GetViewItemsOfOrder(selectedOrderId, unit));
             orderRecipeViews.Clear();
-            orderRecipeViews.AppendList(GetRecipeOfOrder(selectedOrderId, dataSet));
+            orderRecipeViews.AppendList(GetRecipeOfOrder(selectedOrderId, unit));
         }
 
         public BindingListEx<ItemView> initItemViewList()
@@ -86,7 +84,7 @@ namespace PovarCRM.UIcontrollers
             //сразу заполняем для визуала
 
             orders.Clear();
-            orders.AppendList(dataSet.OrderChecks.GetCollection().ToList());
+            orders.AppendList(unit.OrderChecks.GetCollection().ToList());
   
             return orders;
         }
@@ -98,28 +96,29 @@ namespace PovarCRM.UIcontrollers
         public int CreatOrderCheck(String clientNaming)
         {
             OrderCheck newOrder;
-            using (var unit = new UnitOfWork())
+            
+            newOrder = (new OrderCheck
             {
-                newOrder = (new OrderCheck
-                {
-                    ClientName = clientNaming,
-                    Total = 0,
-                    OrderTime = DateTime.Now,
-                });
-                unit.OrderChecks.Add(newOrder);
-                unit.Save();
+                ClientName = clientNaming,
+                Total = 0,
+                OrderTime = DateTime.Now,
+            });
+            newOrder = unit.OrderChecks.Add(newOrder);
 
-                this.newOrdersId.Add(newOrder.Id);
-                this.dataSet.OrderChecks.Add(newOrder);
-            }
+            unit.Save();
+            
 
 
             return newOrder.Id;
         }
+        public void UpdateOrderCheck(int id)
+        {
+            DataExtractor.UpdateExistOrderCheckParam(id, unit);
+        }
 
         public UnitOfWork GetUnitOfWork()
         {
-            return this.dataSet;
+            return this.unit;
         }
 
         public void UpdateState()

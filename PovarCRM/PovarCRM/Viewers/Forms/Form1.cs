@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using PovarCRM.Models;
 using PovarCRM.UIcontrollers;
 using PovarCRM.Viewers;
+using PovarCRM.Viewers.UserControlls;
 
 namespace PovarCRM
 {
@@ -12,6 +13,7 @@ namespace PovarCRM
         BindingList<OrderCheck> binCtrlOrderChecks;
         CheckListViewController checkListController;
         ServingOrdersController servingOrdersController1;
+        DishMenuController dishMenuController1;
 
         public Form1(CheckListViewController checkListController)
         {
@@ -35,6 +37,9 @@ namespace PovarCRM
             servingOrdersController1 = new ServingOrdersController();
             servingOrdersViewer1.InitController(servingOrdersController1);
 
+            //DishMenu Part
+            dishMenuController1 = new DishMenuController();
+            dishMenu1.InitDependecies(dishMenuController1);
 
 
         }
@@ -337,7 +342,7 @@ namespace PovarCRM
         }
 
         private void button5_Click(object sender, EventArgs e)
-        { 
+        {
 
         }
 
@@ -346,7 +351,11 @@ namespace PovarCRM
 
             if (mainTabControl.SelectedTab.Text == "Serving orders")
                 this.servingOrdersController1?.onUpdateState();
-                
+
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
         }
     }
 }

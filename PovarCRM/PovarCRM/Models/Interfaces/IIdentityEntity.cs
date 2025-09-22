@@ -8,8 +8,18 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PovarCRM.Models.Interfaces
 {
-    internal interface IIdentityEntity
+    public interface IIdentityEntity
     {
         int[] Id { get; }
+
+        //public bool Validate() {
+        //{
+        //        for (int i = 0; i < Id.Length; i++)
+        //        {
+        //            if(Id[i] <= 0)
+        //                return false;
+        //        }
+        //        return true;
+        //}
     }
 }

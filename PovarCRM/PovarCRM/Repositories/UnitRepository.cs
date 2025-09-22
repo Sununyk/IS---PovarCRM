@@ -8,7 +8,7 @@ using PovarCRM.Repositories.Abstracts;
 
 namespace PovarCRM.Repositories
 {
-    public class UnitRepository : DefaultRepository<Unit>
+    public class UnitRepository: DefaultRepository<Unit>
     {
         public UnitRepository(PovarDbContext context) : base(context)
         {

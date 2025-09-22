@@ -13,7 +13,8 @@ namespace PovarCRM.Repositories.Interfaces
         IEnumerable<T> GetCollection();
         T GetByID(params int[] objID);
         void AddRange(IEnumerable<T> entities);
-        void Add(T entity);
+        //return linked atached T
+        T Add(T entity);
         bool Delete(params T[] objs);
         bool Delete(T obj);
         //bool Delete(int[] ids);

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PovarCRM.Models;
+using PovarCRM.Repositories;
 using PovarCRM.UIcontrollers;
 using PovarCRM.UIcontrollers.UImembers;
 
@@ -14,16 +16,25 @@ namespace PovarCRM.Viewers
 {
     public partial class Menu : Form
     {
-        public Menu(MenuController controller)
+        public Menu()
         {
             InitializeComponent();
-
+        }
+        public void InitDependecies(MenuController controller)
+        {
             this.controller = controller;
             ((IFormControllerMember)this).SubscribeController(controller);
             this.commandManagerViewer1.InitDependency(controller.CommandManager);
             this.orderConstructorViewer1.InitDependecies(controller.OrderConstructor);
-
             this.KeyPreview = true;
+            this.MenuModeLabel.Text = controller.Mode.ToString();
+        }
+        public Menu(MenuController controller)
+        {
+            InitializeComponent();
+
+            InitDependecies(controller);
+            //  this..Text = controller.Mode.ToString();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -80,7 +91,7 @@ namespace PovarCRM.Viewers
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                this.controller.Close(false);
+                this.controller.Close(this.OrderComplete);
             }
         }
 
@@ -117,17 +128,34 @@ namespace PovarCRM.Viewers
 
         private void Denied_Click(object sender, EventArgs e)
         {
-            using(var confirm = new ConfirmationForm())
+            using (var confirm = new ConfirmationForm())
             {
                 confirm.Owner = this;
                 confirm.StartPosition = FormStartPosition.CenterParent;
                 if (confirm.ShowDialog() == DialogResult.OK)
                 {
-                    
+
                 }
                 if (confirm.YesOrNo == true)
                     this.controller.Close(false);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.orderComplete = true;
+            
+            //Сохрнаяем Items
+            //using (var unit = new UnitOfWork())
+            //{
+            //    foreach (Item i in controller.TempContext.Items.GetCollection())
+            //    {
+            //        unit.Items.Add((Item)i.Clone());
+            //    }
+            //}
+            //this.controller.TempContext.Save();
+            
+            this.controller.Close(true);
         }
     }
 }

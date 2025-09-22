@@ -34,13 +34,11 @@ namespace PovarCRM
         /// </summary>
         private void InitializeComponent()
         {
-            components = new Container();
             splitContainer1 = new SplitContainer();
             flowLayoutPanel1 = new FlowLayoutPanel();
             FinanceAnalyz = new Button();
             button2 = new Button();
             button4 = new Button();
-            menuStrip1 = new MenuStrip();
             mainTabControl = new TabControl();
             tabPage1 = new TabPage();
             checkBox2 = new CheckBox();
@@ -76,12 +74,11 @@ namespace PovarCRM
             label7 = new Label();
             dataGridView1 = new DataGridView();
             tabPage2 = new TabPage();
-            button5 = new Button();
+            dishMenu1 = new PovarCRM.Viewers.UserControlls.DishMenu();
             tabPage3 = new TabPage();
             tabPage4 = new TabPage();
             servingOrdersViewer1 = new ServingOrdersViewer();
             label11 = new Label();
-            contextMenuStrip1 = new ContextMenuStrip(components);
             ((ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -132,7 +129,6 @@ namespace PovarCRM
             flowLayoutPanel1.Controls.Add(FinanceAnalyz);
             flowLayoutPanel1.Controls.Add(button2);
             flowLayoutPanel1.Controls.Add(button4);
-            flowLayoutPanel1.Controls.Add(menuStrip1);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(0, 0);
@@ -170,15 +166,6 @@ namespace PovarCRM
             button4.TabIndex = 4;
             button4.Text = "Workers";
             button4.UseVisualStyleBackColor = true;
-            // 
-            // menuStrip1
-            // 
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Location = new Point(10, 115);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(180, 24);
-            menuStrip1.TabIndex = 5;
-            menuStrip1.Text = "menuStrip1";
             // 
             // mainTabControl
             // 
@@ -616,25 +603,23 @@ namespace PovarCRM
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(button5);
+            tabPage2.Controls.Add(dishMenu1);
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(1154, 732);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "Menu Control";
+            tabPage2.Text = "Menu constructor";
             tabPage2.UseVisualStyleBackColor = true;
             tabPage2.Click += tabPage2_Click;
             // 
-            // button5
+            // dishMenu1
             // 
-            button5.Location = new Point(115, 190);
-            button5.Name = "button5";
-            button5.Size = new Size(94, 29);
-            button5.TabIndex = 0;
-            button5.Text = "button5";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            dishMenu1.Dock = DockStyle.Fill;
+            dishMenu1.Location = new Point(3, 3);
+            dishMenu1.Name = "dishMenu1";
+            dishMenu1.Size = new Size(1148, 726);
+            dishMenu1.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -644,6 +629,7 @@ namespace PovarCRM
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Workers";
             tabPage3.UseVisualStyleBackColor = true;
+            tabPage3.Click += tabPage3_Click;
             // 
             // tabPage4
             // 
@@ -677,19 +663,12 @@ namespace PovarCRM
             label11.Text = "Orders";
             label11.Click += label11_Click_1;
             // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1356, 765);
             Controls.Add(splitContainer1);
-            MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -698,7 +677,6 @@ namespace PovarCRM
             ((ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
-            flowLayoutPanel1.PerformLayout();
             mainTabControl.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
@@ -772,8 +750,6 @@ namespace PovarCRM
         private TabPage tabPage4;
         private Label label11;
         private ServingOrdersViewer servingOrdersViewer1;
-        private Button button5;
-        private MenuStrip menuStrip1;
-        private ContextMenuStrip contextMenuStrip1;
+        private Viewers.UserControlls.DishMenu dishMenu1;
     }
 }

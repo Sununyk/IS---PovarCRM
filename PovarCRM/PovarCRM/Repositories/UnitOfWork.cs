@@ -14,18 +14,19 @@ public class UnitOfWork : IDisposable
     }
     public UnitOfWork(PovarDbContext.DbMode mode)
     {
-        if (mode == PovarDbContext.DbMode.DataBaseOff)
-        {
-            var options = new DbContextOptionsBuilder<PovarDbContext>()
-                .UseInMemoryDatabase("TempDatabase") // имя временной базы
-                .Options;
-            db = new PovarDbContext(options, mode);
-        }
-        else
-            db = new PovarDbContext();
+        //if (mode == PovarDbContext.DbMode.DataBaseOff)
+        //{
+        //    var options = new DbContextOptionsBuilder<PovarDbContext>()
+        //        .UseInMemoryDatabase("TempDatabase") // имя временной базы
+        //        .Options;
+        //    db = new PovarDbContext(options, mode);
+        //}
+        //else
+        db = new PovarDbContext();
     }
-    public void AddReps(UnitOfWork anotherUnit)
+    public void CopyReps(UnitOfWork anotherUnit)
     {
+
         this.InitRepositoryes();
         dishRepository.AddRange(anotherUnit.Dishes.GetCollection());
         dishTypeRepository.AddRange(anotherUnit.DishTypes.GetCollection());
@@ -134,10 +135,13 @@ public class UnitOfWork : IDisposable
         Dispose(true);
         GC.SuppressFinalize(this);
     }
-
+    public void Clear()
+    {
+        
+    }
     public void InitRepositoryes()
     {
-        if(dishTypeRepository == null)
+        if (dishTypeRepository == null)
             dishTypeRepository = new DishTypeRepository(db);
         if (unitRepository == null)
             unitRepository = new UnitRepository(db);

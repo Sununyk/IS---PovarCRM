@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Diagnostics.Eventing.Reader;
+using Microsoft.EntityFrameworkCore;
 using PovarCRM.Models.Interfaces;
 using PovarCRM.Repositories.Interfaces;
 
 namespace PovarCRM.Repositories.Abstracts
 {
-    public abstract class DefaultRepository<T> : IRepository<T> where T : class, ICopyable<T>
+    public abstract class DefaultRepository<T> : IRepository<T> where T : class, ICopyable<T>, ICloneable
     {
         internal DbContext DbContext { get; set; }
 
@@ -17,42 +18,84 @@ namespace PovarCRM.Repositories.Abstracts
         {
             return DbContext.Set<T>();
         }
+       
         public virtual void AddRange(IEnumerable<T> entities)
         {
             Console.WriteLine(entities);
 
-            if (entities is IEnumerable<ISingleIdentityEntity> listEntity)
-            {
-                foreach (var entity in listEntity)
-                {
-                    if (this.GetByID(entity.Id) != null)
-                        Update((T)entity);
-                    else
-                        DbContext.Set<T>().Add((T)entity);
-                }
-            }
-            else if (entities is IEnumerable<IIdentityEntity> list)
-            {
-                foreach (var entity in list)
-                {
-                    if (this.GetByID(entity.Id) != null)
-                        Update((T)entity);
-                    else
-                        DbContext.Set<T>().Add((T)entity);
-                }
-            }
-            DbContext.SaveChanges();
+            //if (entities is IEnumerable<ISingleIdentityEntity> listEntity)
+            //{
+            foreach (var entity in entities)
+                this.Add(entity);
+
+                //{
+                    //if (this.GetByID(entity.Id) != null)
+                    //    Update((T)entity);
+                    //else
+                    //    DbContext.Set<T>().Add((T)entity);
+              //  }
+            //}
+            //else if (entities is IEnumerable<IIdentityEntity> list)
+            //{
+            //    foreach (var entity in list)
+            //    {
+            //        if (this.GetByID(entity.Id) != null)
+            //            Update((T)entity);
+            //        else
+            //            DbContext.Set<T>().Add((T)entity);
+            //    }
+            //}
+            //DbContext.SaveChanges();
 
         }
-        public virtual void Add(T entity)
+        //public int[] Add(T obj)
+        //{
+        //    T entity = (T)obj.Clone();
+        //    if (entity is ISingleIdentityEntity singleEntity)
+        //    {
+        //        var existing = this.GetByID(singleEntity.Id);
+        //        if (existing != null)
+        //            Update(entity);
+        //        else
+        //        {
+        //            DbContext.Set<T>().Add(entity);
+        //            DbContext.SaveChanges();
+        //        }
+        //        return new int[1] { singleEntity.Id };
+        //    }
+        //    else if (entity is IIdentityEntity identityEntity)
+        //    {
+        //        var existing = this.GetByID(identityEntity.Id);
+        //        if (existing != null)
+        //            Update(entity);
+        //        else
+        //        {
+        //            DbContext.Set<T>().Add(entity);
+        //            DbContext.SaveChanges();
+        //        }
+        //        return identityEntity.Id;
+
+        //    }
+        //    return null;
+
+        //}
+        public T Add(T obj)
         {
+            if (obj is not T ob)
+                return null;
+
+            T entity = (T)obj.Clone();
+
             if (entity is ISingleIdentityEntity singleEntity)
             {
                 var existing = this.GetByID(singleEntity.Id);
                 if (existing != null)
                     Update(entity);
                 else
+                {
                     DbContext.Set<T>().Add(entity);
+                    DbContext.SaveChanges();
+                }
             }
             else if (entity is IIdentityEntity identityEntity)
             {
@@ -60,36 +103,57 @@ namespace PovarCRM.Repositories.Abstracts
                 if (existing != null)
                     Update(entity);
                 else
-                    DbContext.Set<T>().Add(entity);
-            }
+                {
 
-            DbContext.SaveChanges();
+                    DbContext.Set<T>().Add(entity);
+                    DbContext.SaveChanges();
+                }
+
+            }
+            return entity;
+
         }
-        public virtual T GetByID(params int[] id)
+        public virtual T? GetByID(params int[] id)
         {
             if (id == null)
-                return null;
+                 throw new ArgumentNullException("id");
 
-            if (!DbContext.Set<T>().Any())
-            {
-                Console.WriteLine("(\"DB is empty\"); typeof = " + typeof(T).ToString());
-                return null;
-            }
+
+            var local = DbContext.Set<T>()
+                .Local
+                .FirstOrDefault(e => e.Equals(id));
+            if (local != null)
+                return local;
+
+
 
             T? a;
+            object[] keyValues = id.Cast<object>().ToArray();
             if (id.Length == 1)
-                a = DbContext.Set<T>().Find(id[0]);
-            else
             {
-                object[] keyValues = id.Cast<object>().ToArray();
                 a = DbContext.Set<T>().Find(keyValues);
-            }
-            if (a == null)
-            {
-                return null;
+                if (a == null)
+                    a = DbContext.Set<T>().Local
+                    .FirstOrDefault(e => (e as ISingleIdentityEntity)?.Id == id[0]);
+
             }
             else
-                return a;
+            {
+               
+                a = DbContext.Set<T>().Find(keyValues);
+                if (a == null)
+                    a = DbContext.Set<T>().Local
+                        .FirstOrDefault(e =>
+                        {
+                            if (e is IIdentityEntity identity)
+                            {
+                                return identity.Id.SequenceEqual(id); // сравнение ключей по значению
+                            }
+                            return false;
+                        });
+            }
+
+            return a;
         }
 
         //public virtual T Insert(T obj)
@@ -121,30 +185,43 @@ namespace PovarCRM.Repositories.Abstracts
 
             //}
 
-            if (item != null)
-                item.Copy(obj);
+            item.Copy(obj);
+            DbContext.SaveChanges();
 
             //var j = DbContext.Entry(item).State;
             //z = DbContext.Entry(obj).State;
-            DbContext.SaveChanges();
+           // DbContext.SaveChanges();
         }
         public virtual void Update(params T[] objs)
         {
             foreach (T item in objs)
                 Update(item);
-            DbContext.SaveChanges();
             return;
         }
 
+        public virtual bool Delete(params int[] keys)
+        {
+            var item = GetByID(keys);
+            if (item != null)
+            {
+                DbContext.Remove(item);
+                DbContext.SaveChanges();
+                return true;
+            }
+            DbContext.SaveChanges();
+            return false;
 
+        }
         public virtual bool Delete(T obj)
         {
             var item = GetByID(Find(obj));
             if (item != null)
             {
                 DbContext.Remove(item);
+                DbContext.SaveChanges();
                 return true;
             }
+            DbContext.SaveChanges();
             return false;
 
         }
@@ -182,7 +259,6 @@ namespace PovarCRM.Repositories.Abstracts
             //    throw new Exception();
             //}
 
-            DbContext.SaveChanges();
             return true;
         }
         //public virtual bool Delete(int objID)

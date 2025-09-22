@@ -7,10 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using PovarCRM.Models;
 using PovarCRM.Models.Views;
+using PovarCRM.Repositories;
 using PovarCRM.Repositories.CommandsLogic;
 using PovarCRM.UIcontrollers.UImembers;
 using PovarCRM.UIelements;
-using static PovarCRM.Repositories.DataExctractor;
+using static PovarCRM.Repositories.DataExtractor;
 
 namespace PovarCRM.UIcontrollers
 {
@@ -19,10 +20,14 @@ namespace PovarCRM.UIcontrollers
     {
 
 
-        public OrderConstructorController(int newOrderId, UnitOfWork unit, CommandManagerController commandController)
+        public OrderConstructorController(UnitOfWork unit, int newOrderId, CommandManagerController commandController)
         {
-            this.newOrderCheck = unit.OrderChecks.GetByID(newOrderId);
+
             this.unit = unit;
+            this.newOrderCheck = unit.OrderChecks.GetByID(newOrderId);
+            if (newOrderCheck == null)
+                throw new Exception();
+
             this.commandManagerController = commandController;
 
             dishTypes = new BindingListEx<DishType>();
@@ -33,8 +38,17 @@ namespace PovarCRM.UIcontrollers
             dishTypes.AppendList(GetDishTypes(unit));
             dishViews.AppendList(GetDishViews(unit));
 
+            dishViews.AddUpdateMember(this);
             dishViews.ListItemChanged += OnListItemChanged;
-
+            dishViews.CommandReadyToExec += (object obj, ICommand command) =>
+            {
+                commandController.Execute(command);
+            };
+            dishTypes.CommandReadyToExec += (object obj, ICommand command) =>
+            {
+                commandController.Execute(command);
+            };
+    
         }
         public BindingListEx<DishType> InitDishTypes()
         {
@@ -58,6 +72,7 @@ namespace PovarCRM.UIcontrollers
             };
             CommandPackage eventPack = new CommandPackage();
 
+            eventPack.AddCommand(new ActionCommand<OrderCheck>(() => DataExtractor.UpdateExistOrderCheckParam(newOrderCheck.Id, unit), () => DataExtractor.UpdateExistOrderCheckParam(newOrderCheck.Id, unit)));
             eventPack.AddCommand(changeOldOnNewItemCommand);
 
             if (oldItem.Picked != newItem.Picked)
@@ -87,7 +102,8 @@ namespace PovarCRM.UIcontrollers
                     unit, newOrderItem));
                 
             }
-            if(eventPack.GetPackageSize() > 0)
+            eventPack.AddCommand(new ActionCommand<OrderCheck>(() => DataExtractor.UpdateExistOrderCheckParam(newOrderCheck.Id, unit), () => DataExtractor.UpdateExistOrderCheckParam(newOrderCheck.Id, unit)));
+            if (eventPack.GetPackageSize() > 0)
                 this.commandManagerController.Execute(eventPack);
 
         }
@@ -98,10 +114,6 @@ namespace PovarCRM.UIcontrollers
             dishRecipeViews.AppendList(GetDishRecipeViews(dishId, unit));
         }
 
-        public void onUpdateState()
-        {
-           // UpdateDishView();
-        }
         public void UpdateDishView()
         {
             dishViews.Clear();
@@ -109,7 +121,7 @@ namespace PovarCRM.UIcontrollers
         }
 
 
-
+        public int NewOrderCheck { get {return this.newOrderCheck.Id; } }
         private BindingListEx<DishType> dishTypes;
         private BindingListEx<DishView> dishViews;
         private BindingListEx<DishRecipeView> dishRecipeViews;
@@ -119,6 +131,7 @@ namespace PovarCRM.UIcontrollers
         private UnitOfWork unit;
         private OrderCheck newOrderCheck;
 
+        public event UpdateState ObserverStateUpdated;
     }
 
 }

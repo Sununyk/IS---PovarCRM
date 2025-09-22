@@ -30,17 +30,17 @@ public partial class Item : IIdentityEntity, ICopyable<Item>, ICloneable
         OrderCheckId = other.OrderCheckId;
         DishId = other.DishId;
         DishCount = other.DishCount;
-        Dish = other.Dish; // поверхностная копия ссылки
-        OrderCheck = other.OrderCheck; // поверхностная копия ссылки
+        //Dish = other.Dish; // поверхностная копия ссылки
+        //OrderCheck = other.OrderCheck; // поверхностная копия ссылки
     }
     public void Copy(Item other)
     {
         if (other == null) throw new ArgumentNullException(nameof(other));
-        orderCheckId = other.orderCheckId;
-        dishId = other.dishId;
+       // orderCheckId = other.orderCheckId;
+       // dishId = other.dishId;
         this.dishCount = other.dishCount;
 
-        //Dish = other.Dish; // поверхностная копия ссылки
+       // Dish = other.Dish; // поверхностная копия ссылки
         //OrderCheck = other.OrderCheck; // поверхностная копия ссылки
     }
 
