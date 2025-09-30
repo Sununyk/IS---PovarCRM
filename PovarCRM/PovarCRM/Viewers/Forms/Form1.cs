@@ -1,9 +1,12 @@
 using System.ComponentModel;
+using System.Reflection.Metadata.Ecma335;
 using System.Windows.Forms;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using PovarCRM.Models;
 using PovarCRM.UIcontrollers;
 using PovarCRM.Viewers;
+using PovarCRM.Viewers.Forms;
 using PovarCRM.Viewers.UserControlls;
 
 namespace PovarCRM
@@ -14,6 +17,9 @@ namespace PovarCRM
         CheckListViewController checkListController;
         ServingOrdersController servingOrdersController1;
         DishMenuController dishMenuController1;
+
+        String userName = "NoName";
+        String userRole = "NoStatus";
 
         public Form1(CheckListViewController checkListController)
         {
@@ -42,6 +48,22 @@ namespace PovarCRM
             dishMenu1.InitDependecies(dishMenuController1);
 
 
+            //DishProduct Part
+            DishProductController dishProductController = new DishProductController();
+            dishProductView1.InitDependency(dishProductController);
+
+            using (var context = new PovarDbContext())
+            {
+                this.user = context.Users
+                       .Include(u => u.Role)                       // Загружаем роль
+                           .ThenInclude(r => r.RolePermissions)   // Загружаем права роли
+                       .FirstOrDefault(u => u.UserName == "NoName")
+                       ?? throw new Exception();
+            }
+
+            UserName.Text = userName;
+            Role.Text = userRole;
+
         }
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -50,7 +72,23 @@ namespace PovarCRM
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            using (var loginForm = new LoginForm())
+            {
+                if (loginForm.ShowDialog() == DialogResult.OK)
+                {
+                    if (loginForm.IsLogin && loginForm.User != null)
+                    {
+                        this.user = loginForm.User ?? new User();
+                        this.UserName.Text = this.user.UserName;
+                        this.Role.Text = this.user.Role.RoleName;
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
 
+            }
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -346,16 +384,76 @@ namespace PovarCRM
 
         }
 
+        private bool OnPermissionChecking(String permissionName)
+        {
+            if (this.user == null || this.user.Role.RolePermissions.Count == 0)
+                return false;
+            using (var context = new PovarDbContext())
+            {
+                var roles = context.Set<Role>().ToList();
+                if (!this.user.Role.RolePermissions.Any(rp => rp.Permission == permissionName))
+                {
+                    MessageBox.Show("У вас нет прав для просмотра этой страницы.", "Доступ запрещён", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+            }
+            return true;
+        }
         private void mainTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (mainTabControl.SelectedTab.Name != "FinanceAnalyz")
+            {
+                if (!OnPermissionChecking(mainTabControl.SelectedTab.Name))
+                {
+                    mainTabControl.SelectedTab = mainTabControl.TabPages[0];
+                    return;
+                }
+            }
 
             if (mainTabControl.SelectedTab.Text == "Serving orders")
                 this.servingOrdersController1?.onUpdateState();
+
+
 
         }
 
         private void tabPage3_Click(object sender, EventArgs e)
         {
+        }
+
+        private void splitContainer4_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label12_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dishMenu1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserName_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

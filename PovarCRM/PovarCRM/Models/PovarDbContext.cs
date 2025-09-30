@@ -43,16 +43,16 @@ public partial class PovarDbContext : DbContext
     public PovarDbContext(DbContextOptions<PovarDbContext> options, DbMode mode)
         : base(options)
     {
-        if(mode == DbMode.DataBaseOn)
+        if (mode == DbMode.DataBaseOn)
             connectionString = ConfigurationManager.ConnectionStrings["PovarDbContext"].ConnectionString;
-        else if(mode == DbMode.DataBaseOff)
+        else if (mode == DbMode.DataBaseOff)
         {
             connectionString = "DataSource=:memory:";
             this._mode = mode;
         }
-            
+
     }
-    
+
     public virtual DbSet<Dish> Dishes { get; set; }
 
     public virtual DbSet<DishType> DishTypes { get; set; }
@@ -68,6 +68,9 @@ public partial class PovarDbContext : DbContext
     public string connectionString;
     private readonly DbMode _mode = DbMode.DataBaseOn;
 
+    public DbSet<User> Users => Set<User>();
+    public DbSet<Role> Roles => Set<Role>();
+    public DbSet<RolePermission> RolePermissions => Set<RolePermission>();
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -75,13 +78,28 @@ public partial class PovarDbContext : DbContext
         {
             optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["PovarDbContext"].ConnectionString);
         }
-        else if(this._mode == DbMode.DataBaseOff)
+        else if (this._mode == DbMode.DataBaseOff)
         {
             optionsBuilder.UseInMemoryDatabase(this.connectionString);
         }
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        // User -> Role 1:N
+        modelBuilder.Entity<User>()
+            .HasOne(u => u.Role)
+            .WithMany(r => r.Users)
+            .HasForeignKey(u => u.RoleId);
+
+        // RolePermission
+        modelBuilder.Entity<RolePermission>()
+            .HasKey(rp => new { rp.Id, rp.Permission }); // составной ключ RoleId + Permission
+
+        modelBuilder.Entity<RolePermission>()
+            .HasOne(rp => rp.Role)
+            .WithMany(r => r.RolePermissions)
+            .HasForeignKey(rp => rp.Id);
+
         modelBuilder.Entity<Dish>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Dish__3214EC073FCC58D9");
@@ -203,8 +221,30 @@ public partial class PovarDbContext : DbContext
                 .IsUnicode(false);
         });
 
-        OnModelCreatingPartial(modelBuilder);
-    }
+        ////заполняем мастера
+        
+        //// --- Role Master ---
+        //modelBuilder.Entity<Role>().HasData(new Role
+        //{
+        //    Id = 1,
+        //    RoleName = "Master"
+        //});
 
+        //// --- User Sany ---
+        //modelBuilder.Entity<User>().HasData(new User
+        //{
+        //    Id = 1,
+        //    UserName = "Sany",
+        //    RoleId = 1
+        //});
+
+        //// --- Permissions for Master ---
+        //modelBuilder.Entity<RolePermission>().HasData(
+        //    new RolePermission { Id = 1, Permission = "DishProductConstructor" },
+        //    new RolePermission { Id = 1, Permission = "ServingOrders" },
+        //    new RolePermission { Id = 1, Permission = "MenuConstructor" }
+        //);
+    }
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
+

@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.Eventing.Reader;
+using System.Runtime.CompilerServices;
 using Microsoft.EntityFrameworkCore;
 using PovarCRM.Models.Interfaces;
 using PovarCRM.Repositories.Interfaces;
@@ -22,63 +23,11 @@ namespace PovarCRM.Repositories.Abstracts
         public virtual void AddRange(IEnumerable<T> entities)
         {
             Console.WriteLine(entities);
-
-            //if (entities is IEnumerable<ISingleIdentityEntity> listEntity)
-            //{
             foreach (var entity in entities)
                 this.Add(entity);
 
-                //{
-                    //if (this.GetByID(entity.Id) != null)
-                    //    Update((T)entity);
-                    //else
-                    //    DbContext.Set<T>().Add((T)entity);
-              //  }
-            //}
-            //else if (entities is IEnumerable<IIdentityEntity> list)
-            //{
-            //    foreach (var entity in list)
-            //    {
-            //        if (this.GetByID(entity.Id) != null)
-            //            Update((T)entity);
-            //        else
-            //            DbContext.Set<T>().Add((T)entity);
-            //    }
-            //}
-            //DbContext.SaveChanges();
-
         }
-        //public int[] Add(T obj)
-        //{
-        //    T entity = (T)obj.Clone();
-        //    if (entity is ISingleIdentityEntity singleEntity)
-        //    {
-        //        var existing = this.GetByID(singleEntity.Id);
-        //        if (existing != null)
-        //            Update(entity);
-        //        else
-        //        {
-        //            DbContext.Set<T>().Add(entity);
-        //            DbContext.SaveChanges();
-        //        }
-        //        return new int[1] { singleEntity.Id };
-        //    }
-        //    else if (entity is IIdentityEntity identityEntity)
-        //    {
-        //        var existing = this.GetByID(identityEntity.Id);
-        //        if (existing != null)
-        //            Update(entity);
-        //        else
-        //        {
-        //            DbContext.Set<T>().Add(entity);
-        //            DbContext.SaveChanges();
-        //        }
-        //        return identityEntity.Id;
 
-        //    }
-        //    return null;
-
-        //}
         public T Add(T obj)
         {
             if (obj is not T ob)
@@ -93,6 +42,7 @@ namespace PovarCRM.Repositories.Abstracts
                     Update(entity);
                 else
                 {
+                    singleEntity.Id = default(int);
                     DbContext.Set<T>().Add(entity);
                     DbContext.SaveChanges();
                 }
@@ -104,7 +54,7 @@ namespace PovarCRM.Repositories.Abstracts
                     Update(entity);
                 else
                 {
-
+                    
                     DbContext.Set<T>().Add(entity);
                     DbContext.SaveChanges();
                 }
@@ -156,19 +106,7 @@ namespace PovarCRM.Repositories.Abstracts
             return a;
         }
 
-        //public virtual T Insert(T obj)
-        //{
-        //    DbContext.Set<T>().Add(obj);
-        //    DbContext.SaveChanges();
-        //    return obj;
-        //}
-        //public virtual void Insert(params T[] objs)
-        //{
-        //    foreach (T item in objs)
-        //        DbContext.Set<T>().Add(item);
-        //    DbContext.SaveChanges();
-        //    return;
-        //}
+
 
         public virtual void Update(T obj)
         {
@@ -176,21 +114,11 @@ namespace PovarCRM.Repositories.Abstracts
             T item = GetByID(Find(obj));
             if (item == null)
                 return;
-            //if(DbContext.Entry(item).State != EntityState.Detached)
-            //{
-            //    var i = DbContext.Entry(item).State;
-            //}
-            //else
-            //{
-
-            //}
 
             item.Copy(obj);
+            //DbContext.Update(clone);
             DbContext.SaveChanges();
 
-            //var j = DbContext.Entry(item).State;
-            //z = DbContext.Entry(obj).State;
-           // DbContext.SaveChanges();
         }
         public virtual void Update(params T[] objs)
         {
@@ -232,63 +160,8 @@ namespace PovarCRM.Repositories.Abstracts
                 {
                     return false;
                 }
-
-            //if (objs.First() is IIdentityEntity)
-            //{
-            //    IIdentityEntity[] composEntities = (IIdentityEntity[])objs;
-            //    foreach (IIdentityEntity item in composEntities)
-            //    {
-            //        flag = DbContext.Remove(;
-            //        if (!flag)
-            //            break;
-            //    }
-
-            //}
-            //else if(objs.First() is ISingleIdentityEntity)
-            //{
-            //    ISingleIdentityEntity[] composEntities = (ISingleIdentityEntity[])objs;
-            //    foreach (ISingleIdentityEntity item in composEntities)
-            //    {
-            //        flag = this.Delete(item.Id);
-            //        if (!flag)
-            //            break;
-            //    }
-            //}
-            //else
-            //{
-            //    throw new Exception();
-            //}
-
             return true;
         }
-        //public virtual bool Delete(int objID)
-        //{
-        //    T? obj = GetByID(objID);
-        //    if (obj == null) {
-        //        DbContext.SaveChanges();
-        //        return false;
-        //    }else{
-        //        DbContext.Set<T>().Remove(obj);
-        //        DbContext.SaveChanges();
-        //        return true;
-        //    }
-        //}
-
-        //public bool Delete(int[] ids)
-        //{
-        //    T? obj = GetByID(ids);
-        //    if (obj == null)
-        //    {
-        //        DbContext.SaveChanges();
-        //        return false;
-        //    }
-        //    else
-        //    {
-        //        DbContext.Set<T>().Remove(obj);
-        //        DbContext.SaveChanges();
-        //        return true;
-        //    }
-        //}
         public virtual int[]? Find(T entity)
         {
             if (entity is ISingleIdentityEntity singleEntity)
@@ -310,9 +183,12 @@ namespace PovarCRM.Repositories.Abstracts
             throw new Exception();
         }
 
-        //public virtual IEnumerable<T> GetCollection()
-        //{
-        //    return this.DbContext.Set<T>().ToList();
-        //}
+        public void Clear()
+        {
+            foreach(T item in DbContext.Set<T>())
+            {
+                this.Delete(item);
+            }
+        }
     }
 }

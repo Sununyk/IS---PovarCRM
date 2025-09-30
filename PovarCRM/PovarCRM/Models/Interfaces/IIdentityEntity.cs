@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -12,14 +14,5 @@ namespace PovarCRM.Models.Interfaces
     {
         int[] Id { get; }
 
-        //public bool Validate() {
-        //{
-        //        for (int i = 0; i < Id.Length; i++)
-        //        {
-        //            if(Id[i] <= 0)
-        //                return false;
-        //        }
-        //        return true;
-        //}
     }
 }

@@ -18,16 +18,27 @@ namespace PovarCRM.Viewers.Forms
             DishType dishType = unit.DishTypes.GetCollection().ToList().
                 Where(dishType => dishType.Naming == comboBox1.Text).FirstOrDefault();
 
-            this.listDishes.Add(
-                new Dish
-                {
-                    Naming = textBox1.Text,
-                    DishTypeId = dishType.Id,
-                    Markup = (float)numericUpDown1.Value
-                });
+            this.creatingDish = new Dish
+            {
+                Naming = textBox1.Text,
+                DishTypeId = dishType.Id,
+                Markup = (float)numericUpDown1.Value
+            };
 
+            this.listDishes.Insert(0, this.creatingDish);
 
             isCompleted = true;
+        }
+        protected override void OnClosed(EventArgs e)
+        {
+            if (!isCompleted)
+            {
+                if (this.creatingDish != null)
+                {
+                    this.listDishes.Remove(this.creatingDish);
+                }
+            }
+            base.OnClosed(e);
         }
         /// <summary>
         /// Clean up any resources being used.

@@ -15,22 +15,27 @@ using PovarCRM.UIcontrollers.UImembers;
 
 namespace PovarCRM.UIelements
 {
-    class BoolBox
-    {
-        public bool Value { get; set; }
-    }
 
     //Кастомный БиндингЛист с возможностью отключения обновлений
     public class BindingListEx<T> : BindingList<T>, IUpdateObserver where T : class, ICloneable, ICopyable<T>
     {
+
         public delegate void ItemChanged(object sender, T oldItem, T newItem, ChangeNewOnOldItemCommand<T> historyCommand);
         public delegate void FilterChanged(object sender, ICommand viewCommand, Func<T, bool> filter);
-        
+        public delegate void ItemEvent(object sender, T deletedItem);
+        public delegate void Notify(object sender);
+
+        public event Notify SaveChangedData;
+        public event ItemEvent ItemSelected;
+        public event ItemEvent ItemDeleted;
         public event CommandEventHandler CommandReadyToExec; 
         public event ItemChanged ListItemChanged;
         public event UpdateState ObserverStateUpdated;
+        public BindingListEx(bool flagToSaveNotify = false) : base()
+        {
+            this.flagToSaveNotify = flagToSaveNotify;
+        }
 
-        public BindingListEx() : base() { }
         public BindingListEx(IEnumerable<T> collection) : base(new List<T>(collection))
         {
             allItems = new List<T>(collection);
@@ -44,6 +49,8 @@ namespace PovarCRM.UIelements
         }
         public void ResetFilter()
         {
+            if(currentFilter == null)
+                currentFilter = (x) => { return true; };
             SuspendNotifications();
             base.ClearItems();
 
@@ -58,27 +65,48 @@ namespace PovarCRM.UIelements
         }
         protected override void InsertItem(int index, T item)
         {
-            if (!allItems.Any(x => x.Equals(item)))
+            if (!allItems.Any(x => { 
+                if(x is IIdentityEntity entity)
+                    return entity.Id == ((IIdentityEntity)item).Id;
+                else if(x is ISingleIdentityEntity sEntity)
+                {
+                    return sEntity.Id == ((ISingleIdentityEntity)item).Id;
+                }
+                else
+                {
+                    return x.Equals(item);
+                }
+             }))
                 allItems.Add(item);
 
-            if (currentFilter == null || currentFilter(item))
+            if ((currentFilter == null || currentFilter(item)) &&
+                !base.Items.Contains(item))
+            {
                 base.InsertItem(index, item);
+            }
         }
-
+        public void RemoveItemByObject(T item)
+        {
+            allItems.Remove(item);
+            if (currentFilter == null || currentFilter(item))
+            {
+                int index = base.IndexOf(item);
+                if (index >= 0)
+                    base.RemoveItem(index);
+            }
+            ItemDeleted?.Invoke(this, item);
+        }
         protected override void RemoveItem(int index)
         {
+            if (index < 0 || index >= base.Count)
+                return; // безопасно
+
             var item = this[index];
             allItems.Remove(item);
             base.RemoveItem(index);
         }
-        //protected override object AddNewCore()
-        //{
-        //    T newItem = (T)Activator.CreateInstance(typeof(T));
-        //    InsertItem(0, newItem);
-        //    OnListChanged(new ListChangedEventArgs(ListChangedType.ItemAdded, 0));
 
-        //    return newItem;
-        //}
+
         public int GetOldItemIndex()
         {
             return changedItem.oldItemIndex;
@@ -122,7 +150,6 @@ namespace PovarCRM.UIelements
                 ));
 
             }
- 
             base.OnListChanged(e);
                 
         }
@@ -137,11 +164,18 @@ namespace PovarCRM.UIelements
         }
         //событийная херня
         public void UpdateState()
-        {
+        { 
+             if(flagToSaveNotify)
+                this.SaveChangedData?.Invoke(this);
+
+        
             this.ObserverStateUpdated?.Invoke();
         }
         public void onUpdateState()
         {
+            if(flagToSaveNotify)
+                this.SaveChangedData?.Invoke(this);
+
             UpdateState();
         }
         public void AddUpdateMember(IUpdateMember member)
@@ -153,7 +187,13 @@ namespace PovarCRM.UIelements
         //подписчик на DataGridView
         public void OnValueValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-            ChangedItem = (e.RowIndex, (T)this[e.RowIndex].Clone());      
+            try
+            {
+                ChangedItem = (e.RowIndex, (T)this[e.RowIndex].Clone());
+            }
+            catch (Exception ex) { 
+
+            }
         }
         //событийная вещь
         public (int oldItemIndex, T? item) ChangedItem { get; private set; }
@@ -162,6 +202,8 @@ namespace PovarCRM.UIelements
         private bool _suspend = false;
         //логика фильтрации
         private List<T> allItems = new List<T>();
+
+        private bool flagToSaveNotify = false;
         //фильтр
         public Func<T, bool>? CurrenFilter { get { return currentFilter; } set { currentFilter = value; } }
         private Func<T, bool>? currentFilter = (T t) => { return true; };

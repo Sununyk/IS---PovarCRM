@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using CommunityToolkit.Mvvm.ComponentModel;
 using PovarCRM.Models.Interfaces;
+using PovarCRM.Models.Views;
 
 namespace PovarCRM.Models;
 
@@ -14,6 +15,8 @@ public partial class DishProduct : ISingleIdentityEntity, ICopyable<DishProduct>
      string naming= null!;
     [ObservableProperty]
      decimal cost;
+    [ObservableProperty]
+    double weight = 1.0f;
     [ObservableProperty]
      int? unitId;
     public virtual Unit? Unit { get; set; }
@@ -40,6 +43,7 @@ public partial class DishProduct : ISingleIdentityEntity, ICopyable<DishProduct>
         naming = other.naming;
         cost = other.cost;
         unitId = other.unitId;
+        weight = other.weight;
         //Unit = other.Unit; // ссылка, глубокое копирование при необходимости
     }
 

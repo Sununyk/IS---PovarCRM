@@ -34,13 +34,16 @@ namespace PovarCRM
         /// </summary>
         private void InitializeComponent()
         {
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
             splitContainer1 = new SplitContainer();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            FinanceAnalyz = new Button();
-            button2 = new Button();
-            button4 = new Button();
+            label12 = new Label();
+            tableLayoutPanel4 = new TableLayoutPanel();
+            pictureBox1 = new PictureBox();
+            UserName = new Label();
+            Role = new Label();
+            label14 = new Label();
             mainTabControl = new TabControl();
-            tabPage1 = new TabPage();
+            FinanceAnalyz = new TabPage();
             checkBox2 = new CheckBox();
             checkBox1 = new CheckBox();
             textBox1 = new TextBox();
@@ -73,19 +76,21 @@ namespace PovarCRM
             label8 = new Label();
             label7 = new Label();
             dataGridView1 = new DataGridView();
-            tabPage2 = new TabPage();
+            MenuConstructor = new TabPage();
             dishMenu1 = new PovarCRM.Viewers.UserControlls.DishMenu();
-            tabPage3 = new TabPage();
-            tabPage4 = new TabPage();
+            DishProductsConstructor = new TabPage();
+            dishProductView1 = new PovarCRM.Viewers.UserControlls.DishProductView();
+            ServingOrders = new TabPage();
             servingOrdersViewer1 = new ServingOrdersViewer();
             label11 = new Label();
             ((ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
+            tableLayoutPanel4.SuspendLayout();
+            ((ISupportInitialize)pictureBox1).BeginInit();
             mainTabControl.SuspendLayout();
-            tabPage1.SuspendLayout();
+            FinanceAnalyz.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((ISupportInitialize)splitContainer2).BeginInit();
             splitContainer2.Panel1.SuspendLayout();
@@ -101,8 +106,9 @@ namespace PovarCRM
             ((ISupportInitialize)numericUpDown6).BeginInit();
             ((ISupportInitialize)numericUpDown5).BeginInit();
             ((ISupportInitialize)dataGridView1).BeginInit();
-            tabPage2.SuspendLayout();
-            tabPage4.SuspendLayout();
+            MenuConstructor.SuspendLayout();
+            DishProductsConstructor.SuspendLayout();
+            ServingOrders.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
@@ -113,7 +119,8 @@ namespace PovarCRM
             // 
             // splitContainer1.Panel1
             // 
-            splitContainer1.Panel1.Controls.Add(flowLayoutPanel1);
+            splitContainer1.Panel1.Controls.Add(label12);
+            splitContainer1.Panel1.Controls.Add(tableLayoutPanel4);
             splitContainer1.Panel1.Paint += splitContainer1_Panel1_Paint;
             // 
             // splitContainer1.Panel2
@@ -124,55 +131,85 @@ namespace PovarCRM
             splitContainer1.TabIndex = 0;
             splitContainer1.SplitterMoved += splitContainer1_SplitterMoved;
             // 
-            // flowLayoutPanel1
+            // label12
             // 
-            flowLayoutPanel1.Controls.Add(FinanceAnalyz);
-            flowLayoutPanel1.Controls.Add(button2);
-            flowLayoutPanel1.Controls.Add(button4);
-            flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.Location = new Point(0, 0);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Padding = new Padding(10, 10, 0, 0);
-            flowLayoutPanel1.Size = new Size(190, 765);
-            flowLayoutPanel1.TabIndex = 0;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
+            label12.AutoSize = true;
+            label12.Font = new Font("Arial Narrow", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label12.Location = new Point(46, 9);
+            label12.Name = "label12";
+            label12.Size = new Size(97, 33);
+            label12.TabIndex = 4;
+            label12.Text = "Welcom";
             // 
-            // FinanceAnalyz
+            // tableLayoutPanel4
             // 
-            FinanceAnalyz.Location = new Point(13, 13);
-            FinanceAnalyz.Name = "FinanceAnalyz";
-            FinanceAnalyz.Size = new Size(152, 29);
-            FinanceAnalyz.TabIndex = 1;
-            FinanceAnalyz.Text = "FinanceAnalyz";
-            FinanceAnalyz.UseVisualStyleBackColor = true;
-            FinanceAnalyz.Click += button2_Click;
+            tableLayoutPanel4.ColumnCount = 2;
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 36.95652F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 63.04348F));
+            tableLayoutPanel4.Controls.Add(pictureBox1, 0, 0);
+            tableLayoutPanel4.Controls.Add(UserName, 1, 0);
+            tableLayoutPanel4.Controls.Add(Role, 1, 1);
+            tableLayoutPanel4.Controls.Add(label14, 0, 1);
+            tableLayoutPanel4.Location = new Point(4, 79);
+            tableLayoutPanel4.Name = "tableLayoutPanel4";
+            tableLayoutPanel4.RowCount = 2;
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.Size = new Size(184, 127);
+            tableLayoutPanel4.TabIndex = 3;
             // 
-            // button2
+            // pictureBox1
             // 
-            button2.Location = new Point(13, 48);
-            button2.Name = "button2";
-            button2.Size = new Size(152, 29);
-            button2.TabIndex = 3;
-            button2.Text = "Menu Control";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click_1;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Padding = new Padding(5);
+            pictureBox1.Size = new Size(58, 57);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
-            // button4
+            // UserName
             // 
-            button4.Location = new Point(13, 83);
-            button4.Name = "button4";
-            button4.Size = new Size(152, 29);
-            button4.TabIndex = 4;
-            button4.Text = "Workers";
-            button4.UseVisualStyleBackColor = true;
+            UserName.AutoSize = true;
+            UserName.Dock = DockStyle.Fill;
+            UserName.Location = new Point(70, 0);
+            UserName.Name = "UserName";
+            UserName.Size = new Size(111, 63);
+            UserName.TabIndex = 1;
+            UserName.Text = "label13";
+            UserName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            UserName.Click += UserName_Click;
+            // 
+            // Role
+            // 
+            Role.AutoSize = true;
+            Role.Location = new Point(70, 63);
+            Role.Name = "Role";
+            Role.Size = new Size(58, 20);
+            Role.TabIndex = 3;
+            Role.Text = "label15";
+            Role.Click += label15_Click;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Dock = DockStyle.Fill;
+            label14.Location = new Point(3, 63);
+            label14.Name = "label14";
+            label14.Size = new Size(61, 64);
+            label14.TabIndex = 2;
+            label14.Text = "Status:";
+            label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            label14.Click += label14_Click;
             // 
             // mainTabControl
             // 
-            mainTabControl.Controls.Add(tabPage1);
-            mainTabControl.Controls.Add(tabPage2);
-            mainTabControl.Controls.Add(tabPage3);
-            mainTabControl.Controls.Add(tabPage4);
+            mainTabControl.Controls.Add(FinanceAnalyz);
+            mainTabControl.Controls.Add(MenuConstructor);
+            mainTabControl.Controls.Add(DishProductsConstructor);
+            mainTabControl.Controls.Add(ServingOrders);
             mainTabControl.Dock = DockStyle.Fill;
             mainTabControl.Location = new Point(0, 0);
             mainTabControl.Name = "mainTabControl";
@@ -182,25 +219,25 @@ namespace PovarCRM
             mainTabControl.SelectedIndexChanged += mainTabControl_SelectedIndexChanged;
             mainTabControl.Selected += mainTabControl_Selected;
             // 
-            // tabPage1
+            // FinanceAnalyz
             // 
-            tabPage1.Controls.Add(checkBox2);
-            tabPage1.Controls.Add(checkBox1);
-            tabPage1.Controls.Add(textBox1);
-            tabPage1.Controls.Add(tableLayoutPanel1);
-            tabPage1.Controls.Add(numericUpDown7);
-            tabPage1.Controls.Add(tableLayoutPanel2);
-            tabPage1.Controls.Add(label8);
-            tabPage1.Controls.Add(label7);
-            tabPage1.Controls.Add(dataGridView1);
-            tabPage1.Location = new Point(4, 29);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1154, 732);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "FInanceAnalyz";
-            tabPage1.UseVisualStyleBackColor = true;
-            tabPage1.Click += tabPage1_Click;
+            FinanceAnalyz.Controls.Add(checkBox2);
+            FinanceAnalyz.Controls.Add(checkBox1);
+            FinanceAnalyz.Controls.Add(textBox1);
+            FinanceAnalyz.Controls.Add(tableLayoutPanel1);
+            FinanceAnalyz.Controls.Add(numericUpDown7);
+            FinanceAnalyz.Controls.Add(tableLayoutPanel2);
+            FinanceAnalyz.Controls.Add(label8);
+            FinanceAnalyz.Controls.Add(label7);
+            FinanceAnalyz.Controls.Add(dataGridView1);
+            FinanceAnalyz.Location = new Point(4, 29);
+            FinanceAnalyz.Name = "FinanceAnalyz";
+            FinanceAnalyz.Padding = new Padding(3);
+            FinanceAnalyz.Size = new Size(1154, 732);
+            FinanceAnalyz.TabIndex = 0;
+            FinanceAnalyz.Text = "FInanceAnalyz";
+            FinanceAnalyz.UseVisualStyleBackColor = true;
+            FinanceAnalyz.Click += tabPage1_Click;
             // 
             // checkBox2
             // 
@@ -601,17 +638,17 @@ namespace PovarCRM
             dataGridView1.TabIndex = 2;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // tabPage2
+            // MenuConstructor
             // 
-            tabPage2.Controls.Add(dishMenu1);
-            tabPage2.Location = new Point(4, 29);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1154, 732);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Menu constructor";
-            tabPage2.UseVisualStyleBackColor = true;
-            tabPage2.Click += tabPage2_Click;
+            MenuConstructor.Controls.Add(dishMenu1);
+            MenuConstructor.Location = new Point(4, 29);
+            MenuConstructor.Name = "MenuConstructor";
+            MenuConstructor.Padding = new Padding(3);
+            MenuConstructor.Size = new Size(1154, 732);
+            MenuConstructor.TabIndex = 1;
+            MenuConstructor.Text = "Menu constructor";
+            MenuConstructor.UseVisualStyleBackColor = true;
+            MenuConstructor.Click += tabPage2_Click;
             // 
             // dishMenu1
             // 
@@ -620,29 +657,39 @@ namespace PovarCRM
             dishMenu1.Name = "dishMenu1";
             dishMenu1.Size = new Size(1148, 726);
             dishMenu1.TabIndex = 0;
+            dishMenu1.Load += dishMenu1_Load;
             // 
-            // tabPage3
+            // DishProductsConstructor
             // 
-            tabPage3.Location = new Point(4, 29);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1154, 732);
-            tabPage3.TabIndex = 2;
-            tabPage3.Text = "Workers";
-            tabPage3.UseVisualStyleBackColor = true;
-            tabPage3.Click += tabPage3_Click;
+            DishProductsConstructor.Controls.Add(dishProductView1);
+            DishProductsConstructor.Location = new Point(4, 29);
+            DishProductsConstructor.Name = "DishProductsConstructor";
+            DishProductsConstructor.Size = new Size(1154, 732);
+            DishProductsConstructor.TabIndex = 2;
+            DishProductsConstructor.Text = "DishProducts";
+            DishProductsConstructor.UseVisualStyleBackColor = true;
+            DishProductsConstructor.Click += tabPage3_Click;
             // 
-            // tabPage4
+            // dishProductView1
             // 
-            tabPage4.Controls.Add(servingOrdersViewer1);
-            tabPage4.Controls.Add(label11);
-            tabPage4.Location = new Point(4, 29);
-            tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(1154, 732);
-            tabPage4.TabIndex = 3;
-            tabPage4.Text = "Serving orders";
-            tabPage4.UseVisualStyleBackColor = true;
-            tabPage4.Click += tabPage4_Click;
-            tabPage4.Enter += tabPage4_Enter;
+            dishProductView1.Dock = DockStyle.Fill;
+            dishProductView1.Location = new Point(0, 0);
+            dishProductView1.Name = "dishProductView1";
+            dishProductView1.Size = new Size(1154, 732);
+            dishProductView1.TabIndex = 0;
+            // 
+            // ServingOrders
+            // 
+            ServingOrders.Controls.Add(servingOrdersViewer1);
+            ServingOrders.Controls.Add(label11);
+            ServingOrders.Location = new Point(4, 29);
+            ServingOrders.Name = "ServingOrders";
+            ServingOrders.Size = new Size(1154, 732);
+            ServingOrders.TabIndex = 3;
+            ServingOrders.Text = "Serving orders";
+            ServingOrders.UseVisualStyleBackColor = true;
+            ServingOrders.Click += tabPage4_Click;
+            ServingOrders.Enter += tabPage4_Enter;
             // 
             // servingOrdersViewer1
             // 
@@ -673,13 +720,16 @@ namespace PovarCRM
             Text = "Form1";
             Load += Form1_Load;
             splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
             ((ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
-            flowLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel4.ResumeLayout(false);
+            tableLayoutPanel4.PerformLayout();
+            ((ISupportInitialize)pictureBox1).EndInit();
             mainTabControl.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
+            FinanceAnalyz.ResumeLayout(false);
+            FinanceAnalyz.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             splitContainer2.Panel1.ResumeLayout(false);
@@ -698,23 +748,22 @@ namespace PovarCRM
             ((ISupportInitialize)numericUpDown6).EndInit();
             ((ISupportInitialize)numericUpDown5).EndInit();
             ((ISupportInitialize)dataGridView1).EndInit();
-            tabPage2.ResumeLayout(false);
-            tabPage4.ResumeLayout(false);
-            tabPage4.PerformLayout();
+            MenuConstructor.ResumeLayout(false);
+            DishProductsConstructor.ResumeLayout(false);
+            ServingOrders.ResumeLayout(false);
+            ServingOrders.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
+        private User user;
+
         private SplitContainer splitContainer1;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private Button FinanceAnalyz;
-        private Button button2;
-        private Button button4;
         public TabControl mainTabControl;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
-        private TabPage tabPage3;
+        private TabPage FinanceAnalyz;
+        private TabPage MenuConstructor;
+        private TabPage DishProductsConstructor;
         private DataGridView dataGridView1;
         private DateTimePicker dateTimePicker2;
         private DateTimePicker dateTimePicker1;
@@ -747,9 +796,16 @@ namespace PovarCRM
         private Label Choise_items;
         private SplitContainer splitContainer2;
         private Button button1;
-        private TabPage tabPage4;
+        private TabPage ServingOrders;
         private Label label11;
         private ServingOrdersViewer servingOrdersViewer1;
         private Viewers.UserControlls.DishMenu dishMenu1;
+        private Viewers.UserControlls.DishProductView dishProductView1;
+        private Label UserName;
+        private Label label14;
+        private PictureBox pictureBox1;
+        private TableLayoutPanel tableLayoutPanel4;
+        private Label Role;
+        private Label label12;
     }
 }

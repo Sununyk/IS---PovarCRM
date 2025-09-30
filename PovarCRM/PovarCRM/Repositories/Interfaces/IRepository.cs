@@ -17,6 +17,7 @@ namespace PovarCRM.Repositories.Interfaces
         T Add(T entity);
         bool Delete(params T[] objs);
         bool Delete(T obj);
+        int[]? Find(T entity);
         //bool Delete(int[] ids);
         //void Update(T obj);
         //void Update(params T[] objs);

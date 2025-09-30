@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +16,10 @@ using PovarCRM.Repositories.CommandsLogic;
 using PovarCRM.UIcontrollers;
 using PovarCRM.UIcontrollers.UImembers;
 using PovarCRM.Viewers.Forms;
+using QuestPDF.Fluent;
+using QuestPDF.Helpers;
+using System.IO;
+using System.Diagnostics;
 
 namespace PovarCRM.Viewers
 {
@@ -24,7 +29,7 @@ namespace PovarCRM.Viewers
         {
             InitializeComponent();
 
-            
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -76,7 +81,8 @@ namespace PovarCRM.Viewers
 
             using (var form = new ConfirmAndInputForm())
             {
-                form.KeyDown += (object obj, KeyEventArgs args) => {
+                form.KeyDown += (object obj, KeyEventArgs args) =>
+                {
                     if (args.KeyCode == Keys.Enter) clientName = form.ClientNaming;
                 };
                 if (form.ShowDialog() == DialogResult.OK)
@@ -104,7 +110,7 @@ namespace PovarCRM.Viewers
 
             if (!controller.OrderComplete)
                 this.controller.Unit.OrderChecks.Delete(this.controller.Unit.OrderChecks.GetByID(newOrderId));
-            this.controller.Unit.Save(); 
+            this.controller.Unit.Save();
         }
         //private void button1_Click_1(object sender, EventArgs e)
         //{
@@ -175,6 +181,25 @@ namespace PovarCRM.Viewers
                 itemsTable.Columns["DishWeight"].DefaultCellStyle.Format = "0\" грамм\"";
             }
             catch (Exception ex) { }
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            if(this.ordersTable.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Выберите заказ для печати");
+                return;
+            }
+            int orderId = (int)this.ordersTable.SelectedRows[0].Cells[0].Value;
+
+            String tempPdfPath = this.controller.CreatOrderPDF();
+
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = tempPdfPath,
+                UseShellExecute = true  // ключевой момент!
+            });
+
         }
     }
 }

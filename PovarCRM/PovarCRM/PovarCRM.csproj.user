@@ -19,6 +19,9 @@
     <Compile Update="Viewers\Forms\ConfirmationForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Viewers\Forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Viewers\Forms\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -26,6 +29,9 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Viewers\UserControlls\DishMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Viewers\UserControlls\DishProductView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Viewers\UserControlls\OrderConstructorViewer.cs">

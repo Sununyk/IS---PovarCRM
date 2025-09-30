@@ -11,6 +11,7 @@ using PovarCRM.Models;
 using PovarCRM.Models.Views;
 using PovarCRM.Repositories;
 using PovarCRM.UIcontrollers;
+using PovarCRM.UIelements;
 using PovarCRM.Viewers.Forms;
 
 namespace PovarCRM.Viewers.UserControlls
@@ -140,10 +141,17 @@ namespace PovarCRM.Viewers.UserControlls
             {
             }
             flag = yesno.YesOrNo ?? false;
-            if (dishTable.SelectedRows.Count > 0 && flag)
+            if (flag && dishTable.SelectedRows.Count > 0)
             {
-                this.controller.Unit.Dishes.Delete((int)dishTable.SelectedRows[0].Cells[0].Value);
-                this.controller.UpdateState();
+                var row = dishTable.SelectedRows[0];
+
+                // Получаем объект из BindingListEx (видимая коллекция)
+                Dish item = row.DataBoundItem as Dish;
+                if (item != null)
+                {
+                    // Удаляем объект из BindingListEx
+                    dishList.RemoveItemByObject(item);
+                }
             }
             else
             {
@@ -167,6 +175,7 @@ namespace PovarCRM.Viewers.UserControlls
                 if (id > -1)
                 {
                     this.controller.UpdateRecipes(id);
+                    
                     this.button3.Enabled = true;
                     this.button2.Enabled = true;
                 }
@@ -191,17 +200,37 @@ namespace PovarCRM.Viewers.UserControlls
             DishCreator dishCreator = new DishCreator(this.controller.Unit, controller.initDishes(), controller.initDishTypeList());
 
             dishCreator.ShowDialog();
-
-            this.controller.UpdateState();
+            if (!dishCreator.isCompleted)
+                return;
 
             using (var menu = new DishConstructor())
             {
-                var controller = this.controller.BuildDishConstructorConstroller();
+                var controller = this.controller.BuildDishConstructorConstrollerOnCreat();
                 controller.AddUpdateMember(this.controller);
 
                 menu.InitDependencies(controller);
-                menu.ShowDialog();
 
+
+                this.controller.SelectNewDish();
+                dishTable.ClearSelection();
+                if(dishTable.Rows.Count <= 0)
+                {
+                    MessageBox.Show("Создаваемое блюдо не входит в данный раздел");
+                    this.controller.DeniedDishCreating();
+                    return;
+                }
+
+                dishTable.Rows[0].Selected = true;
+
+                menu.ShowDialog();
+                if(menu.IsCompleted)
+                {
+                    this.controller.UpdateState();
+                }
+                else
+                {
+                    this.controller.DeniedDishCreating();
+                }
 
             }
 
@@ -212,7 +241,19 @@ namespace PovarCRM.Viewers.UserControlls
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            if(dishTable.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("No one selected Rows");
+                return;
+            }
+            else
+            {
+                using(var menu = new DishConstructor())
+                {
+                    menu.InitDependencies(this.controller.BuildDishConstructorConstrollerOnUpdate());
+                    menu.ShowDialog();
+                }
+            }
         }
 
         private void splitContainer5_SplitterMoved(object sender, SplitterEventArgs e)

@@ -80,6 +80,9 @@ namespace PovarCRM.Migrations
                     b.Property<int?>("UnitId")
                         .HasColumnType("int");
 
+                    b.Property<double>("Weight")
+                        .HasColumnType("float");
+
                     b.HasKey("Id")
                         .HasName("PK__DishProd__3214EC0793517D24");
 
@@ -178,6 +181,36 @@ namespace PovarCRM.Migrations
                     b.ToTable("Recipes");
                 });
 
+            modelBuilder.Entity("PovarCRM.Models.Role", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("RoleName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Roles");
+                });
+
+            modelBuilder.Entity("PovarCRM.Models.RolePermission", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Permission")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id", "Permission");
+
+                    b.ToTable("RolePermissions");
+                });
+
             modelBuilder.Entity("PovarCRM.Models.Unit", b =>
                 {
                     b.Property<int>("Id")
@@ -192,9 +225,6 @@ namespace PovarCRM.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(100)");
 
-                    b.Property<double>("Weight")
-                        .HasColumnType("float");
-
                     b.HasKey("Id")
                         .HasName("PK__Unit__3214EC07D9854487");
 
@@ -202,6 +232,36 @@ namespace PovarCRM.Migrations
                         .IsUnique();
 
                     b.ToTable("Unit", (string)null);
+                });
+
+            modelBuilder.Entity("PovarCRM.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("PovarCRM.Models.Views.DishExpensiveView", b =>
@@ -289,9 +349,38 @@ namespace PovarCRM.Migrations
                     b.Navigation("DishProduct");
                 });
 
+            modelBuilder.Entity("PovarCRM.Models.RolePermission", b =>
+                {
+                    b.HasOne("PovarCRM.Models.Role", "Role")
+                        .WithMany("RolePermissions")
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Role");
+                });
+
+            modelBuilder.Entity("PovarCRM.Models.User", b =>
+                {
+                    b.HasOne("PovarCRM.Models.Role", "Role")
+                        .WithMany("Users")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Role");
+                });
+
             modelBuilder.Entity("PovarCRM.Models.DishType", b =>
                 {
                     b.Navigation("Dishes");
+                });
+
+            modelBuilder.Entity("PovarCRM.Models.Role", b =>
+                {
+                    b.Navigation("RolePermissions");
+
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("PovarCRM.Models.Unit", b =>

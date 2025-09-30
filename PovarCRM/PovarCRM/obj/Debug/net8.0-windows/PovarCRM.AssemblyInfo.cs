@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PovarCRM")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e79f13ffbe8dc5b98a2f0baa8e66ad26f1e6550")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8dee5285265f1e7002b1dfc467da053dc831e40d")]
 [assembly: System.Reflection.AssemblyProductAttribute("PovarCRM")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PovarCRM")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

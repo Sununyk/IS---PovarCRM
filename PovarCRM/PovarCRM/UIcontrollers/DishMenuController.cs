@@ -17,6 +17,7 @@ namespace PovarCRM.UIcontrollers
     public class DishMenuController : IUpdateObserver
     {
         private int selectedDishId = -1;
+        private Dish selectedDish;
 
         UnitOfWork unit;
 
@@ -30,42 +31,61 @@ namespace PovarCRM.UIcontrollers
         {
             this.unit = new UnitOfWork();
 
-            dishes = new BindingListEx<Dish>();
+            dishes = new BindingListExUpCore<Dish>();
             recipes = new BindingListEx<DishRecipeView>();
 
             dishes.ListChanged += OnDishListChange;
+            dishes.ItemDeleted += (object obj, Dish item) => { DeleteDish(item); };
 
         }
-        public DishConstructorController BuildDishConstructorConstroller()
+        public DishConstructorController BuildDishConstructorConstrollerOnCreat()
         {
+            if (newDish == null)
+                return null;
             return new DishConstructorController(this.unit, this.newDish.Id);
         }
-
-        public void CreatDish(String dishNaming, Double moneyPercentage, int? dishTypeId)
+        public DishConstructorController BuildDishConstructorConstrollerOnUpdate()
         {
-            newDish = (new Dish
-            {
-                Naming = dishNaming,
-                Cost = 0,
-                DishTypeId = dishTypeId,
-                Weight = 0
-            });
-            newDish = unit.Dishes.Add(newDish);
-            DataExtractor.UpdateExistDishParam(newDish.Id, unit);
-            dishes.Add(newDish);
+            if (selectedDishId >= 0)
+                return new DishConstructorController(this.unit, this.selectedDish.Id);
+            return null;
         }
-        public void DeleteDish(Dish dish)
+        public void DeniedDishCreating()
+        {
+
+            if(this.DeleteDish(this.newDish))
+                newDish = null;
+
+            UpdateState();
+        }
+        public bool DeleteDish(Dish dish)
         {
             if (!DataExtractor.ValidateDish(dish, unit))
             {
-                unit.Recipes.Delete(newDish.Id);
-                newDish = null;
+                return unit.Dishes.Delete(dish.Id);
             }
+
+            return false;
         }
-        public void DeniedCreatDish()
+        public bool DeleteDish(int dishId)
         {
-            DeleteDish(newDish);
+            var dish = unit.Dishes.GetByID(dishId);
+            if (dish == null)
+            {
+                this.UpdateState();
+                return false;
+            }
+            if (!DataExtractor.ValidateDish(dish, unit))
+            {
+                return unit.Dishes.Delete(dish.Id);
+            }
+
+            return false;
         }
+        //public void DeniedCreatDish()
+        //{
+        //    DeleteDish(newDish);
+        //}
         public void OnDishListChange(object sender, ListChangedEventArgs args)
         {
             if (args.ListChangedType == ListChangedType.ItemAdded)
@@ -73,7 +93,6 @@ namespace PovarCRM.UIcontrollers
                 newDish = ((BindingListEx<Dish>)sender)[args.NewIndex];
         
                 this.newDish = unit.Dishes.Add(newDish);
-                unit.Save();
             }
         }
 
@@ -82,26 +101,30 @@ namespace PovarCRM.UIcontrollers
         {
             UpdateRecipes(dishId);
         }
+        public void SelectNewDish()
+        {
+            UpdateRecipes(this.newDish.Id);
+        }
         public void UpdateRecipes(int DishId)
         {
-            if (DishId == this.selectedDishId)
+            if (DishId <= 0)
                 return;
+
 
             recipes.Clear();
             recipes.AppendList(GetDishRecipeViews(DishId, unit));
 
             this.selectedDishId = DishId;
+            this.selectedDish = unit.Dishes.GetByID(DishId);
         }
         public void onUpdateState()
         {
-            dishes.Clear();
-            dishes.AppendList(GetDishes(unit));
-
             if (selectedDishId < 0)
                 return;
 
             recipes.Clear();
             recipes.AppendList(GetDishRecipeViews(this.selectedDishId, unit));
+            
         }
 
        
@@ -125,7 +148,14 @@ namespace PovarCRM.UIcontrollers
 
         public void UpdateState()
         {
-            onUpdateState();
+            dishes.Clear();
+            dishes.AppendList(GetDishes(unit));
+
+            if (selectedDishId < 0)
+                return;
+
+            recipes.Clear();
+            recipes.AppendList(GetDishRecipeViews(this.selectedDishId, unit));
         }
 
         public void AddUpdateMember(IUpdateMember member)

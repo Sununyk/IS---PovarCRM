@@ -13,8 +13,8 @@ public partial class Unit : ISingleIdentityEntity, ICopyable<Unit>, ICloneable
     int id;
     [ObservableProperty]
     string naming = null!;
-    [ObservableProperty]
-    double weight = 1.0;//in gramm
+    //[ObservableProperty]
+    //double weight = 1.0;//in gramm
     public virtual ICollection<DishProduct> DishProducts { get; set; } = new List<DishProduct>();
 
     // Конструктор копирования
@@ -25,6 +25,7 @@ public partial class Unit : ISingleIdentityEntity, ICopyable<Unit>, ICloneable
 
         Id = other.Id;
         Naming = other.Naming;
+      //  Weight = other.Weight;
         // Поверхностная копия коллекции
        // DishProducts = new List<DishProduct>(other.DishProducts);
     }

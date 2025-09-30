@@ -54,6 +54,7 @@ namespace PovarCRM.Viewers.Forms
                 MessageBox.Show("This name yeat existing");
             }
         }
+        private Dish creatingDish;
         private BindingListEx<Dish>? listDishes = null;
         private List<DishType>? dishTypes = null;
     }

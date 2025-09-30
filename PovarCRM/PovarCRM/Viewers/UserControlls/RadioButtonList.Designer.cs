@@ -24,13 +24,14 @@ namespace PovarCRM.Viewers.UserControls
             }
             base.Dispose(disposing);
         }
-        
+
         #region Код, автоматически созданный конструктором компонентов
 
         /// <summary> 
         /// Требуемый метод для поддержки конструктора — не изменяйте 
         /// содержимое этого метода с помощью редактора кода.
         /// </summary>
+
         private void InitializeComponent()
         {
             checkedListBox1 = new CheckedListBox();

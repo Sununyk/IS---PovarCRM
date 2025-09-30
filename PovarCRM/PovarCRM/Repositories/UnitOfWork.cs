@@ -166,8 +166,10 @@ public class UnitOfWork : IDisposable
             return (IRepository<T>)this.OrderChecks;
         else if (typeof(T) == typeof(DishProduct))
             return (IRepository<T>)this.DishProducts;
+        else if (typeof(T) == typeof(Unit))
+            return (IRepository<T>)this.Units;
 
-        throw new NotSupportedException($"No repository found for type {typeof(T).Name}");
+            throw new NotSupportedException($"No repository found for type {typeof(T).Name}");
     }
 
     

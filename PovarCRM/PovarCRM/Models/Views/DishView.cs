@@ -48,35 +48,6 @@ namespace PovarCRM.Models.Views
             Count = source.Count;
         }
 
-        //public bool Picked
-        //{
-        //    get => picked;
-        //    set
-        //    {
-        //        if (picked != value)
-        //        {
-        //            picked = value;
-        //            OnPropertyChanged(nameof(Picked));
-        //        }
-        //    }
-        //}
-
-        //public int Count
-        //{
-        //    get => picked ? _count : 0;
-        //    set
-        //    {
-        //        if (_count != value)
-        //        {
-        //            if (picked)
-        //            {
-        //                _count = value;
-        //                if (_count == 0) Picked = false;
-        //                OnPropertyChanged(nameof(Count));
-        //            }
-        //        }
-        //    }
-        //}
 
         public override string ToString() => $"{Id} {Naming}";
 

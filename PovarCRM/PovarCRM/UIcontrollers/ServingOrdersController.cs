@@ -13,6 +13,9 @@ using PovarCRM.UIelements;
 using static PovarCRM.Repositories.DataExtractor;
 using PovarCRM.Repositories.CommandsLogic;
 using PovarCRM.Repositories;
+using QuestPDF.Fluent;
+using System.Configuration;
+using Microsoft.Web.WebView2.Core;
 
 namespace PovarCRM.UIcontrollers
 {
@@ -57,9 +60,12 @@ namespace PovarCRM.UIcontrollers
 
             this.selectedOrderId = orderCheckId;
         }
-        public void LoadDataSet()
+        public void PrintCheck(int orderCheckId)
         {
+            OrderCheck order = unit.OrderChecks.GetByID(orderCheckId);
+
         }
+
         public void onUpdateState()
         {
            
@@ -111,6 +117,20 @@ namespace PovarCRM.UIcontrollers
 
             return newOrder.Id;
         }
+        //return pdf path
+        public String CreatOrderPDF()
+        {
+            OrderCheck newOrder = unit.OrderChecks.GetByID(this.selectedOrderId);
+            var check = new Documents.OrderPDFComposer(
+                newOrder,
+                this.items.ToList()
+            );
+            String datatime = newOrder.OrderTime.ToString("yy-mm-dd");
+            String pdfPath = $"{ConfigurationManager.AppSettings["OrderCheckFolderPath"]}\\Order_{newOrder.Id}_{datatime}.pdf";
+            check.GeneratePdf(pdfPath);
+
+            return pdfPath;
+        }
         public void UpdateOrderCheck(int id)
         {
             DataExtractor.UpdateExistOrderCheckParam(id, unit);
@@ -130,16 +150,6 @@ namespace PovarCRM.UIcontrollers
         {
             throw new NotImplementedException();
         }
-        //private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    if (e.RowIndex >= 0)
-        //    {
-        //        // Получаем выбранную строку
-        //        DataGridViewRow row = _ordersTable.Rows[e.RowIndex];
-        //        _itemsAndProductsTable.DataSource = GetViewItemsByOrder((row.DataBoundItem as OrderCheck).Id);
-        //    }
-        //    return;
-        //}
 
 
     }

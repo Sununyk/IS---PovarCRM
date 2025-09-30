@@ -207,19 +207,6 @@ namespace PovarCRM.UIcontrollers
                 _clearButton.Visible = false;
         }
 
-        //public void AddAllFromListBoxToComboBox()
-        //{
-        //    _comboBoxCollection.AppendList(_listBoxCollection.ToList());
-        //    _listBoxCollection.Clear();
-        //    ItemsDeleted?.Invoke(this, _listBoxCollection.ToList<TypeOfSet>());
-
-        //    //this.ComboBoxInputer.Refresh();
-        //    //this.ListBoxContainer.Refresh();
-        //}
-        //private void onComboBoxIndexChanged(object sender, EventArgs e)
-        //{
-        //    this.AddFromComboBoxToListBox((TypeOfSet)this.ComboBoxInputer.SelectedItem);
-        //}
     }
 }
 

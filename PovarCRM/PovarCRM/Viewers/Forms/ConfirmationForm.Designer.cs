@@ -19,7 +19,7 @@
             }
             base.Dispose(disposing);
         }
-        public bool? YesOrNo {  get; set; }
+        public bool? YesOrNo { get; set; } = false;
 
         #region Windows Form Designer generated code
 

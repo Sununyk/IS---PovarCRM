@@ -8,6 +8,10 @@ using PovarCRM.Models.Views;
 using PovarCRM.Models;
 using PovarCRM.Migrations;
 using PovarCRM.Models.Interfaces;
+using QuestPDF.Infrastructure;
+using PovarCRM.Repositories.Abstracts;
+using System.Runtime.CompilerServices;
+using static QuestPDF.Helpers.Colors;
 
 namespace PovarCRM.Repositories
 {
@@ -57,7 +61,7 @@ namespace PovarCRM.Repositories
                     DishProductNaming = p.Naming,
                     CountOfUnits = r.CountOfUnits,
                     UnitNaming = u.Naming,
-                    Weight = r.CountOfUnits * (float)u.Weight
+                    //Weight = r.CountOfUnits * (float)u.Weight
                 }
             ).OrderBy(x => x.DishProductNaming));
             return recipeViewList;
@@ -283,20 +287,6 @@ namespace PovarCRM.Repositories
         {
             return unit.DishTypes.GetCollection().OrderBy(x => x.Naming).ToList();
         }
-
-        //static public Recipe ExtractFromRecipeView(DishRecipeView view, UnitOfWork unit)
-        //{
-        //    //int DishProdId = unit.DishProducts.GetCollection().ToList<DishProduct>().Find(x => {
-        //    //    if (x.Naming == view.DishProductNaming)
-        //    //        return true;
-        //    //    else
-        //    //        return false;
-        //    //    });
-        //    //if(DishProdId <= 0)
-        //    //    return null;
-
-            
-        //}
         //UPDATE PARAMETERS #################################################################################################
         static public Dish? UpdateExistDishParam(int DishId, UnitOfWork unit)
         {
@@ -320,7 +310,7 @@ namespace PovarCRM.Repositories
                               group new { i, j, u } by u.Naming into g
                               select new
                               {
-                                  Weight = g.Sum(x => x.i.CountOfUnits * x.u.Weight),
+                                  Weight = g.Sum(x => x.i.CountOfUnits * x.j.Weight),
                                   Total = g.Sum(x => (decimal)x.i.CountOfUnits * x.j.Cost)
                               }).ToList();
 
@@ -378,6 +368,31 @@ namespace PovarCRM.Repositories
 
             return true;
         }
+        public static bool ValidateEntity(object entity, UnitOfWork unit)
+        {
+            if(entity is DishProduct dishProduct)
+            {
+                return ValidateDishProduct(dishProduct, unit);
+            }else if(entity is Dish dish)
+            {
+                return ValidateDish(dish, unit);
+            }else if(entity is Recipe recipe)
+            {
+                return ValidateDishRecipe(recipe, unit);
+            }
+                return true;
+        }
+        public static bool ValidateDishProduct(DishProduct dishProduct, UnitOfWork unit)
+        {
+            if (dishProduct == null)
+                return false;
+
+            if (unit.DishProducts.GetCollection().FirstOrDefault(dp => dp.Naming == dishProduct.Naming) != null)
+                return false;
+            else
+                return true;
+        }
+
 
         public static bool ValidateDish(Dish dish, UnitOfWork unit)
         {
@@ -398,6 +413,82 @@ namespace PovarCRM.Repositories
 
             return true;
         }
+
+        public static List<DishProductView> GetDishViewProduct(UnitOfWork unit)
+        {
+            return ((
+                from dp in unit.DishProducts.GetCollection()
+                join u in unit.Units.GetCollection() on dp.UnitId equals u.Id
+                select new DishProductView { Cost = dp.Cost, UnitId = u.Id, UnitName = u.Naming, Id = dp.Id, Weight = dp.Weight, Naming = dp.Naming }
+            ).ToList());
+
+        }
+
+        public class Sync<T> where T : class, ICloneable, ICopyable<T>
+        {
+            public static List<T> SyncRepositoryes(List<T> tempData)
+            {
+                using (var unit = new UnitOfWork())
+                {
+                    DefaultRepository<T> rep = (DefaultRepository<T>)unit.GetRepository<T>();
+
+                    if (rep == null) throw new ArgumentNullException(nameof(rep));
+                    if (tempData == null) throw new ArgumentNullException(nameof(tempData));
+
+                    // Текущие элементы из репозитория
+                    var items = rep.GetCollection().ToList();
+
+                    // Добавление новых элементов
+                    for (int i = 0; i < tempData.Count(); i++)
+                    {
+                        if (unit.GetRepository<T>().Find(tempData[i]) == null && DataExtractor.ValidateEntity(tempData[i], unit))
+                        {
+                            //сразу обновляем
+                            tempData[i].Copy(rep.Add(tempData[i]));
+                        }
+                        else if (unit.GetRepository<T>().Find(tempData[i]) != null)
+                        {
+                            // Обновляем существующий элемент
+                            rep.Update(tempData[i]);
+                        }
+                    }
+                }
+                using (var unit = new UnitOfWork())
+                {
+                    DefaultRepository<T> rep = (DefaultRepository<T>)unit.GetRepository<T>();
+                    var toRemove = rep.GetCollection().ToList()
+                        .Where(existing =>
+                        {
+                            if (existing is IIdentityEntity identExisting)
+                            {
+                                return !tempData.Any(temp => temp is IIdentityEntity identTemp && (identTemp.Id == identExisting.Id || identTemp.Id == default));
+                            }
+                            else if (existing is ISingleIdentityEntity singleExisting)
+                            {
+                                return !tempData.Any(temp => temp is ISingleIdentityEntity singleTemp && (singleTemp.Id == singleExisting.Id || singleTemp.Id == 0));
+                            }
+                            return false;
+                        })
+                        .ToList();
+
+                    // Удаляем
+                    foreach (var item in toRemove)
+                    {
+                        rep.Delete(item);
+                    }
+
+                    // Удаление элементов, которых нет в tempData
+
+                    // Возвращаем актуальный список
+                    return rep.GetCollection().ToList();
+                }
+                    
+                
+            }
+        }
+
+
+
 
     }
 }

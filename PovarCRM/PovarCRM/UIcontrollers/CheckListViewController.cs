@@ -93,26 +93,6 @@ namespace PovarCRM.UIcontrollers
             OnFilterChanged();
         }
 
-        //public void UpdateListComboBox()
-        //{
-        //    using (var unitOfWork = new UnitOfWork())
-        //    {
-        //        this.filtDishListController.FillComboBoxCollection(unitOfWork);
-        //    }
-        //}
-
-        //public void AddFromComboBoxToListBox(Dish item)
-        //{
-        //    this.filtDishListController.AddFromComboBoxToListBox(item);
-        //    OnFilterChanged();
-        //}
-
-        //public void AddFromListBoxToComboBox()
-        //{
-        //    this.filtDishListController.AddFromListBoxToComboBox();
-        //    OnFilterChanged();
-        //}
-
         public CheckListFilterParams FilterParams => _filterParams;
 
         // Прокси-свойства:

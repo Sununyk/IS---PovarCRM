@@ -52,6 +52,10 @@ namespace PovarCRM.Viewers.UserControlls
 
         }
         
+        public void SaveProductChanges()
+        {
+            
+        }
         /// <summary> 
         /// Освободить все используемые ресурсы.
         /// </summary>

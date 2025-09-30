@@ -52,6 +52,7 @@ namespace PovarCRM.Viewers
             IngredientsTable = new DataGridView();
             tableLayoutPanel1 = new TableLayoutPanel();
             splitContainer1 = new SplitContainer();
+            button1 = new Button();
             label2 = new Label();
             splitContainer2 = new SplitContainer();
             NewOrderButton = new Button();
@@ -178,6 +179,7 @@ namespace PovarCRM.Viewers
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.Controls.Add(button1);
             splitContainer1.Panel1.Controls.Add(label2);
             // 
             // splitContainer1.Panel2
@@ -186,6 +188,16 @@ namespace PovarCRM.Viewers
             splitContainer1.Size = new Size(272, 533);
             splitContainer1.SplitterDistance = 36;
             splitContainer1.TabIndex = 6;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(175, 5);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 1;
+            button1.Text = "Print";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_2;
             // 
             // label2
             // 
@@ -270,5 +282,6 @@ namespace PovarCRM.Viewers
         private DataGridView IngredientsTable;
 
         private int selectedDishId = -1;
+        private Button button1;
     }
 }
