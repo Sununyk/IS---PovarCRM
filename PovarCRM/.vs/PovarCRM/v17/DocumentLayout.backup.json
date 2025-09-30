@@ -221,8 +221,8 @@
               "Title": "ServingOrdersViewer.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControlls\\ServingOrdersViewer.cs",
               "RelativeDocumentMoniker": "PovarCRM\\Viewers\\UserControlls\\ServingOrdersViewer.cs",
-              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControlls\\ServingOrdersViewer.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
-              "RelativeToolTip": "PovarCRM\\Viewers\\UserControlls\\ServingOrdersViewer.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
+              "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\UserControlls\\ServingOrdersViewer.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "PovarCRM\\Viewers\\UserControlls\\ServingOrdersViewer.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-30T07:34:37.52Z",
               "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
@@ -414,7 +414,8 @@
               "RelativeToolTip": "PovarCRM\\Viewers\\Forms\\DishConstructor.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAN4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-29T18:08:03.439Z"
+              "WhenOpened": "2025-09-29T18:08:03.439Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -437,7 +438,8 @@
               "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\Forms\\DishConstructor.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "PovarCRM\\Viewers\\Forms\\DishConstructor.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-29T18:07:11.376Z"
+              "WhenOpened": "2025-09-29T18:07:11.376Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             },
             {
               "$type": "Document",
@@ -449,7 +451,8 @@
               "RelativeToolTip": "PovarCRM\\Models\\Unit.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAgwAYAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-29T16:18:53.997Z"
+              "WhenOpened": "2025-09-29T16:18:53.997Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -461,7 +464,8 @@
               "RelativeToolTip": "PovarCRM\\Repositories\\Abstracts\\DefaultRepository.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAAWwEAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-29T16:10:42.196Z"
+              "WhenOpened": "2025-09-29T16:10:42.196Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -473,7 +477,8 @@
               "RelativeToolTip": "PovarCRM\\Models\\Views\\DishProductView.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAAWwDQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-29T16:10:16.39Z"
+              "WhenOpened": "2025-09-29T16:10:16.39Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -485,7 +490,8 @@
               "RelativeToolTip": "PovarCRM\\Repositories\\Interfaces\\IRepository.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-29T18:52:47.828Z"
+              "WhenOpened": "2025-09-29T18:52:47.828Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -496,7 +502,8 @@
               "ToolTip": "C:\\Users\\alexu\\OneDrive\\Desktop\\SHARAGA6\\Kursach\\PovarCRM\\PovarCRM\\Viewers\\Forms\\DishCreator.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "PovarCRM\\Viewers\\Forms\\DishCreator.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-29T18:07:09.364Z"
+              "WhenOpened": "2025-09-29T18:07:09.364Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             },
             {
               "$type": "Document",
@@ -519,7 +526,8 @@
               "RelativeToolTip": "PovarCRM\\Repositories\\DishProductRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-29T17:56:40.579Z"
+              "WhenOpened": "2025-09-29T17:56:40.579Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -531,7 +539,8 @@
               "RelativeToolTip": "PovarCRM\\Models\\User.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAwwDUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-28T16:37:35.548Z"
+              "WhenOpened": "2025-09-28T16:37:35.548Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -543,7 +552,8 @@
               "RelativeToolTip": "PovarCRM\\Tests\\UserRoleTests.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAAwBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-28T18:21:04Z"
+              "WhenOpened": "2025-09-28T18:21:04Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -566,7 +576,8 @@
               "RelativeToolTip": "PovarCRM\\Viewers\\Forms\\Form1.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-28T16:33:27.46Z"
+              "WhenOpened": "2025-09-28T16:33:27.46Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -591,7 +602,8 @@
               "RelativeToolTip": "PovarCRM\\Migrations\\20250928160030_CompositeKeyOnPermissionTable.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-28T16:00:30.47Z"
+              "WhenOpened": "2025-09-28T16:00:30.47Z",
+              "EditorCaption": ""
             }
           ]
         }
